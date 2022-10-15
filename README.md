@@ -1,2 +1,2 @@
-# kenny-s-adventure
-2D game in java
+# Kenny's Adventure
+> Final Project PBO Kelas D
