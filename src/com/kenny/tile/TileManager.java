@@ -1,20 +1,28 @@
 package com.kenny.tile;
 
 import java.awt.Graphics2D;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import javax.imageio.ImageIO;
 import com.kenny.main.GamePanel;
 
 public class TileManager {
     GamePanel gp;
     Tile[] tile;
+    int mapTileNum[][];
     
     public TileManager(GamePanel gp) {
         this.gp = gp;
         
         tile = new Tile[10];
+
+        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
         
         getTileImage();
+        loadMap("/maps/map01.txt");
     }
     
     public void getTileImage() {
@@ -31,21 +39,61 @@ public class TileManager {
             e.printStackTrace();
         }
     }
+    public void loadMap(String filePath) {
+        String line;
+        try {
+            // get the text file
+            InputStream is = getClass().getResourceAsStream(filePath);
+            // read the content of the text file
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        
+            int col = 0;
+            int row = 0;
+            
+            while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
     
+                    line = br.readLine();
+    
+                while(col < gp.maxScreenCol) {
+                    String numbers[] = line.split(" ");
+                    
+                    int num = Integer.parseInt(numbers[col]);
+                    
+                    mapTileNum[col][row] = num;
+                    col++;
+                }
+                
+                if(col == gp.maxScreenCol) {
+                    col = 0;
+                    row++;
+                }
+            }
+            
+            br.close();
+        } catch (IOException e) {
+            
+        }
+    }
     public void draw(Graphics2D g2d) {
-        g2d.drawImage(tile[0].image, 0, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[0].image, 1 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[0].image, 2 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[0].image, 3 * 48, 0, gp.tileSize, gp.tileSize, null);
+        int col = 0;
+        int row = 0;
+        int x = 0;
+        int y = 0;
         
-        g2d.drawImage(tile[1].image, 4 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[1].image, 5 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[1].image, 6 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[1].image, 7 * 48, 0, gp.tileSize, gp.tileSize, null);
+        while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
+            int tileNum = mapTileNum[col][row];
+            
+            g2d.drawImage(tile[tileNum].image, x, y, gp.tileSize, gp.tileSize, null);
+            col++;
+            x += gp.tileSize;
+            
+            if(col == gp.maxScreenCol) {
+                col = 0;
+                x = 0;
+                row++;
+                y += gp.tileSize;
+            }
+        }
         
-        g2d.drawImage(tile[2].image, 8 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[2].image, 9 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[2].image, 10 * 48, 0, gp.tileSize, gp.tileSize, null);
-        g2d.drawImage(tile[2].image, 11 * 48, 0, gp.tileSize, gp.tileSize, null);
     }
 }
