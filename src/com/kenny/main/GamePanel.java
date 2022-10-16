@@ -11,12 +11,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
+import com.kenny.entity.Player;
+
 public class GamePanel extends JPanel implements Runnable {
 	
 	// Screen Settings
 	private final int originalTileSize = 16; // 16x16 Tile
 	private final int scale = 3;
-	private final int tileSize = originalTileSize * scale; // 48x48 Tile
+	public final int tileSize = originalTileSize * scale; // 48x48 Tile
 	
 	// 4 : 3 screen
 	private final int maxScreenCol = 16; 
@@ -29,12 +31,8 @@ public class GamePanel extends JPanel implements Runnable {
 	KeyHandler keyH = new KeyHandler();
 	// keeps the program running until users stop it
 	Thread gameThread;
-	
-	// Player's default position
-	private int playerX = 100;
-	private int playerY = 100;
-	private int playerSpeed = 5;
-	
+	// instantiate player
+	Player player = new Player(this, keyH);
 	
 	public GamePanel() {
 		// set size of this GamePanel
@@ -113,17 +111,7 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 	
 	public void update() {
-		if(keyH.upPressed == true)
-			playerY -= playerSpeed;
-		
-		else if(keyH.leftPressed == true)
-			playerX -= playerSpeed;
-		
-		else if(keyH.downPressed == true)
-			playerY += playerSpeed;
-		
-		else if(keyH.rightPressed == true)
-			playerX += playerSpeed;
+		player.update();
 	}
 	
 	// Standard method to draw on JPanel
@@ -132,9 +120,7 @@ public class GamePanel extends JPanel implements Runnable {
 		
 		Graphics2D g2d = (Graphics2D) g;
 		
-		g2d.setColor(Color.white);
-		
-		g2d.fillRect(playerX, playerY, tileSize, tileSize);
+		player.draw(g2d);
 		
 		// dispose (membuang) this graphics context and release any system resources that using it
 		// to save memory
