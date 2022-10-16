@@ -12,6 +12,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import com.kenny.entity.Player;
+import com.kenny.tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable {
 	
@@ -33,6 +34,8 @@ public class GamePanel extends JPanel implements Runnable {
 	Thread gameThread;
 	// instantiate player
 	Player player = new Player(this, keyH);
+	// instantiate tile manager
+	TileManager tileM = new TileManager(this);
 	
 	public GamePanel() {
 		// set size of this GamePanel
@@ -121,7 +124,13 @@ public class GamePanel extends JPanel implements Runnable {
 		
 		Graphics2D g2d = (Graphics2D) g;
 		
+		// draw background first, and then the player
+		// 1. Background
+		tileM.draw(g2d);
+		
+		// 2. Player
 		player.draw(g2d);
+		
 		
 		// dispose (membuang) this graphics context and release any system resources that using it
 		// to save memory

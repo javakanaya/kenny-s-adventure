@@ -67,6 +67,7 @@ public class Player extends Entity {
 	public void update() {
 	    
 	    // if key pressed
+	    spriteCounter++;
 	    if(keyH.upPressed == true || 
 	            keyH.leftPressed == true ||
 	            keyH.downPressed == true || 
@@ -96,7 +97,7 @@ public class Player extends Entity {
 	        }
 	        
 	        // animating sprite
-	        spriteCounter++;
+	        
 	        if(spriteCounter > 12) {
 	            if(spriteNum == 4)
 	                spriteNum = 1;
@@ -106,8 +107,11 @@ public class Player extends Entity {
 	        }
 	    }
 	    // if no keys pressed, then sprite stop animating and stand still
-	    else
+	    else {
 	        spriteNum = 1;
+	    }
+	        
+	        
 		
 	}
 	
