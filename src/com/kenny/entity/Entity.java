@@ -11,7 +11,7 @@ public class Entity {
 	int speed;
 	
 	// image for entity movement
-	public BufferedImage right1, 
+	BufferedImage right1, 
  				  right2, 
  				  right3, 
  				  right4, 
@@ -27,5 +27,8 @@ public class Entity {
  				  down2, 
  				  down3, 
  				  down4;
-	public String direction;
+	String direction;
+	
+	int spriteCounter = 0;
+	int spriteNum = 1;
 }

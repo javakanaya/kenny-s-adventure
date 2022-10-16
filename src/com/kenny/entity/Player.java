@@ -31,10 +31,11 @@ public class Player extends Entity {
 	public void setDefaultValues() {
 		x = 100;
 		y = 100;
-		speed = 4;
+		speed = 3;
 		direction ="down";
 	}
 	
+	// get player image and animating asset
 	public void getPlayerImage() {
 		
 		try {
@@ -64,28 +65,50 @@ public class Player extends Entity {
 	
 	// key handler for the player
 	public void update() {
-		if(keyH.upPressed == true) {
-			direction = "up";
-			y -= speed;
-		}
+	    
+	    // if key pressed
+	    if(keyH.upPressed == true || 
+	            keyH.leftPressed == true ||
+	            keyH.downPressed == true || 
+	            keyH.rightPressed == true) {
+	        
+	        if(keyH.upPressed == true) {
+	            direction = "up";
+	            y -= speed;
+	        }
+	        
+	        else if(keyH.leftPressed == true) {
+	            direction = "left";
+	            x -= speed;
+	            
+	        }
+	        
+	        else if(keyH.downPressed == true) {
+	            direction = "down";
+	            y += speed;
+	            
+	        }
+	        
+	        else if(keyH.rightPressed == true) {
+	            direction = "right";
+	            x += speed;
+	            
+	        }
+	        
+	        // animating sprite
+	        spriteCounter++;
+	        if(spriteCounter > 12) {
+	            if(spriteNum == 4)
+	                spriteNum = 1;
+	            else
+	                spriteNum++;
+	            spriteCounter = 0;
+	        }
+	    }
+	    // if no keys pressed, then sprite stop animating and stand still
+	    else
+	        spriteNum = 1;
 		
-		else if(keyH.leftPressed == true) {
-			direction = "left";
-			x -= speed;
-			
-		}
-		
-		else if(keyH.downPressed == true) {
-			direction = "down";
-			y += speed;
-			
-		}
-		
-		else if(keyH.rightPressed == true) {
-			direction = "right";
-			x += speed;
-			
-		}
 	}
 	
 	// player draw method
@@ -94,23 +117,68 @@ public class Player extends Entity {
 		 // g2d.setColor(Color.white);
 		 // g2d.fillRect(x, y, gp.tileSize, gp.tileSize);
 		
-		BufferedImage image = left1;
+		BufferedImage image = null;
 		
 		switch(direction) {
 		case "down":
-			image = down1;
+		    if (spriteNum == 1) {
+		        image = down1;		        
+		    }
+		    if (spriteNum == 2) {
+                image = down2;              
+            }
+		    if (spriteNum == 3) {
+                image = down3;              
+            }
+		    if (spriteNum == 4) {
+                image = down4;              
+            }
 			break;
 		case "left":
-			image = left1;
+		    if (spriteNum == 1) {
+                image = left1;              
+            }
+            if (spriteNum == 2) {
+                image = left2;              
+            }
+            if (spriteNum == 3) {
+                image = left3;              
+            }
+            if (spriteNum == 4) {
+                image = left4;              
+            }
 			break;
 		case "right":
-			image = right1;
+		    if (spriteNum == 1) {
+		        image = right1;
+	        }
+            if (spriteNum == 2) {
+                image = right2;              
+            }
+            if (spriteNum == 3) {
+                image = right3;              
+            }
+            if (spriteNum == 4) {
+                image = right4;              
+            }
 			break;
 		case "up":
-			image = up1;
+		    if (spriteNum == 1) {
+                image = up1;
+            }
+            if (spriteNum == 2) {
+                image = up2;              
+            }
+            if (spriteNum == 3) {
+                image = up3;              
+            }
+            if (spriteNum == 4) {
+                image = up4;              
+            }
 			break;
 		}
 		
+		// draw the player
 		g2d.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
 		
 	}
