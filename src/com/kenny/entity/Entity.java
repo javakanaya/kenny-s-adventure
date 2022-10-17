@@ -7,7 +7,8 @@ package com.kenny.entity;
 import java.awt.image.BufferedImage;
 
 public class Entity {
-	int x, y;
+	public int  worldX, 
+				worldY;
 	int speed;
 	
 	// image for entity movement
