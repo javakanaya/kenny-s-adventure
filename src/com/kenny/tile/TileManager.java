@@ -11,63 +11,65 @@ import com.kenny.main.GamePanel;
 
 public class TileManager {
     GamePanel gp;
-    Tile[] tile;
-    int mapTileNum[][];
+    public Tile[] tile;
+    public int mapTileNum[][];
     
     public TileManager(GamePanel gp) {
         this.gp = gp;
         
-        tile = new Tile[20];
+        tile = new Tile[30];
 
+        // map size : maxWorldCol x maxWordRow
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
         
         getTileImage();
-        loadMap("/maps/WorldMap.txt");
+        loadMap("/maps/world_map.txt");
     }
     
     public void getTileImage() {
         try {
-            tile[0] = new Tile();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_01.png"));
-            
-            tile[1] = new Tile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_01.png"));
-            
-            tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_02.png"));
-            
-            tile[3] = new Tile();
-            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_03.png"));
-            
-            tile[4] = new Tile();
-            tile[4].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_04.png"));
-            
-            tile[5] = new Tile();
-            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_05.png"));
-            
-            tile[6] = new Tile();
-            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_06.png"));
-            
-            tile[7] = new Tile();
-            tile[7].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_07.png"));
-            
-            tile[8] = new Tile();
-            tile[8].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_08.png"));
-            
-            tile[9] = new Tile();
-            tile[9].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_09.png"));
-            
             tile[10] = new Tile();
-            tile[10].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_10.png"));
+            tile[10].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_00.png"));
+            tile[10].collision = true;
             
             tile[11] = new Tile();
-            tile[11].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_11.png"));
+            tile[11].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_01.png"));
             
             tile[12] = new Tile();
-            tile[12].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_12.png"));
+            tile[12].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_02.png"));
             
             tile[13] = new Tile();
-            tile[13].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_13.png"));
+            tile[13].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_03.png"));
+            
+            tile[14] = new Tile();
+            tile[14].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_04.png"));
+            
+            tile[15] = new Tile();
+            tile[15].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_05.png"));
+            
+            tile[16] = new Tile();
+            tile[16].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_06.png"));
+            
+            tile[17] = new Tile();
+            tile[17].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_07.png"));
+            
+            tile[18] = new Tile();
+            tile[18].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_08.png"));
+            
+            tile[19] = new Tile();
+            tile[19].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_09.png"));
+            
+            tile[20] = new Tile();
+            tile[20].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_10.png"));
+            
+            tile[21] = new Tile();
+            tile[21].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_11.png"));
+            
+            tile[22] = new Tile();
+            tile[22].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_12.png"));
+            
+            tile[23] = new Tile();
+            tile[23].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tiles_13.png"));
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -111,35 +113,35 @@ public class TileManager {
     public void draw(Graphics2D g2d) {
         int worldCol = 0;
         int worldRow = 0;
-        
+
+       
         while(worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
             int tileNum = mapTileNum[worldCol][worldRow];
             
             // Center position
-            int worldX = worldCol * gp.tileSize;
-            int worldY = worldRow * gp.tileSize;
-            
-            // Draw The World from player position
+            int worldX = worldCol * gp.tileSize; // 0 * 48
+            int worldY = worldRow * gp.tileSize; // 0 * 48
+                
+            //
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
             int screenY = worldY - gp.player.worldY + gp.player.screenY;
-            
-            // Improve render
-            if(worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
-               worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
-               worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
-               worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
-            	g2d.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+                
+            // Improve render, draw only the tiles that seen on the screen
+            if(worldX + 2 * gp.tileSize > gp.player.worldX - gp.player.screenX &&
+                    worldX - 2 * gp.tileSize < gp.player.worldX + gp.player.screenX &&
+                    worldY + 2 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
+                    worldY - 2 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
+                
+                g2d.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+                // System.out.println("sX : " + screenX + " sY :" + screenX);
             }
-            
+            // to draw the next tile;
             worldCol++;
-      
             
             if(worldCol == gp.maxWorldCol) {
-            	worldCol = 0;
-            	worldRow++;
-               
+                worldCol = 0;
+                worldRow++;
             }
         }
-        
-    }
+    }   
 }

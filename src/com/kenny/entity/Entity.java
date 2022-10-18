@@ -4,12 +4,13 @@
 
 package com.kenny.entity;
 
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 public class Entity {
 	public int  worldX, 
 				worldY;
-	int speed;
+	public int speed;
 	
 	// image for entity movement
 	BufferedImage right1, 
@@ -28,8 +29,11 @@ public class Entity {
  				  down2, 
  				  down3, 
  				  down4;
-	String direction;
+	public String direction;
 	
 	int spriteCounter = 0;
 	int spriteNum = 1;
+	
+	public Rectangle solidArea;
+	public boolean collisionOn = false;
 }

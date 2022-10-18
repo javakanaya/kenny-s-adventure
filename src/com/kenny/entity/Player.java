@@ -5,6 +5,7 @@
 package com.kenny.entity;
 
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -26,8 +27,12 @@ public class Player extends Entity {
 		this.gp = gp;
 		this.keyH = keyH;
 		
-		screenX = gp.screenWidth/2 - (gp.tileSize/2);
-		screenY = gp.screenHeight/2 - (gp.tileSize/2);
+		// player on the center of the screen
+		screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
+		screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
+		
+		// player area that will collision on the tiles
+		solidArea = new Rectangle(8, 16, 32, 32);
 		
 		setDefaultValues();
 		getPlayerImage();
@@ -35,9 +40,10 @@ public class Player extends Entity {
 	
 	// default values for the player
 	public void setDefaultValues() {
+	    // player position in the world map
 		worldX = gp.tileSize * 23;
 		worldY = gp.tileSize * 21;
-		speed = 3;
+		speed = 4;
 		direction ="down";
 	}
 	
@@ -81,30 +87,51 @@ public class Player extends Entity {
 	        
 	        if(keyH.upPressed == true) {
 	            direction = "up";
-	            worldY -= speed;
+
 	        }
 	        
 	        else if(keyH.leftPressed == true) {
 	            direction = "left";
-	            worldX -= speed;
+
 	            
 	        }
 	        
 	        else if(keyH.downPressed == true) {
 	            direction = "down";
-	            worldY += speed;
+
 	            
 	        }
 	        
 	        else if(keyH.rightPressed == true) {
 	            direction = "right";
-	            worldX += speed;
+
 	            
 	        }
 	        
-	        // animating sprite
+	        // check tile collision
+	        collisionOn = false;
+	        gp.cCheker.checkTile(this);
 	        
-	        if(spriteCounter > 12) {
+	        // if collision is false, player can move
+	        if(collisionOn == false) {
+	            switch(direction) {
+	                case "up":
+	                    worldY -= speed;
+	                    break;
+	                case "left":
+	                    worldX -= speed;
+	                    break;
+	                case "down":
+	                    worldY += speed;
+	                    break;
+	                case "right":
+	                    worldX += speed;
+	                    break;	                
+	            }
+	        }
+	        
+	        // animating sprite
+	        if(spriteCounter > 10) {
 	            if(spriteNum == 4)
 	                spriteNum = 1;
 	            else
@@ -188,8 +215,7 @@ public class Player extends Entity {
 			break;
 		}
 		
-		// draw the player
-		g2d.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
-		
+		// draw the player, the player doesn't change but the map
+	    g2d.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
 	}
 }
