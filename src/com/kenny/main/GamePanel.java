@@ -12,13 +12,14 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import com.kenny.entity.Player;
+import com.kenny.object.SuperObject;
 import com.kenny.tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable {
 	
 	// Screen Settings
 	private final int originalTileSize = 16; // 16x16 Tile
-	private final int scale = 3;
+	public final int scale = 3;
 	public final int tileSize = originalTileSize * scale; // 48x48 Tile
 	
 	// 4 : 3 screen
@@ -44,6 +45,11 @@ public class GamePanel extends JPanel implements Runnable {
 	TileManager tileM = new TileManager(this);
 	// Instantiate collision checker
 	public CollisionChecker cCheker = new CollisionChecker(this);
+	// instantiate SuperObject Array as Slots for Objects
+	public SuperObject obj[] = new SuperObject[10];
+	// instantiate AssetSetter
+	public AssetSetter aSetter = new AssetSetter(this);
+
 	
 	public GamePanel() {
 		// set size of this GamePanel
@@ -65,6 +71,12 @@ public class GamePanel extends JPanel implements Runnable {
 		
 		// the GamePanel can be "focused" to receive key input.
 		this.setFocusable(true);
+	}
+	
+	// setup for Game
+	public void setupGame() {
+		
+		aSetter.setObject();
 	}
 	
 	public void startGameThread() {
@@ -136,7 +148,14 @@ public class GamePanel extends JPanel implements Runnable {
 		// 1. Background
 		tileM.draw(g2d);
 		
-		// 2. Player
+		// 2. Object
+		for(int i = 0; i < obj.length; i++) {
+			// check slots are empty or not, avoid NullPointer error
+			if(obj[i] != null)
+				obj[i].draw(g2d, this);
+		}
+		
+		// 3. Player
 		player.draw(g2d);
 		
 		

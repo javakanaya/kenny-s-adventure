@@ -22,11 +22,6 @@ public class Player extends Entity {
 	public final int screenX;
 	public final int screenY;
 	
-	//idle gap
-	private int anchor1 = 100
-			   ,anchor2 = 120;
-	
-	
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
 		this.gp = gp;
@@ -169,11 +164,13 @@ public class Player extends Entity {
 	        
 	    	// sprite idle animation
 	    	else{
+	    		//transition
 	    		if(spriteCounter == 60)
 	                spriteNum = 5;
 	    		else if(spriteCounter == 70)
 	                spriteNum = 6;
 	    		
+	    		//looping animation for idle
 	    		else if(spriteCounter == 80 || (spriteNum == 8 && spriteCounter%20 == 0 )){
 	    			spriteNum = 7;
 	    		}

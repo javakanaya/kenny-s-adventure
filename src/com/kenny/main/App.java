@@ -33,6 +33,9 @@ public class App {
 		// to see the window
 		window.setVisible(true);
 		
+		// calling all setup before the game starts
+		gamePanel.setupGame();
+		
 		// start the game
 		gamePanel.startGameThread();		
 	}
