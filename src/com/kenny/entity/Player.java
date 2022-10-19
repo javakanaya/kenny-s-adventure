@@ -22,6 +22,11 @@ public class Player extends Entity {
 	public final int screenX;
 	public final int screenY;
 	
+	//idle gap
+	private int anchor1 = 100
+			   ,anchor2 = 120;
+	
+	
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
 		this.gp = gp;
@@ -43,7 +48,7 @@ public class Player extends Entity {
 	    // player position in the world map
 		worldX = gp.tileSize * 23;
 		worldY = gp.tileSize * 21;
-		speed = 4;
+		speed = 3;
 		direction ="down";
 	}
 	
@@ -51,25 +56,41 @@ public class Player extends Entity {
 	public void getPlayerImage() {
 		
 		try {
-			down1 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_down_1.png"));
-			down2 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_down_2.png"));
-			down3 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_down_3.png"));
-			down4 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_down_4.png"));
+			down1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_1.png"));
+			down2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_2.png"));
+			down3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_3.png"));
+			down4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_4.png"));
 			
-			left1 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_left_1.png"));
-			left2 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_left_2.png"));
-			left3 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_left_3.png"));
-			left4 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_left_4.png"));
+			left1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_1.png"));
+			left2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_2.png"));
+			left3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_3.png"));
+			left4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_4.png"));
 
-			right1 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_right_1.png"));
-			right2 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_right_2.png"));
-			right3 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_right_3.png"));
-			right4 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_right_4.png"));
+			right1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_1.png"));
+			right2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_2.png"));
+			right3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_3.png"));
+			right4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_4.png"));
 
-			up1 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_up_1.png"));
-			up2 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_up_2.png"));
-			up3 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_up_3.png"));
-			up4 = ImageIO.read(getClass().getResourceAsStream("/player/kenny_up_4.png"));
+			up1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_1.png"));
+			up2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_2.png"));
+			up3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_3.png"));
+			up4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_4.png"));
+			
+			idleFront1 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_1.png"));
+			idleFront2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_2.png"));
+			idleFront3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_3.png"));
+			idleFront4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_4.png"));
+			
+			idleLeft1 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_2.png"));
+			idleLeft2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_3.png"));
+			idleLeft3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_4.png"));
+			idleLeft4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_5.png"));
+			
+			idleRight1 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_2.png"));
+			idleRight2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_3.png"));
+			idleRight3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_4.png"));
+			idleRight4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_5.png"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -132,16 +153,34 @@ public class Player extends Entity {
 	        
 	        // animating sprite
 	        if(spriteCounter > 10) {
-	            if(spriteNum == 4)
+	            if(spriteNum >= 4)
 	                spriteNum = 1;
 	            else
 	                spriteNum++;
 	            spriteCounter = 0;
 	        }
 	    }
-	    // if no keys pressed, then sprite stop animating and stand still
+	    // if no keys pressed, then sprite stop walking animation
 	    else {
-	        spriteNum = 1;
+	    	
+	    	// sprite stand still
+	    	if(spriteCounter < 60)
+	    		spriteNum = 2;
+	        
+	    	// sprite idle animation
+	    	else{
+	    		if(spriteCounter == 60)
+	                spriteNum = 5;
+	    		else if(spriteCounter == 70)
+	                spriteNum = 6;
+	    		
+	    		else if(spriteCounter == 80 || (spriteNum == 8 && spriteCounter%20 == 0 )){
+	    			spriteNum = 7;
+	    		}
+	    		else if(spriteNum == 7 && spriteCounter%20 == 0) {
+	    			spriteNum = 8;
+	    		}
+	    	}
 	    }
 	        
 	        
@@ -170,6 +209,18 @@ public class Player extends Entity {
 		    if (spriteNum == 4) {
                 image = down4;              
             }
+		    if (spriteNum == 5) {
+                image = idleFront1;              
+            }
+		    if (spriteNum == 6) {
+                image = idleFront2;              
+            }
+		    if (spriteNum == 7) {
+                image = idleFront3;              
+            }
+		    if (spriteNum == 8) {
+                image = idleFront4;              
+            }
 			break;
 		case "left":
 		    if (spriteNum == 1) {
@@ -183,6 +234,18 @@ public class Player extends Entity {
             }
             if (spriteNum == 4) {
                 image = left4;              
+            }
+            if (spriteNum == 5) {
+                image = idleLeft1;              
+            }
+		    if (spriteNum == 6) {
+                image = idleLeft2;              
+            }
+		    if (spriteNum == 7) {
+                image = idleLeft3;              
+            }
+		    if (spriteNum == 8) {
+                image = idleLeft4;              
             }
 			break;
 		case "right":
@@ -198,6 +261,18 @@ public class Player extends Entity {
             if (spriteNum == 4) {
                 image = right4;              
             }
+            if (spriteNum == 5) {
+                image = idleRight1;              
+            }
+		    if (spriteNum == 6) {
+                image = idleRight2;              
+            }
+		    if (spriteNum == 7) {
+                image = idleRight3;              
+            }
+		    if (spriteNum == 8) {
+                image = idleRight4;              
+            }
 			break;
 		case "up":
 		    if (spriteNum == 1) {
@@ -211,6 +286,18 @@ public class Player extends Entity {
             }
             if (spriteNum == 4) {
                 image = up4;              
+            }
+            if (spriteNum == 5) {
+                image = idleFront1;              
+            }
+		    if (spriteNum == 6) {
+                image = idleFront2;              
+            }
+		    if (spriteNum == 7) {
+                image = idleFront3;              
+            }
+		    if (spriteNum == 8) {
+                image = idleFront4;              
             }
 			break;
 		}

@@ -29,6 +29,21 @@ public class Entity {
  				  down2, 
  				  down3, 
  				  down4;
+ 				  
+	// image for entity idle
+ 	BufferedImage idleFront1,
+ 				  idleFront2,
+ 				  idleFront3,
+ 				  idleFront4,
+ 				  idleLeft1,
+				  idleLeft2,
+				  idleLeft3,
+				  idleLeft4,
+				  idleRight1,
+ 				  idleRight2,
+ 				  idleRight3,
+ 				  idleRight4;
+	
 	public String direction;
 	
 	int spriteCounter = 0;
