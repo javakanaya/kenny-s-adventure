@@ -4,15 +4,15 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class OBJ_Testing extends SuperObject{
+public class OBJ_Tree extends SuperObject{
 	
 	
-	public OBJ_Testing() {
+	public OBJ_Tree() {
 		
-		name = "heart";
+		name = "tree";
 		try {
 			
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/Testing.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/tree_1.png"));
 			
 		}catch(IOException e) {
 			e.printStackTrace();

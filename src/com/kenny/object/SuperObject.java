@@ -25,7 +25,7 @@ public class SuperObject {
                 worldY + 2 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
                 worldY - 2 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
             
-            g2d.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+            g2d.drawImage(image, screenX, screenY, gp.tileSize*3, gp.tileSize*3, null);
             // System.out.println("sX : " + screenX + " sY :" + screenX);
         }
 	}

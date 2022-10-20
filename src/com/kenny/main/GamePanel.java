@@ -148,15 +148,15 @@ public class GamePanel extends JPanel implements Runnable {
 		// 1. Background
 		tileM.draw(g2d);
 		
+		// 3. Player
+				player.draw(g2d);
+		
 		// 2. Object
 		for(int i = 0; i < obj.length; i++) {
 			// check slots are empty or not, avoid NullPointer error
 			if(obj[i] != null)
 				obj[i].draw(g2d, this);
 		}
-		
-		// 3. Player
-		player.draw(g2d);
 		
 		
 		// dispose (membuang) this graphics context and release any system resources that using it
