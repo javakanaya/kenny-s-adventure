@@ -1,0 +1,21 @@
+package com.kenny.object.tree;
+
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+public class PineTree extends Tree {
+	
+	public PineTree() {
+		
+		name = "Pine Tree";
+		try {
+			
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/pineTree.png"));
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

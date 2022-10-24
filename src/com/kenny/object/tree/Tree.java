@@ -1,11 +1,11 @@
-package com.kenny.object;
+package com.kenny.object.tree;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import com.kenny.main.GamePanel;
 
-public class SuperObject {
+public class Tree {
 	
 	public BufferedImage image;	
 	public String name;
@@ -20,10 +20,10 @@ public class SuperObject {
         int screenY = worldY - gp.player.worldY + gp.player.screenY;
             
         // Improve render, draw only the tiles that seen on the screen
-        if(worldX + 2 * gp.tileSize > gp.player.worldX - gp.player.screenX &&
-                worldX - 2 * gp.tileSize < gp.player.worldX + gp.player.screenX &&
-                worldY + 2 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
-                worldY - 2 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
+        if(worldX + 3 * gp.tileSize > gp.player.worldX - gp.player.screenX &&
+                worldX - 3 * gp.tileSize < gp.player.worldX + gp.player.screenX &&
+                worldY + 3 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
+                worldY - 3 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
             
             g2d.drawImage(image, screenX, screenY, gp.tileSize*3, gp.tileSize*3, null);
             // System.out.println("sX : " + screenX + " sY :" + screenX);
