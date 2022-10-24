@@ -11,6 +11,7 @@ public class CollisionChecker {
     
     // check if the player solidArea, hit the  tile or not
     public void checkTile(Entity entity) {
+        
         // leftX
         int entityLeftWorldX = entity.worldX + entity.solidArea.x;
         // rightX
@@ -61,9 +62,7 @@ public class CollisionChecker {
                 if(gp.tileM.tile[tileNum1].collision == true || gp.tileM.tile[tileNum2].collision == true) {
                     entity.collisionOn = true;
                 }
-                break;
-                
-             
+                break; 
         }
     }
 }
