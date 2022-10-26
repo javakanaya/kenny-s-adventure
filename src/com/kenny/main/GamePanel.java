@@ -149,7 +149,7 @@ public class GamePanel extends JPanel implements Runnable {
 		tileM.draw(g2d);
 		
 		// 3. Player
-				player.draw(g2d);
+		player.draw(g2d);
 		
 		// 2. Object
 		
