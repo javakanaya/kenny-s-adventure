@@ -46,7 +46,7 @@ public class GamePanel extends JPanel implements Runnable {
 	// Instantiate collision checker
 	public CollisionChecker cCheker = new CollisionChecker(this);
 	// instantiate SuperObject Array as Slots for Objects
-	public Tree tree[] = new Tree[100];
+	public Tree tree[] = new Tree[350];
 	// instantiate AssetSetter
 	public AssetSetter aSetter = new AssetSetter(this);
 

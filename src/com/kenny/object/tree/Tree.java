@@ -25,7 +25,7 @@ public class Tree {
                 worldY + 3 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
                 worldY - 3 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
             
-            g2d.drawImage(image, screenX, screenY, gp.tileSize*3, gp.tileSize*3, null);
+            g2d.drawImage(image, screenX, screenY, gp.tileSize*4, gp.tileSize*4, null);
             // System.out.println("sX : " + screenX + " sY :" + screenX);
         }
 	}
