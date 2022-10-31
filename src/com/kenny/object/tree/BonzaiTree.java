@@ -11,7 +11,7 @@ public class BonzaiTree extends Tree{
 		name = "Bonzai Tree";
 		try {
 			
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/bonzaiTree.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/bonzaiTree.png"));
 			
 		}catch(IOException e) {
 			e.printStackTrace();

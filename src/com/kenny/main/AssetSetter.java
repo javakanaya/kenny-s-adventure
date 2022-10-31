@@ -1,5 +1,7 @@
 package com.kenny.main;
 
+import com.kenny.object.gatekey.WinterGate;
+import com.kenny.object.gatekey.WinterKey;
 import com.kenny.object.tree.AppleTree;
 import com.kenny.object.tree.BanyanTree;
 import com.kenny.object.tree.BonzaiTree;
@@ -1297,5 +1299,15 @@ public class AssetSetter {
 		gp.tree[317] = new PineTree();
 		gp.tree[317].worldX = (((15)-2) - 1) *gp.tileSize;
 		gp.tree[317].worldY = (((50)-3) - 1) *gp.tileSize;
+		
+		///
+		
+		gp.key[0] = new WinterKey();
+		gp.key[0].worldX = ((27) - 1) *gp.tileSize;
+		gp.key[0].worldY = ((27) - 1) *gp.tileSize;
+		
+		gp.key[1] = new WinterGate();
+		gp.key[1].worldX = ((23) - 1) *gp.tileSize;
+		gp.key[1].worldY = ((27) - 1) *gp.tileSize;
 	}
 }

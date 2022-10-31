@@ -11,7 +11,7 @@ public class SpruceTree extends Tree {
 		name = "Spruce Tree";
 		try {
 			
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/spruceTree.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/spruceTree.png"));
 			
 		}catch(IOException e) {
 			e.printStackTrace();

@@ -17,7 +17,7 @@ public class TileManager {
     public TileManager(GamePanel gp) {
         this.gp = gp;
         
-        tile = new Tile[30];
+        tile = new Tile[50];
 
         // map size : maxWorldCol x maxWordRow
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
@@ -70,6 +70,39 @@ public class TileManager {
             
             tile[23] = new Tile();
             tile[23].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_left_dirt.png"));
+            
+            tile[30] = new Tile();
+            tile[30].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow.png"));
+            
+            tile[31] = new Tile();
+            tile[31].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/grass_corner_leftUp_snow.png"));
+            
+            tile[32] = new Tile();
+            tile[32].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/grass_corner_rightDown_snow.png"));
+            
+            tile[33] = new Tile();
+            tile[33].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/grass_corner_rightUp_snow.png"));
+            
+            tile[40] = new Tile();
+            tile[40].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_leftDown_grass.png"));
+            
+            tile[34] = new Tile();
+            tile[34].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_leftUp_grass.png"));
+            
+            tile[35] = new Tile();
+            tile[35].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_rightDown_grass.png"));
+            
+            tile[36] = new Tile();
+            tile[36].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_rightUp_grass.png"));
+            
+            tile[37] = new Tile();
+            tile[37].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_down_grass.png"));
+            
+            tile[38] = new Tile();
+            tile[38].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_left_grass.png"));
+            
+            tile[39] = new Tile();
+            tile[39].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_up_grass.png"));
             
         } catch (IOException e) {
             e.printStackTrace();

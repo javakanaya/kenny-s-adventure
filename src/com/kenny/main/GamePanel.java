@@ -12,6 +12,7 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 import com.kenny.entity.Player;
+import com.kenny.object.gatekey.GateKey;
 import com.kenny.object.tree.Tree;
 import com.kenny.tile.TileManager;
 
@@ -47,6 +48,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public CollisionChecker cCheker = new CollisionChecker(this);
 	// instantiate SuperObject Array as Slots for Objects
 	public Tree tree[] = new Tree[350];
+	public GateKey key[] = new GateKey[10];
 	// instantiate AssetSetter
 	public AssetSetter aSetter = new AssetSetter(this);
 
@@ -157,6 +159,12 @@ public class GamePanel extends JPanel implements Runnable {
 			// check slots are empty or not, avoid NullPointer error
 			if(tree[i] != null)
 				tree[i].draw(g2d, this);
+		}
+		
+		for(int i = 0; i < key.length; i++) {
+			// check slots are empty or not, avoid NullPointer error
+			if(key[i] != null)
+				key[i].draw(g2d, this);
 		}
 		
 		
