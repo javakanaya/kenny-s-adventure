@@ -1,6 +1,7 @@
 package com.kenny.object.gatekey;
 
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import com.kenny.main.GamePanel;
@@ -11,6 +12,9 @@ public class GateKey {
 	public String name;
 	public boolean collision = false;
 	public int worldX, worldY;
+	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
+	public int solidDefaultAreaX = 0;
+	public int solidDefaultAreaY = 0;
 	
 	//draw method
 	public void draw(Graphics2D g2d, GamePanel gp) {

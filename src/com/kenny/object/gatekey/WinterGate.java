@@ -14,6 +14,7 @@ public class WinterGate extends GateKey{
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
+		collision = true;
 	}
 
 }

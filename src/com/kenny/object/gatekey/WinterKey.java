@@ -14,6 +14,10 @@ public class WinterKey extends GateKey{
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
+		
+		// if want to set specific solid area to each object
+//		solidArea.x = 5;
+		
 	}
 
 }

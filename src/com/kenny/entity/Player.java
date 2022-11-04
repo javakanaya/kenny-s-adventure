@@ -21,6 +21,7 @@ public class Player extends Entity {
 	//indicate where the player will be drawn
 	public final int screenX;
 	public final int screenY;
+	int hasKey = 0;
 	
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
@@ -33,6 +34,8 @@ public class Player extends Entity {
 		
 		// player area that will collision on the tiles
 		solidArea = new Rectangle(8, 16, 32, 32);
+		solidAreaDefaultX = solidArea.x;
+		solidAreaDefaultY = solidArea.y;
 		
 		setDefaultValues();
 		getPlayerImage();
@@ -43,7 +46,7 @@ public class Player extends Entity {
 	    // player position in the world map
 		worldX = gp.tileSize * 23;
 		worldY = gp.tileSize * 21;
-		speed = 10;
+		speed = 4;
 		direction ="down";
 	}
 	
@@ -128,6 +131,10 @@ public class Player extends Entity {
 	        collisionOn = false;
 	        gp.cCheker.checkTile(this);
 	        
+	        // check object collision
+	        int objIndex = gp.cCheker.checkObject(this, true);
+	        pickUpObject(objIndex);
+	        
 	        // if collision is false, player can move
 	        if(collisionOn == false) {
 	            switch(direction) {
@@ -181,6 +188,28 @@ public class Player extends Entity {
 	    }
 	        
 	        
+		
+	}
+	
+	public void pickUpObject(int i) {
+		
+		if(i != 999) {
+			
+			String objectName = gp.key[i].name;
+			
+			switch(objectName) {
+			case "Winter Key" :
+				hasKey++;
+				gp.key[i] = null;
+				break;
+			case "Winter Gate" :
+				if(hasKey > 0) {
+					gp.key[i] = null;
+					hasKey--;
+				}
+			}
+			
+		}
 		
 	}
 	
