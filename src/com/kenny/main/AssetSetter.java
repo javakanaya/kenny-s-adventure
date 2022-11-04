@@ -1,5 +1,6 @@
 package com.kenny.main;
 
+import com.kenny.object.gatekey.Bone;
 import com.kenny.object.gatekey.WinterGate;
 import com.kenny.object.gatekey.WinterKey;
 import com.kenny.object.tree.AppleTree;
@@ -1309,5 +1310,9 @@ public class AssetSetter {
 		gp.key[1] = new WinterGate();
 		gp.key[1].worldX = ((23) - 1) *gp.tileSize;
 		gp.key[1].worldY = ((27) - 1) *gp.tileSize;
+		
+		gp.key[2] = new Bone();
+		gp.key[2].worldX = ((30) - 1) *gp.tileSize;
+		gp.key[2].worldY = ((30) - 1) *gp.tileSize;
 	}
 }

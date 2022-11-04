@@ -32,14 +32,10 @@ public class GamePanel extends JPanel implements Runnable {
 	// World Map Settings
 	public final int maxWorldCol = 50;
 	public final int maxWorldRow = 50;
-	public final int worldWidth = tileSize * maxWorldCol;
-	public final int worldHeight = tileSize * maxWorldRow;
 	
 	private final int fps = 60;
 	// add keyHandler
 	KeyHandler keyH = new KeyHandler();
-	// keeps the program running until users stop it
-	Thread gameThread;
 	// instantiate player
 	public Player player = new Player(this, keyH);
 	// instantiate tile manager
@@ -51,6 +47,10 @@ public class GamePanel extends JPanel implements Runnable {
 	public GateKey key[] = new GateKey[10];
 	// instantiate AssetSetter
 	public AssetSetter aSetter = new AssetSetter(this);
+	// instantiate sound
+	Sound sound = new Sound();
+	// keeps the program running until users stop it
+	Thread gameThread;
 
 	
 	public GamePanel() {
@@ -79,6 +79,8 @@ public class GamePanel extends JPanel implements Runnable {
 	public void setupGame() {
 		
 		aSetter.setObject();
+		
+		playMusic(0);
 	}
 	
 	public void startGameThread() {
@@ -171,5 +173,21 @@ public class GamePanel extends JPanel implements Runnable {
 		// dispose (membuang) this graphics context and release any system resources that using it
 		// to save memory
 		g2d.dispose();
+	}
+	
+	public void playMusic(int i) {
+		
+		sound.setFile(i);
+		sound.play();
+		sound.loop();
+	}
+	
+	public void stopMusic() {
+		sound.stop();
+	}
+	
+	public void playSE(int i) {
+		sound.setFile(i);
+		sound.play();
 	}
 }

@@ -199,6 +199,10 @@ public class Player extends Entity {
 			
 			switch(objectName) {
 			case "Winter Key" :
+				
+				// give SE to Key
+				// gp.playSE(1);
+				
 				hasKey++;
 				gp.key[i] = null;
 				break;
@@ -207,6 +211,11 @@ public class Player extends Entity {
 					gp.key[i] = null;
 					hasKey--;
 				}
+				break;
+			case "Bone" :
+				speed += 2;
+				gp.key[i] = null;
+				break;
 			}
 			
 		}
