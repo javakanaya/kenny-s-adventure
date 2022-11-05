@@ -17,7 +17,7 @@ public class TileManager {
     public TileManager(GamePanel gp) {
         this.gp = gp;
         
-        tile = new Tile[50];
+        tile = new Tile[100];
 
         // map size : maxWorldCol x maxWordRow
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
@@ -103,6 +103,45 @@ public class TileManager {
             
             tile[39] = new Tile();
             tile[39].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_up_grass.png"));
+            
+            tile[50] = new Tile();
+            tile[50].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras.png"));
+            
+            tile[51] = new Tile();
+            tile[51].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_leftDown_lras.png"));
+            
+            tile[52] = new Tile();
+            tile[52].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_leftUp_lras.png"));
+            
+            tile[53] = new Tile();
+            tile[53].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_rightDown_lras.png"));
+            
+            tile[54] = new Tile();
+            tile[54].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_rightUp_lras.png"));
+            
+            tile[55] = new Tile();
+            tile[55].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_leftDown_grass.png"));
+            
+            tile[56] = new Tile();
+            tile[56].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_leftUp_grass.png"));
+            
+            tile[57] = new Tile();
+            tile[57].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_rightDown_grass.png"));
+            
+            tile[58] = new Tile();
+            tile[58].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_rightUp_grass.png"));
+            
+            tile[59] = new Tile();
+            tile[59].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_down_grass.png"));
+            
+            tile[60] = new Tile();
+            tile[60].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_left_grass.png"));
+            
+            tile[61] = new Tile();
+            tile[61].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_up_grass.png"));
+            
+            tile[62] = new Tile();
+            tile[62].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/iras_right_grass.png"));
             
         } catch (IOException e) {
             e.printStackTrace();
