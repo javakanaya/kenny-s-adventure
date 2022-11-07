@@ -21,7 +21,7 @@ public class Player extends Entity {
 	//indicate where the player will be drawn
 	public final int screenX;
 	public final int screenY;
-//	int hasKey = 0;
+	public int[] hasKey = {0, 0, 0, 0};
 	int keys[] = new int[4];
 	
 	// player constructor
@@ -187,9 +187,12 @@ public class Player extends Entity {
 	    		}
 	    	}
 	    }
+	    
+	    if(gp.key[1] == null && gp.key[7] == null && gp.key[6] == null && gp.key[8] == null) {
+	        gp.ui.gameFinished = true;
+	        gp.stopMusic();
 	        
-	        
-		
+	    }
 	}
 	
 	public void pickUpObject(int i) {
@@ -200,60 +203,75 @@ public class Player extends Entity {
 			
 			switch(objectName) {
 			case "Winter Key" :
-				
 				// give SE to Key
 				// gp.playSE(1);
-				
+				hasKey[0]++;
 				keys[0] = 1;
 				gp.key[i] = null;
+				gp.ui.showMessage("You got a Winter Key!");
 				break;
 			case "Spring Key" :
-				
 				// give SE to Key
 				// gp.playSE(1);
-				
+			    hasKey[1]++;
 				keys[1] = 1;
 				gp.key[i] = null;
+				gp.ui.showMessage("You got a Spring Key!");
 				break;
 			case "Summer Key" :
-	
 				// give SE to Key
 				// gp.playSE(1);
-	
+			    hasKey[2]++;
 				keys[2] = 1;
 				gp.key[i] = null;
+				gp.ui.showMessage("You got a Summer Key!");
 				break;
 			case "Autumn Key" :
-	
 				// give SE to Key
 				// gp.playSE(1);
-	
+			    hasKey[3]++;
 				keys[3] = 1;
 				gp.key[i] = null;
+				gp.ui.showMessage("You got an Autumn Key!");
 				break;
+				
+				
 			case "Winter Gate" :
 				if(keys[0] == 1) {
+				    hasKey[0]--;
 					gp.key[i] = null;
 				}
+				else
+				    gp.ui.showMessage("You need a Winter Key!");
 				break;
 			case "Spring Gate" :
 				if(keys[1] == 1) {
+				    hasKey[1]--;
 					gp.key[i] = null;
 				}
+				else
+				    gp.ui.showMessage("You need a Spring Key!");
 				break;
 			case "Summer Gate" :
 				if(keys[2] == 1) {
+				    hasKey[2]--;
 					gp.key[i] = null;
 				}
+				else
+				    gp.ui.showMessage("You need a Summer Key!");
 				break;
 			case "Autumn Gate" :
 				if(keys[3] == 1) {
+				    hasKey[3]--;
 					gp.key[i] = null;
 				}
+				else
+				    gp.ui.showMessage("You need an Autumn Key!");
 				break;
 			case "Bone" :
 				speed += 2;
 				gp.key[i] = null;
+				gp.ui.showMessage("Speed up!");
 				break;
 			}
 			

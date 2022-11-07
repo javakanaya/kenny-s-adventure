@@ -47,8 +47,12 @@ public class GamePanel extends JPanel implements Runnable {
 	public GateKey key[] = new GateKey[10];
 	// instantiate AssetSetter
 	public AssetSetter aSetter = new AssetSetter(this);
-	// instantiate sound
-	Sound sound = new Sound();
+	// instantiate sound (music and sound fx)
+	Sound music = new Sound();
+	Sound sfx = new Sound();
+	// instantiate UI
+	public UI ui = new UI(this);
+	
 	// keeps the program running until users stop it
 	Thread gameThread;
 
@@ -152,11 +156,10 @@ public class GamePanel extends JPanel implements Runnable {
 		// 1. Background
 		tileM.draw(g2d);
 		
-		// 3. Player
+		// 2. Player
 		player.draw(g2d);
 		
-		// 2. Object
-		
+		// 3. Object
 		for(int i = 0; i < tree.length; i++) {
 			// check slots are empty or not, avoid NullPointer error
 			if(tree[i] != null)
@@ -169,6 +172,10 @@ public class GamePanel extends JPanel implements Runnable {
 				key[i].draw(g2d, this);
 		}
 		
+		// 4.UI
+		ui.draw(g2d);
+		
+		
 		
 		// dispose (membuang) this graphics context and release any system resources that using it
 		// to save memory
@@ -177,17 +184,17 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	public void playMusic(int i) {
 		
-		sound.setFile(i);
-		sound.play();
-		sound.loop();
+		music.setFile(i);
+		music.play();
+		music.loop();
 	}
 	
 	public void stopMusic() {
-		sound.stop();
+		music.stop();
 	}
 	
-	public void playSE(int i) {
-		sound.setFile(i);
-		sound.play();
+	public void playSfx(int i) {
+		sfx.setFile(i);
+		sfx.play();
 	}
 }
