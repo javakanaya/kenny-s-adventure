@@ -21,7 +21,8 @@ public class Player extends Entity {
 	//indicate where the player will be drawn
 	public final int screenX;
 	public final int screenY;
-	int hasKey = 0;
+//	int hasKey = 0;
+	int keys[] = new int[4];
 	
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
@@ -203,13 +204,51 @@ public class Player extends Entity {
 				// give SE to Key
 				// gp.playSE(1);
 				
-				hasKey++;
+				keys[0] = 1;
+				gp.key[i] = null;
+				break;
+			case "Spring Key" :
+				
+				// give SE to Key
+				// gp.playSE(1);
+				
+				keys[1] = 1;
+				gp.key[i] = null;
+				break;
+			case "Summer Key" :
+	
+				// give SE to Key
+				// gp.playSE(1);
+	
+				keys[2] = 1;
+				gp.key[i] = null;
+				break;
+			case "Autumn Key" :
+	
+				// give SE to Key
+				// gp.playSE(1);
+	
+				keys[3] = 1;
 				gp.key[i] = null;
 				break;
 			case "Winter Gate" :
-				if(hasKey > 0) {
+				if(keys[0] == 1) {
 					gp.key[i] = null;
-					hasKey--;
+				}
+				break;
+			case "Spring Gate" :
+				if(keys[1] == 1) {
+					gp.key[i] = null;
+				}
+				break;
+			case "Summer Gate" :
+				if(keys[2] == 1) {
+					gp.key[i] = null;
+				}
+				break;
+			case "Autumn Gate" :
+				if(keys[3] == 1) {
+					gp.key[i] = null;
 				}
 				break;
 			case "Bone" :

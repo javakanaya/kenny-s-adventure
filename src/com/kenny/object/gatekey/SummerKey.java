@@ -4,13 +4,13 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Bone extends GateKey{
+public class SummerKey extends GateKey{
 	
-	public Bone() {
+	public SummerKey() {
 		
-		name = "Bone";
+		name = "Summer Key";
 		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/others/bones.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/keys/summerKey.png"));
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
@@ -19,4 +19,5 @@ public class Bone extends GateKey{
 //		solidArea.x = 5;
 		
 	}
+
 }

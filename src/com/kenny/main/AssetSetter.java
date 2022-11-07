@@ -1,6 +1,12 @@
 package com.kenny.main;
 
+import com.kenny.object.gatekey.AutumnGate;
+import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.Bone;
+import com.kenny.object.gatekey.SpringGate;
+import com.kenny.object.gatekey.SpringKey;
+import com.kenny.object.gatekey.SummerGate;
+import com.kenny.object.gatekey.SummerKey;
 import com.kenny.object.gatekey.WinterGate;
 import com.kenny.object.gatekey.WinterKey;
 import com.kenny.object.tree.AppleTree;
@@ -223,7 +229,7 @@ public class AssetSetter {
 		
 		gp.tree[50] = new BonzaiTree();
 		gp.tree[50].worldX = (((20)-2) - 1) *gp.tileSize;
-		gp.tree[50].worldY = (((43)-3) - 1) *gp.tileSize;
+		gp.tree[50].worldY = (((42)-3) - 1) *gp.tileSize;
 		
 		gp.tree[51] = new AppleTree();
 		gp.tree[51].worldX = (((11)-2) - 1) *gp.tileSize;
@@ -1304,15 +1310,39 @@ public class AssetSetter {
 		///
 		
 		gp.key[0] = new WinterKey();
-		gp.key[0].worldX = ((27) - 1) *gp.tileSize;
-		gp.key[0].worldY = ((27) - 1) *gp.tileSize;
+		gp.key[0].worldX = ((48) - 1) *gp.tileSize;
+		gp.key[0].worldY = ((29) - 1) *gp.tileSize;
 		
 		gp.key[1] = new WinterGate();
-		gp.key[1].worldX = ((23) - 1) *gp.tileSize;
+		gp.key[1].worldX = ((25) - 1) *gp.tileSize;
 		gp.key[1].worldY = ((27) - 1) *gp.tileSize;
 		
 		gp.key[2] = new Bone();
-		gp.key[2].worldX = ((30) - 1) *gp.tileSize;
-		gp.key[2].worldY = ((30) - 1) *gp.tileSize;
+		gp.key[2].worldX = ((24) - 1) *gp.tileSize;
+		gp.key[2].worldY = ((23) - 1) *gp.tileSize;
+		
+		gp.key[3] = new SpringKey();
+		gp.key[3].worldX = ((24) - 1) *gp.tileSize;
+		gp.key[3].worldY = ((48) - 1) *gp.tileSize;
+		
+		gp.key[4] = new SummerKey();
+		gp.key[4].worldX = ((3) - 1) *gp.tileSize;
+		gp.key[4].worldY = ((28) - 1) *gp.tileSize;
+		
+		gp.key[5] = new AutumnKey();
+		gp.key[5].worldX = ((24) - 1) *gp.tileSize;
+		gp.key[5].worldY = ((2) - 1) *gp.tileSize;
+		
+		gp.key[6] = new SpringGate();
+		gp.key[6].worldX = ((23) - 1) *gp.tileSize;
+		gp.key[6].worldY = ((29) - 1) *gp.tileSize;
+		
+		gp.key[7] = new SummerGate();
+		gp.key[7].worldX = ((21) - 1) *gp.tileSize;
+		gp.key[7].worldY = ((27) - 1) *gp.tileSize;
+		
+		gp.key[8] = new AutumnGate();
+		gp.key[8].worldX = ((23) - 1) *gp.tileSize;
+		gp.key[8].worldY = ((25) - 1) *gp.tileSize;
 	}
 }

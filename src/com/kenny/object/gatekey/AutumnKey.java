@@ -4,13 +4,13 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Bone extends GateKey{
-	
-	public Bone() {
+public class AutumnKey extends GateKey{
+
+	public AutumnKey() {
 		
-		name = "Bone";
+		name = "Autumn Key";
 		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/others/bones.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/keys/autumnKey.png"));
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
