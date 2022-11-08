@@ -15,9 +15,8 @@ public class SpringKey extends GateKey {
 			e.printStackTrace();
 		}
 		
-		// if want to set specific solid area to each object
-//		solidArea.x = 5;
-		
+        // if want to set specific solid area to each object
+        // solidArea.x = 5;
 	}
 
 }

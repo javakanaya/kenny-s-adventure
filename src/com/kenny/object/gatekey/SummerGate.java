@@ -6,13 +6,12 @@ import javax.imageio.ImageIO;
 
 public class SummerGate extends GateKey{
 
-	
 	public SummerGate() {
 		
 		name = "Summer Gate";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/gates/summerGate.png"));
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		collision = true;

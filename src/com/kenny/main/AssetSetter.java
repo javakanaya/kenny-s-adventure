@@ -17,16 +17,16 @@ import com.kenny.object.tree.PineTree;
 import com.kenny.object.tree.SpruceTree;
 
 public class AssetSetter {
-	
+    
 	GamePanel gp;
 	
 	public AssetSetter(GamePanel gp) {
+	    
 		this.gp = gp;
 	}
 	
 	public void setObject() {
-		
-
+	    
 		gp.tree[0] = new SpruceTree();
 		gp.tree[0].worldX = (((7)-2) - 1) *gp.tileSize;
 		gp.tree[0].worldY = (((29)-3) - 1) *gp.tileSize;

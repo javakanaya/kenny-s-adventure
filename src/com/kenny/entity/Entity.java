@@ -8,6 +8,8 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 public class Entity {
+    
+    // entity location on world
 	public int  worldX, 
 				worldY;
 	public int speed;
@@ -49,6 +51,7 @@ public class Entity {
 	int spriteCounter = 0;
 	int spriteNum = 1;
 	
+	// entity collision setting
 	public Rectangle solidArea;
 	public int 	solidAreaDefaultX,
 			 	solidAreaDefaultY;

@@ -11,12 +11,12 @@ public class Bone extends GateKey{
 		name = "Bone";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/others/bones.png"));
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		
-		// if want to set specific solid area to each object
-//		solidArea.x = 5;
+        // if want to set specific solid area to each object
+        // solidArea.x = 5;
 		
 	}
 }

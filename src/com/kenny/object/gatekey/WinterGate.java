@@ -11,7 +11,7 @@ public class WinterGate extends GateKey{
 		name = "Winter Gate";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/gates/winterGate.png"));
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		collision = true;

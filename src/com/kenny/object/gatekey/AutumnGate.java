@@ -11,7 +11,7 @@ public class AutumnGate extends GateKey{
 		name = "Autumn Gate";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/gates/autumnGate.png"));
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		collision = true;

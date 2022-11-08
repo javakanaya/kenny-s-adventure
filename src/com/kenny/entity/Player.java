@@ -14,7 +14,7 @@ import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
 
 public class Player extends Entity {
-	
+    
 	GamePanel gp;
 	KeyHandler keyH;
 	
@@ -26,6 +26,7 @@ public class Player extends Entity {
 	
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
+	    
 		this.gp = gp;
 		this.keyH = keyH;
 		
@@ -44,6 +45,7 @@ public class Player extends Entity {
 	
 	// default values for the player
 	public void setDefaultValues() {
+	    
 	    // player position in the world map
 		worldX = gp.tileSize * 23;
 		worldY = gp.tileSize * 21;
@@ -53,7 +55,7 @@ public class Player extends Entity {
 	
 	// get player image and animating asset
 	public void getPlayerImage() {
-		
+	    
 		try {
 			down1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_1.png"));
 			down2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_2.png"));
@@ -89,43 +91,31 @@ public class Player extends Entity {
 			idleRight2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_3.png"));
 			idleRight3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_4.png"));
 			idleRight4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_5.png"));
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	// key handler for the player
+	// update method
 	public void update() {
 	    
-	    // if key pressed
+	    // key handler for the player
 	    spriteCounter++;
 	    if(keyH.upPressed == true || 
 	            keyH.leftPressed == true ||
 	            keyH.downPressed == true || 
-	            keyH.rightPressed == true) {
-	        
+	            keyH.rightPressed == true) {	        
 	        if(keyH.upPressed == true) {
 	            direction = "up";
-
 	        }
-	        
 	        else if(keyH.leftPressed == true) {
-	            direction = "left";
-
-	            
+	            direction = "left";   
 	        }
-	        
 	        else if(keyH.downPressed == true) {
-	            direction = "down";
-
-	            
+	            direction = "down";   
 	        }
-	        
 	        else if(keyH.rightPressed == true) {
-	            direction = "right";
-
-	            
+	            direction = "right";   
 	        }
 	        
 	        // check tile collision
@@ -165,7 +155,6 @@ public class Player extends Entity {
 	    }
 	    // if no keys pressed, then sprite stop walking animation
 	    else {
-	    	
 	    	// sprite stand still
 	    	if(spriteCounter < 60)
 	    		spriteNum = 2;
@@ -187,20 +176,21 @@ public class Player extends Entity {
 	    		}
 	    	}
 	    }
-	    
 	    if(gp.key[1] == null && gp.key[7] == null && gp.key[6] == null && gp.key[8] == null) {
 	        gp.ui.gameFinished = true;
-	        gp.stopMusic();
-	        
+	        gp.stopMusic();   
 	    }
 	}
 	
+	// pickup object method
 	public void pickUpObject(int i) {
-		
+	    
+	    // i indicates the name of the object
 		if(i != 999) {
-			
+		    // get the object name
 			String objectName = gp.key[i].name;
 			
+			// condition for each object
 			switch(objectName) {
 			case "Winter Key" :
 				// give SE to Key
@@ -234,8 +224,6 @@ public class Player extends Entity {
 				gp.key[i] = null;
 				gp.ui.showMessage("You got an Autumn Key!");
 				break;
-				
-				
 			case "Winter Gate" :
 				if(keys[0] == 1) {
 				    hasKey[0]--;
@@ -281,12 +269,11 @@ public class Player extends Entity {
 	
 	// player draw method
 	public void draw(Graphics2D g2d) {
-		 // white rectangle  player
-		 // g2d.setColor(Color.white);
-		 // g2d.fillRect(x, y, gp.tileSize, gp.tileSize);
-		
+	    
+	    // set buffer image
 		BufferedImage image = null;
 		
+		// get buffer image for each direction
 		switch(direction) {
 		case "down":
 		    if (spriteNum == 1) {

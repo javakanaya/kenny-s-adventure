@@ -260,11 +260,12 @@ public class TileManager {
         while(worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
             int tileNum = mapTileNum[worldCol][worldRow];
             
-            // Center position
+            // tiles position on entire world
             int worldX = worldCol * gp.tileSize; // 0 * 48
             int worldY = worldRow * gp.tileSize; // 0 * 48
                 
-            //
+            // where on the screen the tiles will be draw
+            // the player screen is for the offset
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
             int screenY = worldY - gp.player.worldY + gp.player.screenY;
                 

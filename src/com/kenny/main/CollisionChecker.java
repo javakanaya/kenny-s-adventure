@@ -3,9 +3,11 @@ package com.kenny.main;
 import com.kenny.entity.Entity;
 
 public class CollisionChecker {
+    
     GamePanel gp;
     
     public CollisionChecker(GamePanel gp) {
+        
         this.gp = gp;
     }
     
@@ -71,10 +73,7 @@ public class CollisionChecker {
     	int index = 999;
     	
     	for(int i = 0; i < gp.key.length; i++) {
-    		
     		if(gp.key[i] != null) {
-    			
-    			
     			// Get entity's solid area position
     			entity.solidArea.x = entity.worldX + entity.solidArea.x;
     			entity.solidArea.y = entity.worldY + entity.solidArea.y;
@@ -134,9 +133,7 @@ public class CollisionChecker {
     			gp.key[i].solidArea.x = gp.key[i].solidDefaultAreaX;
     			gp.key[i].solidArea.y = gp.key[i].solidDefaultAreaY;
     		}
-    		
     	}
-    	
     	//check if player hitting any object, if it is, then return the index of object
     	return index;
     	

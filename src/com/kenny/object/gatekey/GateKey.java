@@ -19,7 +19,7 @@ public class GateKey {
 	//draw method
 	public void draw(Graphics2D g2d, GamePanel gp) {
 		
-		 //
+	    // object position on the screen
         int screenX = worldX - gp.player.worldX + gp.player.screenX;
         int screenY = worldY - gp.player.worldY + gp.player.screenY;
             

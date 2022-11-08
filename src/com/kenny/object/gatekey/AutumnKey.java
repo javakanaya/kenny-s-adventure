@@ -11,12 +11,12 @@ public class AutumnKey extends GateKey{
 		name = "Autumn Key";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/keys/autumnKey.png"));
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		
 		// if want to set specific solid area to each object
-//		solidArea.x = 5;
+		// solidArea.x = 5;
 		
 	}
 }

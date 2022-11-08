@@ -10,10 +10,8 @@ public class BonzaiTree extends Tree{
 		
 		name = "Bonzai Tree";
 		try {
-			
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/bonzaiTree.png"));
-			
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}

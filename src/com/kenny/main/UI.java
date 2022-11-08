@@ -32,6 +32,7 @@ public class UI {
     DecimalFormat dFormat = new DecimalFormat("#0.00");
     
     public UI(GamePanel gp) {
+        
         this.gp = gp;
         
         // instantiate before game loop
@@ -45,14 +46,15 @@ public class UI {
     }
     
     public void showMessage(String text) {
+        
         message = text;
         messageOn = true;
     }
     
     public void draw(Graphics2D g2d) {
         
+        // UI for game finished state
         if(gameFinished == true) {
-            
             String text;
             int textLength, x, y;
             

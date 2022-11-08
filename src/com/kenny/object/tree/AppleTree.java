@@ -10,10 +10,8 @@ public class AppleTree extends Tree {
 		
 		name = "Apple Tree";
 		try {
-			
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/appleTree.png"));
-			
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}

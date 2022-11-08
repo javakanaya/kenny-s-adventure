@@ -10,10 +10,8 @@ public class BanyanTree extends Tree {
 		
 		name = "Banyan Tree";
 		try {
-			
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/banyanTree.png"));
-			
-		}catch(IOException e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
