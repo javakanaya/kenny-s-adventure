@@ -4,13 +4,20 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.kenny.main.GamePanel;
+
 public class WinterGate extends GateKey{
 	
-	public WinterGate() {
+    GamePanel gp;
+    
+	public WinterGate(GamePanel gp) {
 		
+	    this.gp = gp;
+	    
 		name = "Winter Gate";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/gates/winterGate.png"));
+			image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

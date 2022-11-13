@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 
 import javax.imageio.ImageIO;
 import com.kenny.main.GamePanel;
+import com.kenny.main.UtilityTool;
 
 public class TileManager {
     GamePanel gp;
@@ -27,196 +28,107 @@ public class TileManager {
     }
     
     public void getTileImage() {
-        try {
-            tile[10] = new Tile();
-            tile[10].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass.png"));
-            tile[10].collision = true;
-            
-            tile[11] = new Tile();
-            tile[11].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/dirt.png"));
-            
-            tile[12] = new Tile();
-            tile[12].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_corner_rightDown_dirt.png"));
-            
-            tile[13] = new Tile();
-            tile[13].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_corner_leftUp_dirt.png"));
-            
-            tile[14] = new Tile();
-            tile[14].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_corner_rightUp_dirt.png"));
-            
-            tile[15] = new Tile();
-            tile[15].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_corner_leftDown_dirt.png"));
-            
-            tile[16] = new Tile();
-            tile[16].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/dirt_corner_rightDown_grass.png"));
-            
-            tile[17] = new Tile();
-            tile[17].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/dirt_corner_leftDown_grass.png"));
-            
-            tile[18] = new Tile();
-            tile[18].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/dirt_corner_rightUp_grass.png"));
-            
-            tile[19] = new Tile();
-            tile[19].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/dirt_corner_leftUp_grass.png"));
-            
-            tile[20] = new Tile();
-            tile[20].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_up_dirt.png"));
-            
-            tile[21] = new Tile();
-            tile[21].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_down_dirt.png"));
-            
-            tile[22] = new Tile();
-            tile[22].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_right_dirt.png"));
-            
-            tile[23] = new Tile();
-            tile[23].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_left_dirt.png"));
-            
-            tile[24] = new Tile();
-            tile[24].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/water.png"));
-            
-            tile[25] = new Tile();
-            tile[25].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/water_up_grass.png"));
-            tile[25].collision = true;
-            
-            tile[26] = new Tile();
-            tile[26].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_corner_leftDown_water.png"));
-            tile[26].collision = true;
-            
-            tile[27] = new Tile();
-            tile[27].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass_corner_rightDown_water.png"));
-            tile[27].collision = true;
-            
-            tile[28] = new Tile();
-            tile[28].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/water_corner_rightUp_grass.png"));
-            tile[28].collision = true;
-            
-            tile[29] = new Tile();
-            tile[29].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/water_right_grass.png"));
-            tile[29].collision = true;
-            
-            tile[41] = new Tile();
-            tile[41].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/water_left_grass.png"));
-            tile[41].collision = true;
-            
-            tile[42] = new Tile();
-            tile[42].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mainWorld/base/grass.png"));
         
-            
-            tile[30] = new Tile();
-            tile[30].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow.png"));
-            
-            tile[31] = new Tile();
-            tile[31].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/grass_corner_leftUp_snow.png"));
-            
-            tile[32] = new Tile();
-            tile[32].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/grass_corner_rightDown_snow.png"));
-            
-            tile[33] = new Tile();
-            tile[33].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/grass_corner_rightUp_snow.png"));
-            
-            tile[40] = new Tile();
-            tile[40].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_leftDown_grass.png"));
-            
-            tile[34] = new Tile();
-            tile[34].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_leftUp_grass.png"));
-            
-            tile[35] = new Tile();
-            tile[35].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_rightDown_grass.png"));
-            
-            tile[36] = new Tile();
-            tile[36].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_corner_rightUp_grass.png"));
-            
-            tile[37] = new Tile();
-            tile[37].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_down_grass.png"));
-            
-            tile[38] = new Tile();
-            tile[38].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_left_grass.png"));
-            
-            tile[39] = new Tile();
-            tile[39].image = ImageIO.read(getClass().getResourceAsStream("/tiles/winterWorld/base/snow_up_grass.png"));
-            
-            tile[50] = new Tile();
-            tile[50].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras.png"));
-            
-            tile[51] = new Tile();
-            tile[51].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_leftDown_lras.png"));
-            
-            tile[52] = new Tile();
-            tile[52].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_leftUp_lras.png"));
-            
-            tile[53] = new Tile();
-            tile[53].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_rightDown_lras.png"));
-            
-            tile[54] = new Tile();
-            tile[54].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/grass_corner_rightUp_lras.png"));
-            
-            tile[55] = new Tile();
-            tile[55].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_leftDown_grass.png"));
-            
-            tile[56] = new Tile();
-            tile[56].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_leftUp_grass.png"));
-            
-            tile[57] = new Tile();
-            tile[57].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_rightDown_grass.png"));
-            
-            tile[58] = new Tile();
-            tile[58].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_corner_rightUp_grass.png"));
-            
-            tile[59] = new Tile();
-            tile[59].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_down_grass.png"));
-            
-            tile[60] = new Tile();
-            tile[60].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_left_grass.png"));
-            
-            tile[61] = new Tile();
-            tile[61].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/lras_up_grass.png"));
-            
-            tile[62] = new Tile();
-            tile[62].image = ImageIO.read(getClass().getResourceAsStream("/tiles/springWorld/base/iras_right_grass.png"));
-            
-            tile[70] = new Tile();
-            tile[70].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown.png"));
-            
-            tile[71] = new Tile();
-            tile[71].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_corner_leftDown_grass.png"));
-            
-            tile[72] = new Tile();
-            tile[72].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_corner_leftUp_grass.png"));
-            
-            tile[73] = new Tile();
-            tile[73].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_corner_rightDown_grass.png"));
-
-            tile[74] = new Tile();
-            tile[74].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_corner_rightUp__grass.png"));
-            
-            tile[75] = new Tile();
-            tile[75].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_down_grass.png"));
-            
-            tile[76] = new Tile();
-            tile[76].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_left_grass.png"));
-            
-            tile[77] = new Tile();
-            tile[77].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_right_grass.png"));
-            
-            tile[78] = new Tile();
-            tile[78].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/brown_up_grass.png"));
-            
-            tile[79] = new Tile();
-            tile[79].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/grass_corner_leftDown_brown.png"));
-            
-            tile[80] = new Tile();
-            tile[80].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/grass_corner_leftUp_brown.png"));
-            
-            tile[81] = new Tile();
-            tile[81].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/grass_corner_rightDown_brown.png"));
-            
-            tile[82] = new Tile();
-            tile[82].image = ImageIO.read(getClass().getResourceAsStream("/tiles/autumnWorld/base/grass_corner_rightUp_brown.png"));
-            
+        // grass-dirt
+        setup(10, "mainWorld/base/grass", true);
+        setup(42, "mainWorld/base/grass", false);
+        
+        setup(12, "mainWorld/base/grass_corner_rightDown_dirt", false);
+        setup(13, "mainWorld/base/grass_corner_leftUp_dirt", false);
+        setup(14, "mainWorld/base/grass_corner_rightUp_dirt", false);
+        setup(15, "mainWorld/base/grass_corner_leftDown_dirt", false);
+        
+        setup(20, "mainWorld/base/grass_up_dirt", false);
+        setup(21, "mainWorld/base/grass_down_dirt", false);
+        setup(22, "mainWorld/base/grass_right_dirt", false);
+        setup(23, "mainWorld/base/grass_left_dirt", false);
+        
+        // dirt-grass
+        setup(11, "mainWorld/base/dirt", false);
+        
+        setup(16, "mainWorld/base/dirt_corner_rightDown_grass", false);
+        setup(17, "mainWorld/base/dirt_corner_leftDown_grass", false);
+        setup(18, "mainWorld/base/dirt_corner_rightUp_grass", false);
+        setup(19, "mainWorld/base/dirt_corner_leftUp_grass", false);
+      
+        // water-grass
+        setup(24, "mainWorld/base/water", true);
+        
+        setup(26, "mainWorld/base/grass_corner_leftDown_water", true);
+        setup(27, "mainWorld/base/grass_corner_rightDown_water", true);
+        setup(28, "mainWorld/base/water_corner_rightUp_grass", true);
+        
+        setup(25, "mainWorld/base/water_up_grass", true);
+        setup(29, "mainWorld/base/water_right_grass", true);
+        setup(41, "mainWorld/base/water_left_grass", true);
+        
+        // snow-grass
+        setup(30, "winterWorld/base/snow", false);
+        
+        setup(31, "winterWorld/base/grass_corner_leftUp_snow", false);
+        setup(32, "winterWorld/base/grass_corner_rightDown_snow", false);
+        setup(33, "winterWorld/base/grass_corner_rightUp_snow", false);
+        
+        setup(40, "winterWorld/base/snow_corner_leftDown_grass", false);
+        setup(34, "winterWorld/base/snow_corner_leftUp_grass", false);
+        setup(35, "winterWorld/base/snow_corner_rightDown_grass", false);
+        setup(36, "winterWorld/base/snow_corner_rightUp_grass", false);
+        
+        setup(37, "winterWorld/base/snow_down_grass", false);
+        setup(38, "winterWorld/base/snow_left_grass", false);
+        setup(39, "winterWorld/base/snow_up_grass", false);
+    
+        // lightGrass-grass
+        setup(50, "springWorld/base/lras", false);
+        
+        setup(51, "springWorld/base/grass_corner_leftDown_lras", false);
+        setup(52, "springWorld/base/grass_corner_leftUp_lras", false);
+        setup(53, "springWorld/base/grass_corner_rightDown_lras", false); 
+        setup(54, "springWorld/base/grass_corner_rightUp_lras", false);
+        
+        setup(55, "springWorld/base/lras_corner_leftDown_grass", false);
+        setup(56, "springWorld/base/lras_corner_leftUp_grass", false);
+        setup(57, "springWorld/base/lras_corner_rightDown_grass", false);
+        setup(58, "springWorld/base/lras_corner_rightUp_grass", false);
+        
+        setup(59, "springWorld/base/lras_down_grass", false);
+        setup(60, "springWorld/base/lras_left_grass", false);
+        setup(61, "springWorld/base/lras_up_grass", false);
+        setup(62, "springWorld/base/lras_right_grass", false);
+        
+        // brown-grass
+        setup(70, "autumnWorld/base/brown", false);
+        
+        setup(71, "autumnWorld/base/brown_corner_leftDown_grass", false);
+        setup(72, "autumnWorld/base/brown_corner_leftUp_grass", false);
+        setup(73, "autumnWorld/base/brown_corner_rightDown_grass", false);
+        setup(74, "autumnWorld/base/brown_corner_rightUp_grass", false);
+        
+        setup(75, "autumnWorld/base/brown_down_grass", false);
+        setup(76, "autumnWorld/base/brown_left_grass", false);
+        setup(77, "autumnWorld/base/brown_right_grass", false);
+        setup(78, "autumnWorld/base/brown_up_grass", false);
+        
+        setup(79, "autumnWorld/base/grass_corner_leftDown_brown", false);
+        setup(80, "autumnWorld/base/grass_corner_leftUp_brown", false);
+        setup(81, "autumnWorld/base/grass_corner_rightDown_brown", false);
+        setup(82, "autumnWorld/base/grass_corner_rightUp_brown", false);
+    }
+    
+    public void setup(int index, String imageName, boolean collision) {
+        
+        UtilityTool uTool = new UtilityTool();
+        
+        try {
+            tile[index] = new Tile();
+            tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tiles/" + imageName + ".png"));
+            tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
+            tile[index].collision = collision;
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
     public void loadMap(String filePath) {
         String line;
         try {
@@ -275,7 +187,7 @@ public class TileManager {
                     worldY + 2 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
                     worldY - 2 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
                 
-                g2d.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+                g2d.drawImage(tile[tileNum].image, screenX, screenY, null);
                 // System.out.println("sX : " + screenX + " sY :" + screenX);
             }
             // to draw the next tile;

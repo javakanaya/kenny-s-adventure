@@ -39,10 +39,10 @@ public class UI {
         arial_40 = new Font("Arial", Font.PLAIN, 40);
         consolas_40 = new Font("Consolas", Font.PLAIN, 40);
         arial_80B = new Font("Arial", Font.PLAIN, 80);
-        keys[0] = new WinterKey();  
-        keys[1] = new SpringKey(); 
-        keys[2] = new SummerKey();
-        keys[3] = new AutumnKey();
+        keys[0] = new WinterKey(gp);  
+        keys[1] = new SpringKey(gp); 
+        keys[2] = new SummerKey(gp);
+        keys[3] = new AutumnKey(gp);
     }
     
     public void showMessage(String text) {

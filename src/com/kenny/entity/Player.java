@@ -12,6 +12,8 @@ import javax.imageio.ImageIO;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
+import com.kenny.main.UtilityTool;
+import com.kenny.tile.Tile;
 
 public class Player extends Entity {
     
@@ -55,46 +57,57 @@ public class Player extends Entity {
 	
 	// get player image and animating asset
 	public void getPlayerImage() {
+	 
+		down1 = setup("walk/kenny_down_1");
+		down2 = setup("walk/kenny_down_2");
+		down3 = setup("walk/kenny_down_3");
+		down4 = setup("walk/kenny_down_4");
+		
+		left1 = setup("walk/kenny_left_1");
+		left2 = setup("walk/kenny_left_2");
+		left3 = setup("walk/kenny_left_3");
+		left4 = setup("walk/kenny_left_4");
+
+		right1 = setup("walk/kenny_right_1");
+		right2 = setup("walk/kenny_right_2");
+        right3 = setup("walk/kenny_right_3");
+        right4 = setup("walk/kenny_right_4");
+		
+		up1 = setup("walk/kenny_up_1");
+		up2 = setup("walk/kenny_up_2");
+		up3 = setup("walk/kenny_up_3");
+		up4 = setup("walk/kenny_up_4");
+		
+		idleFront1 = setup("idle/kenny_idle_front_1");
+		idleFront2 = setup("idle/kenny_idle_front_2");
+		idleFront3 = setup("idle/kenny_idle_front_3");
+		idleFront4 = setup("idle/kenny_idle_front_4");
+		
+	    idleLeft1 = setup("idle/kenny_idle_left_2");
+	    idleLeft2 = setup("idle/kenny_idle_left_3");
+	    idleLeft3 = setup("idle/kenny_idle_left_4");
+	    idleLeft4 = setup("idle/kenny_idle_left_5");
 	    
-		try {
-			down1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_1.png"));
-			down2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_2.png"));
-			down3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_3.png"));
-			down4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_down_4.png"));
-			
-			left1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_1.png"));
-			left2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_2.png"));
-			left3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_3.png"));
-			left4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_left_4.png"));
-
-			right1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_1.png"));
-			right2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_2.png"));
-			right3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_3.png"));
-			right4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_right_4.png"));
-
-			up1 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_1.png"));
-			up2 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_2.png"));
-			up3 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_3.png"));
-			up4 = ImageIO.read(getClass().getResourceAsStream("/player/walk/kenny_up_4.png"));
-			
-			idleFront1 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_1.png"));
-			idleFront2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_2.png"));
-			idleFront3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_3.png"));
-			idleFront4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_front_4.png"));
-			
-			idleLeft1 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_2.png"));
-			idleLeft2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_3.png"));
-			idleLeft3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_4.png"));
-			idleLeft4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_left_5.png"));
-			
-			idleRight1 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_2.png"));
-			idleRight2 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_3.png"));
-			idleRight3 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_4.png"));
-			idleRight4 = ImageIO.read(getClass().getResourceAsStream("/player/idle/kenny_idle_right_5.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        idleRight1 = setup("idle/kenny_idle_right_2");
+        idleRight2 = setup("idle/kenny_idle_right_3");
+        idleRight3 = setup("idle/kenny_idle_right_4");
+        idleRight4 = setup("idle/kenny_idle_right_5");
 	}
+	
+    public BufferedImage setup(String imageName) {
+        
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+        
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream("/player/" + imageName + ".png"));
+            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return image;
+    }
 	
 	// update method
 	public void update() {
@@ -382,6 +395,6 @@ public class Player extends Entity {
 		}
 		
 		// draw the player, the player doesn't change but the map
-	    g2d.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+	    g2d.drawImage(image, screenX, screenY, null);
 	}
 }

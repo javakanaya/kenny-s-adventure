@@ -4,13 +4,20 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.kenny.main.GamePanel;
+
 public class AutumnKey extends GateKey{
 
-	public AutumnKey() {
+    GamePanel gp;
+    
+	public AutumnKey(GamePanel gp) {
 		
+	    this.gp = gp;
+	    
 		name = "Autumn Key";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/keys/autumnKey.png"));
+			image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

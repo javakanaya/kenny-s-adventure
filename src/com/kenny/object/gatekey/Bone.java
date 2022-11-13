@@ -4,13 +4,20 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.kenny.main.GamePanel;
+
 public class Bone extends GateKey{
 	
-	public Bone() {
-		
+    GamePanel gp;
+    
+	public Bone(GamePanel gp) {
+	    
+	    this.gp = gp;
+        
 		name = "Bone";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/others/bones.png"));
+			image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

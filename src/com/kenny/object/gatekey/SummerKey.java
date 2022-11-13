@@ -4,13 +4,20 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class SummerKey extends GateKey{
+import com.kenny.main.GamePanel;
+
+public class SummerKey extends GateKey {
 	
-	public SummerKey() {
+    GamePanel gp;
+    
+	public SummerKey(GamePanel gp) {
 		
+	    this.gp = gp;
+	    
 		name = "Summer Key";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/keys/summerKey.png"));
+			image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

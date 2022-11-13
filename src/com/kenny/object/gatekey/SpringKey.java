@@ -4,14 +4,21 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.kenny.main.GamePanel;
+
 public class SpringKey extends GateKey {
 	
-	public SpringKey() {
+    GamePanel gp;
+    
+	public SpringKey(GamePanel gp) {
 		
+	    this.gp = gp;
+	    
 		name = "Spring Key";
 		try {
 			image = ImageIO.read(getClass().getResourceAsStream("/objects/keys/springKey.png"));
-		}catch(IOException e) {
+			image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		

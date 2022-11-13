@@ -5,6 +5,7 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import com.kenny.main.GamePanel;
+import com.kenny.main.UtilityTool;
 
 public class GateKey {
 	
@@ -15,6 +16,7 @@ public class GateKey {
 	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
 	public int solidDefaultAreaX = 0;
 	public int solidDefaultAreaY = 0;
+	UtilityTool uTool = new UtilityTool();
 	
 	//draw method
 	public void draw(Graphics2D g2d, GamePanel gp) {
