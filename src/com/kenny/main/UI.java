@@ -15,6 +15,7 @@ import com.kenny.object.gatekey.WinterKey;
 
 public class UI {
     GamePanel gp;
+    Graphics2D g2d;
     Font arial_40, consolas_40, arial_80B;
     BufferedImage[] keyImage = new BufferedImage[4];
     GateKey[] keys = new GateKey[4];
@@ -23,9 +24,6 @@ public class UI {
     public boolean messageOn = false;
     public String message = "";
     int messageCounter = 0;
-    
-    // finished
-    public boolean gameFinished = false;
     
     // game play time
     double playTime;
@@ -53,41 +51,14 @@ public class UI {
     
     public void draw(Graphics2D g2d) {
         
-        // UI for game finished state
-        if(gameFinished == true) {
-            String text;
-            int textLength, x, y;
-            
-            g2d.setFont(arial_40);
-            g2d.setColor(Color.white);
-            text = "You opened all gates!";
-            textLength = (int)g2d.getFontMetrics().getStringBounds(text, g2d).getWidth();
-            x = gp.screenWidth / 2 - textLength / 2;
-            y = gp.screenHeight / 2 - (gp.tileSize * 3);
-            g2d.drawString(text, x, y);
-            
-            text = "Your time is : " + dFormat.format(playTime) + "!";
-            textLength = (int)g2d.getFontMetrics().getStringBounds(text, g2d).getWidth();
-            x = gp.screenWidth / 2 - textLength / 2;
-            y = gp.screenHeight / 2 + (gp.tileSize * 4);
-            g2d.drawString(text, x, y);
-            
-            
-            g2d.setFont(arial_80B);
-            g2d.setColor(Color.yellow);
-            text = "Congratulations!";
-            textLength = (int)g2d.getFontMetrics().getStringBounds(text, g2d).getWidth();
-            x = gp.screenWidth / 2 - textLength / 2;
-            y = gp.screenHeight / 2 + (gp.tileSize * 2);
-            g2d.drawString(text, x, y);
-            
-            // stop the thread to stop the game
-            gp.gameThread = null;
-        }
-        else {
-            // choose font
-            g2d.setFont(arial_40);
-            g2d.setColor(Color.white);
+        this.g2d = g2d;
+        
+        // choose font
+        g2d.setFont(arial_40);
+        g2d.setColor(Color.white);
+        
+        // UI for playState
+        if(gp.gameState == gp.playState) {
             
             // draw keys on x, y location
             if(gp.player.hasKey[0] == 1)
@@ -114,5 +85,52 @@ public class UI {
                 }
             }
         }
+        // UI for pauseState
+        else if(gp.gameState == gp.pauseState) {
+            drawPauseScreen();
+        } 
+        else if(gp.gameState == gp.finishState) {
+            String text;
+            int x, y;
+            
+            g2d.setFont(arial_40);
+            g2d.setColor(Color.white);
+            text = "You opened all gates!";
+            x = getXforCenteredText(text);
+            y = gp.screenHeight / 2 - (gp.tileSize * 3);
+            g2d.drawString(text, x, y);
+            
+            text = "Your time is : " + dFormat.format(playTime) + "!";
+            x = getXforCenteredText(text);
+            y = gp.screenHeight / 2 + (gp.tileSize * 4);
+            g2d.drawString(text, x, y);
+            
+            
+            g2d.setFont(arial_80B);
+            g2d.setColor(Color.yellow);
+            text = "Congratulations!";
+            x = getXforCenteredText(text);
+            y = gp.screenHeight / 2 + (gp.tileSize * 2);
+            g2d.drawString(text, x, y);
+            
+            // stop the thread to stop the game
+            gp.gameThread = null;
+        }
+    }
+    
+    public void drawPauseScreen() {
+        
+        String text = "PAUSED";
+        int x = getXforCenteredText(text);
+        int y = gp.screenHeight / 2;
+        
+        g2d.drawString(text, x, y);
+    }
+    
+    // get textLength for centered position
+    public int getXforCenteredText(String text) {
+        
+        int textLength = (int)g2d.getFontMetrics().getStringBounds(text, g2d).getWidth();
+        return gp.screenWidth / 2 - textLength / 2;
     }
 }

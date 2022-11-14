@@ -9,11 +9,14 @@ import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
     
-    // declare boolean variable
-	public boolean upPressed;
-	public boolean downPressed;
-	public boolean leftPressed;
-	public boolean rightPressed;
+    // declare attributes
+	public boolean upPressed, downPressed, leftPressed, rightPressed;
+	GamePanel gp;
+		
+	public KeyHandler(GamePanel gp) {
+	    this.gp = gp;
+	}
+	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -35,6 +38,13 @@ public class KeyHandler implements KeyListener {
 
 		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT)
 			rightPressed = true;
+		
+		if(code == KeyEvent.VK_P) {
+		    if (gp.gameState == gp.playState)
+		        gp.gameState = gp.pauseState;
+		    else if (gp.gameState == gp.pauseState)
+		        gp.gameState = gp.playState;
+		}
 
 		
 	}

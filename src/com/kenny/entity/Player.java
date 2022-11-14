@@ -190,7 +190,7 @@ public class Player extends Entity {
 	    	}
 	    }
 	    if(gp.key[1] == null && gp.key[7] == null && gp.key[6] == null && gp.key[8] == null) {
-	        gp.ui.gameFinished = true;
+	        gp.gameState = gp.finishState;
 	        gp.stopMusic();   
 	    }
 	}

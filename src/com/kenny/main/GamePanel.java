@@ -33,28 +33,39 @@ public class GamePanel extends JPanel implements Runnable {
 	public final int maxWorldCol = 50;
 	public final int maxWorldRow = 50;
 	
+	// SYSTEM
 	private final int fps = 60;
 	// add keyHandler
-	KeyHandler keyH = new KeyHandler();
-	// instantiate player
-	public Player player = new Player(this, keyH);
+	KeyHandler keyH = new KeyHandler(this);
 	// instantiate tile manager
 	TileManager tileM = new TileManager(this);
 	// Instantiate collision checker
 	public CollisionChecker cCheker = new CollisionChecker(this);
+   // instantiate AssetSetter
+    public AssetSetter aSetter = new AssetSetter(this);
+    // instantiate sound (music and sound sfx)
+    Sound music = new Sound();
+    Sound sfx = new Sound();
+    // instantiate UI
+    public UI ui = new UI(this);
+    // keeps the program running until users stop it
+    Thread gameThread;
+	
+    // ENTITY - OBJECT
+	// instantiate player
+    public Player player = new Player(this, keyH);
 	// instantiate SuperObject Array as Slots for Objects
 	public Tree tree[] = new Tree[350];
 	public GateKey key[] = new GateKey[10];
-	// instantiate AssetSetter
-	public AssetSetter aSetter = new AssetSetter(this);
-	// instantiate sound (music and sound fx)
-	Sound music = new Sound();
-	Sound sfx = new Sound();
-	// instantiate UI
-	public UI ui = new UI(this);
 	
-	// keeps the program running until users stop it
-	Thread gameThread;
+	// GAME STATE
+	public int gameState;
+	public final int playState = 1;
+	public final int pauseState = 2;
+    public final int finishState = 3;
+
+	
+
 
 	
 	public GamePanel() {
@@ -81,10 +92,15 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	// setup for Game
 	public void setupGame() {
-		
+		// set object
 		aSetter.setObject();
 		
+		// play music
 		playMusic(0);
+		stopMusic();
+		
+		// initiate gameState
+		gameState = playState;
 	}
 	
 	public void startGameThread() {
@@ -143,7 +159,12 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 	
 	public void update() {
-		player.update();
+	    if(gameState == playState) {
+	        player.update();	        
+	    }
+	    if(gameState == pauseState) {
+	        //nothing, not update player information
+	    }
 	}
 	
 	// Standard method to draw on JPanel
