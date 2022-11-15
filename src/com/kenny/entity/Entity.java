@@ -6,8 +6,16 @@ package com.kenny.entity;
 
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import com.kenny.main.GamePanel;
+import com.kenny.main.UtilityTool;
 
 public class Entity {
+    
+    GamePanel gp;
     
     // entity location on world
 	public int  worldX, 
@@ -52,8 +60,26 @@ public class Entity {
 	int spriteNum = 1;
 	
 	// entity collision setting
-	public Rectangle solidArea;
-	public int 	solidAreaDefaultX,
-			 	solidAreaDefaultY;
+	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
+	public int 	solidAreaDefaultX, solidAreaDefaultY;
 	public boolean collisionOn = false;
+	
+	public Entity(GamePanel gp) {
+	    this.gp = gp;
+	}
+	
+    public BufferedImage setup(String imageName) {
+        
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+        
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream(imageName + ".png"));
+            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        return image;
+    }
 }

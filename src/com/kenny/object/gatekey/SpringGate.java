@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 
 import com.kenny.main.GamePanel;
 
-public class SpringGate extends GateKey {
+public class SpringGate extends SuperObject {
 
     GamePanel gp;
     

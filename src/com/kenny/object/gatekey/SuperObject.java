@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import com.kenny.main.GamePanel;
 import com.kenny.main.UtilityTool;
 
-public class GateKey {
+public class SuperObject {
 	
 	public BufferedImage image;	
 	public String name;

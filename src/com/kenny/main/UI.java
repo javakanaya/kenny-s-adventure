@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import java.text.DecimalFormat;
 
 import com.kenny.object.gatekey.AutumnKey;
-import com.kenny.object.gatekey.GateKey;
+import com.kenny.object.gatekey.SuperObject;
 import com.kenny.object.gatekey.SpringKey;
 import com.kenny.object.gatekey.SummerKey;
 import com.kenny.object.gatekey.WinterKey;
@@ -18,7 +18,7 @@ public class UI {
     Graphics2D g2d;
     Font arial_40, consolas_40, arial_80B;
     BufferedImage[] keyImage = new BufferedImage[4];
-    GateKey[] keys = new GateKey[4];
+    SuperObject[] keys = new SuperObject[4];
     
     // variables for message
     public boolean messageOn = false;

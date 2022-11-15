@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 
 import com.kenny.main.GamePanel;
 
-public class AutumnGate extends GateKey{
+public class AutumnGate extends SuperObject{
 	
     GamePanel gp;
     

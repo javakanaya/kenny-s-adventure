@@ -29,6 +29,8 @@ public class Player extends Entity {
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
 	    
+	    super(gp);
+	    
 		this.gp = gp;
 		this.keyH = keyH;
 		
@@ -37,7 +39,7 @@ public class Player extends Entity {
 		screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 		
 		// player area that will collision on the tiles
-		solidArea = new Rectangle(8, 16, 32, 32);
+		solidArea = new Rectangle(14, 16, 20, 24);
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		
@@ -58,56 +60,41 @@ public class Player extends Entity {
 	// get player image and animating asset
 	public void getPlayerImage() {
 	 
-		down1 = setup("walk/kenny_down_1");
-		down2 = setup("walk/kenny_down_2");
-		down3 = setup("walk/kenny_down_3");
-		down4 = setup("walk/kenny_down_4");
+		down1 = setup("/player/walk/kenny_down_1");
+		down2 = setup("/player/walk/kenny_down_2");
+		down3 = setup("/player/walk/kenny_down_3");
+		down4 = setup("/player/walk/kenny_down_4");
 		
-		left1 = setup("walk/kenny_left_1");
-		left2 = setup("walk/kenny_left_2");
-		left3 = setup("walk/kenny_left_3");
-		left4 = setup("walk/kenny_left_4");
+		left1 = setup("/player/walk/kenny_left_1");
+		left2 = setup("/player/walk/kenny_left_2");
+		left3 = setup("/player/walk/kenny_left_3");
+		left4 = setup("/player/walk/kenny_left_4");
 
-		right1 = setup("walk/kenny_right_1");
-		right2 = setup("walk/kenny_right_2");
-        right3 = setup("walk/kenny_right_3");
-        right4 = setup("walk/kenny_right_4");
+		right1 = setup("/player/walk/kenny_right_1");
+		right2 = setup("/player/walk/kenny_right_2");
+        right3 = setup("/player/walk/kenny_right_3");
+        right4 = setup("/player/walk/kenny_right_4");
 		
-		up1 = setup("walk/kenny_up_1");
-		up2 = setup("walk/kenny_up_2");
-		up3 = setup("walk/kenny_up_3");
-		up4 = setup("walk/kenny_up_4");
+		up1 = setup("/player/walk/kenny_up_1");
+		up2 = setup("/player/walk/kenny_up_2");
+		up3 = setup("/player/walk/kenny_up_3");
+		up4 = setup("/player/walk/kenny_up_4");
 		
-		idleFront1 = setup("idle/kenny_idle_front_1");
-		idleFront2 = setup("idle/kenny_idle_front_2");
-		idleFront3 = setup("idle/kenny_idle_front_3");
-		idleFront4 = setup("idle/kenny_idle_front_4");
+		idleFront1 = setup("/player/idle/kenny_idle_front_1");
+		idleFront2 = setup("/player/idle/kenny_idle_front_2");
+		idleFront3 = setup("/player/idle/kenny_idle_front_3");
+		idleFront4 = setup("/player/idle/kenny_idle_front_4");
 		
-	    idleLeft1 = setup("idle/kenny_idle_left_2");
-	    idleLeft2 = setup("idle/kenny_idle_left_3");
-	    idleLeft3 = setup("idle/kenny_idle_left_4");
-	    idleLeft4 = setup("idle/kenny_idle_left_5");
+	    idleLeft1 = setup("/player/idle/kenny_idle_left_2");
+	    idleLeft2 = setup("/player/idle/kenny_idle_left_3");
+	    idleLeft3 = setup("/player/idle/kenny_idle_left_4");
+	    idleLeft4 = setup("/player/idle/kenny_idle_left_5");
 	    
-        idleRight1 = setup("idle/kenny_idle_right_2");
-        idleRight2 = setup("idle/kenny_idle_right_3");
-        idleRight3 = setup("idle/kenny_idle_right_4");
-        idleRight4 = setup("idle/kenny_idle_right_5");
+        idleRight1 = setup("/player/idle/kenny_idle_right_2");
+        idleRight2 = setup("/player/idle/kenny_idle_right_3");
+        idleRight3 = setup("/player/idle/kenny_idle_right_4");
+        idleRight4 = setup("/player/idle/kenny_idle_right_5");
 	}
-	
-    public BufferedImage setup(String imageName) {
-        
-        UtilityTool uTool = new UtilityTool();
-        BufferedImage image = null;
-        
-        try {
-            image = ImageIO.read(getClass().getResourceAsStream("/player/" + imageName + ".png"));
-            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        return image;
-    }
 	
 	// update method
 	public void update() {
@@ -189,7 +176,7 @@ public class Player extends Entity {
 	    		}
 	    	}
 	    }
-	    if(gp.key[1] == null && gp.key[7] == null && gp.key[6] == null && gp.key[8] == null) {
+	    if(gp.obj[1] == null && gp.obj[7] == null && gp.obj[6] == null && gp.obj[8] == null) {
 	        gp.gameState = gp.finishState;
 	        gp.stopMusic();   
 	    }
@@ -201,7 +188,7 @@ public class Player extends Entity {
 	    // i indicates the name of the object
 		if(i != 999) {
 		    // get the object name
-			String objectName = gp.key[i].name;
+			String objectName = gp.obj[i].name;
 			
 			// condition for each object
 			switch(objectName) {
@@ -210,7 +197,7 @@ public class Player extends Entity {
 				// gp.playSE(1);
 				hasKey[0]++;
 				keys[0] = 1;
-				gp.key[i] = null;
+				gp.obj[i] = null;
 				gp.ui.showMessage("You got a Winter Key!");
 				break;
 			case "Spring Key" :
@@ -218,7 +205,7 @@ public class Player extends Entity {
 				// gp.playSE(1);
 			    hasKey[1]++;
 				keys[1] = 1;
-				gp.key[i] = null;
+				gp.obj[i] = null;
 				gp.ui.showMessage("You got a Spring Key!");
 				break;
 			case "Summer Key" :
@@ -226,7 +213,7 @@ public class Player extends Entity {
 				// gp.playSE(1);
 			    hasKey[2]++;
 				keys[2] = 1;
-				gp.key[i] = null;
+				gp.obj[i] = null;
 				gp.ui.showMessage("You got a Summer Key!");
 				break;
 			case "Autumn Key" :
@@ -234,13 +221,13 @@ public class Player extends Entity {
 				// gp.playSE(1);
 			    hasKey[3]++;
 				keys[3] = 1;
-				gp.key[i] = null;
+				gp.obj[i] = null;
 				gp.ui.showMessage("You got an Autumn Key!");
 				break;
 			case "Winter Gate" :
 				if(keys[0] == 1) {
 				    hasKey[0]--;
-					gp.key[i] = null;
+					gp.obj[i] = null;
 				}
 				else
 				    gp.ui.showMessage("You need a Winter Key!");
@@ -248,7 +235,7 @@ public class Player extends Entity {
 			case "Spring Gate" :
 				if(keys[1] == 1) {
 				    hasKey[1]--;
-					gp.key[i] = null;
+					gp.obj[i] = null;
 				}
 				else
 				    gp.ui.showMessage("You need a Spring Key!");
@@ -256,7 +243,7 @@ public class Player extends Entity {
 			case "Summer Gate" :
 				if(keys[2] == 1) {
 				    hasKey[2]--;
-					gp.key[i] = null;
+					gp.obj[i] = null;
 				}
 				else
 				    gp.ui.showMessage("You need a Summer Key!");
@@ -264,14 +251,14 @@ public class Player extends Entity {
 			case "Autumn Gate" :
 				if(keys[3] == 1) {
 				    hasKey[3]--;
-					gp.key[i] = null;
+					gp.obj[i] = null;
 				}
 				else
 				    gp.ui.showMessage("You need an Autumn Key!");
 				break;
 			case "Bone" :
 				speed += 2;
-				gp.key[i] = null;
+				gp.obj[i] = null;
 				gp.ui.showMessage("Speed up!");
 				break;
 			}

@@ -6,7 +6,7 @@ import javax.imageio.ImageIO;
 
 import com.kenny.main.GamePanel;
 
-public class Bone extends GateKey{
+public class Bone extends SuperObject{
 	
     GamePanel gp;
     
