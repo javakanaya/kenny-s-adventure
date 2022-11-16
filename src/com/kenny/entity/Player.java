@@ -118,13 +118,18 @@ public class Player extends Entity {
 	            direction = "right";   
 	        }
 	        
-	        // check tile collision
+	        // CHECK TILE COLLISION
 	        collisionOn = false;
 	        gp.cCheker.checkTile(this);
 	        
-	        // check object collision
+	        // CHECK OBJECT COLLISION
 	        int objIndex = gp.cCheker.checkObject(this, true);
 	        pickUpObject(objIndex);
+	        
+	        // CHECK NPC COLLISION
+	        // pass NPC array
+	        int npcIndex = gp.cCheker.checkEntity(this, gp.npc);
+	        interactNPC(npcIndex);
 	        
 	        // if collision is false, player can move
 	        if(collisionOn == false) {
@@ -257,7 +262,7 @@ public class Player extends Entity {
 				    gp.ui.showMessage("You need an Autumn Key!");
 				break;
 			case "Bone" :
-				speed += 2;
+				speed += 30;
 				gp.obj[i] = null;
 				gp.ui.showMessage("Speed up!");
 				break;
@@ -265,6 +270,13 @@ public class Player extends Entity {
 			
 		}
 		
+	}
+	
+	public void interactNPC(int i) {
+	    
+	    if(i != 999) {
+	        System.out.println("You are hitting an NPC!");
+	    }
 	}
 	
 	// player draw method

@@ -27,17 +27,32 @@ public class KeyHandler implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
 		
-		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP)
-			upPressed = true;
+		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+            upPressed = true;
+            leftPressed = false;
+            downPressed = false;
+            rightPressed = false;		}
 
-		if(code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT)
-			leftPressed = true;
+		if(code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
+            upPressed = false;
+            leftPressed = true;
+            downPressed = false;
+            rightPressed = false;   
+		}
 
-		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN)
-			downPressed = true;
+		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+            upPressed = false;
+            leftPressed = false;
+            downPressed = true;
+            rightPressed = false; 
+		}
 
-		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT)
-			rightPressed = true;
+		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
+            upPressed = false;
+            leftPressed = false;
+            downPressed = false;
+		    rightPressed = true;
+		}
 		
 		if(code == KeyEvent.VK_P) {
 		    if (gp.gameState == gp.playState)
@@ -57,10 +72,10 @@ public class KeyHandler implements KeyListener {
 			upPressed = false;
 
 		if(code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT)
-			leftPressed = false;
+		    leftPressed = false;
 
 		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN)
-			downPressed = false;
+		    downPressed = false;
 
 		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT)
 			rightPressed = false;

@@ -1,5 +1,6 @@
 package com.kenny.main;
 
+import com.kenny.entity.NPC_SnowMan;
 import com.kenny.object.gatekey.AutumnGate;
 import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.Bone;
@@ -28,8 +29,8 @@ public class AssetSetter {
 	public void setObject() {
 
 	    gp.obj[0] = new Bone(gp);
-	    gp.obj[0].worldX = ((24) - 1) *gp.tileSize;
-	    gp.obj[0].worldY = ((23) - 1) *gp.tileSize;
+	    gp.obj[0].worldX = ((8)) *gp.tileSize;
+	    gp.obj[0].worldY = ((36)) *gp.tileSize;
 	    
 		gp.obj[1] = new WinterKey(gp);
 		gp.obj[1].worldX = ((48) - 1) *gp.tileSize;
@@ -86,5 +87,13 @@ public class AssetSetter {
         gp.tree[5] = new SpruceTree();
         gp.tree[5].worldX = (25) *gp.tileSize;
         gp.tree[5].worldY = (35) *gp.tileSize;
+	}
+	
+	public void setNPC() {
+	    
+	    gp.npc[0] = new NPC_SnowMan(gp);
+	    gp.npc[0].worldX = ((23) - 1) *gp.tileSize;
+        gp.npc[0].worldY = ((27) - 1) *gp.tileSize;
+	    
 	}
 }

@@ -11,6 +11,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
+import com.kenny.entity.Entity;
 import com.kenny.entity.Player;
 import com.kenny.object.gatekey.SuperObject;
 import com.kenny.object.tree.Tree;
@@ -30,13 +31,13 @@ public class GamePanel extends JPanel implements Runnable {
 	public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 	
 	// World Map Settings
-	public final int maxWorldCol = 50;
-	public final int maxWorldRow = 50;
+	public final int maxWorldCol = 100;
+	public final int maxWorldRow = 100;
 	
 	// SYSTEM
 	private final int fps = 60;
 	// add keyHandler
-	KeyHandler keyH = new KeyHandler(this);
+	public KeyHandler keyH = new KeyHandler(this);
 	// instantiate tile manager
 	TileManager tileM = new TileManager(this);
 	// Instantiate collision checker
@@ -57,6 +58,7 @@ public class GamePanel extends JPanel implements Runnable {
 	// instantiate SuperObject Array as Slots for Objects
 	public SuperObject obj[] = new SuperObject[10];
 	public Tree tree[] = new Tree[6];
+	public Entity npc[] = new Entity[10];
 	
 	// GAME STATE
 	public int gameState;
@@ -90,6 +92,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public void setupGame() {
 		// set object
 		aSetter.setObject();
+		aSetter.setNPC();
 		
 		// play music
 		playMusic(0);
@@ -155,7 +158,15 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	public void update() {
 	    if(gameState == playState) {
-	        player.update();	        
+	        // PLAYER
+	        player.update();	  
+	        // NPC
+	        for(int i = 0; i < npc.length; i++) {
+	            // check slots are empty or not, avoid NullPointer error
+	            if(npc[i] != null)
+	                npc[i].update();
+	        }
+	        
 	    }
 	    if(gameState == pauseState) {
 	        //nothing, not update player information
@@ -172,13 +183,10 @@ public class GamePanel extends JPanel implements Runnable {
 //		drawStart = System.nanoTime();
 		
 		// draw background first, and then the player
-		// 1. Background/tile
+		// Background/tile
 		tileM.draw(g2d);
 		
-		// 2. Player
-		player.draw(g2d);
-		
-		// 3. Object
+		// Object
 		for(int i = 0; i < obj.length; i++) {
 			// check slots are empty or not, avoid NullPointer error
 			if(obj[i] != null)
@@ -191,7 +199,17 @@ public class GamePanel extends JPanel implements Runnable {
 				tree[i].draw(g2d, this);
 		}
 		
-		// 4.UI
+		// NPC
+        for(int i = 0; i < npc.length; i++) {
+            // check slots are empty or not, avoid NullPointer error
+            if(npc[i] != null)
+                npc[i].draw(g2d);
+        }
+        
+        // Player
+        player.draw(g2d);
+		
+		// UI
 		ui.draw(g2d);
 		
 //		long drawEnd = System.nanoTime();

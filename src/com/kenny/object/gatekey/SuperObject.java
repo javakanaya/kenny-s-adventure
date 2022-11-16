@@ -15,8 +15,8 @@ public class SuperObject {
 	public int worldX, worldY;
 	// default solid area, is size of tiles
 	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
-	public int solidDefaultAreaX = 0;
-	public int solidDefaultAreaY = 0;
+	public int solidAreaDefaultX = 0;
+	public int solidAreaDefaultxY = 0;
 	UtilityTool uTool = new UtilityTool();
 	
 	//draw method

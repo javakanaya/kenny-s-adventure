@@ -24,13 +24,13 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
         
         getTileImage();
-        loadMap("/maps/mainWorld.txt");
+        loadMap("/maps/newWorld.txt");
     }
     
     public void getTileImage() {
         
         // grass-dirt
-        setup(10, "mainWorld/base/grass", true);
+        setup(35, "mainWorld/base/grass", true);
         setup(42, "mainWorld/base/grass", false);
         
         setup(12, "mainWorld/base/grass_corner_rightDown_dirt", false);
@@ -44,7 +44,7 @@ public class TileManager {
         setup(23, "mainWorld/base/grass_left_dirt", false);
         
         // dirt-grass
-        setup(11, "mainWorld/base/dirt", false);
+        setup(43, "mainWorld/base/dirt", false); //11
         
         setup(16, "mainWorld/base/dirt_corner_rightDown_grass", false);
         setup(17, "mainWorld/base/dirt_corner_leftDown_grass", false);
@@ -71,7 +71,7 @@ public class TileManager {
         
         setup(40, "winterWorld/base/snow_corner_leftDown_grass", false);
         setup(34, "winterWorld/base/snow_corner_leftUp_grass", false);
-        setup(35, "winterWorld/base/snow_corner_rightDown_grass", false);
+        //setup(35, "winterWorld/base/snow_corner_rightDown_grass", false);
         setup(36, "winterWorld/base/snow_corner_rightUp_grass", false);
         
         setup(37, "winterWorld/base/snow_down_grass", false);
