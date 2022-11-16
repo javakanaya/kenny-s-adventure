@@ -1,6 +1,9 @@
 package com.kenny.main;
 
-import com.kenny.entity.NPC_SnowMan;
+import com.kenny.entity.NPC_Bulky;
+import com.kenny.entity.NPC_Drac;
+import com.kenny.entity.NPC_MrSnow;
+import com.kenny.entity.PinaKoolada;
 import com.kenny.object.gatekey.AutumnGate;
 import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.Bone;
@@ -66,7 +69,7 @@ public class AssetSetter {
 		
 		gp.tree[0] = new AppleTree();
         gp.tree[0].worldX = (20) *gp.tileSize;
-        gp.tree[0].worldY = (20) *gp.tileSize;
+        gp.tree[0].worldY = (15) *gp.tileSize;
         
         gp.tree[1] = new BanyanTree();
         gp.tree[1].worldX = (30) *gp.tileSize;
@@ -91,9 +94,21 @@ public class AssetSetter {
 	
 	public void setNPC() {
 	    
-	    gp.npc[0] = new NPC_SnowMan(gp);
-	    gp.npc[0].worldX = ((23) - 1) *gp.tileSize;
+	    gp.npc[0] = new NPC_MrSnow(gp);
+	    gp.npc[0].worldX = ((26) - 1) *gp.tileSize;
         gp.npc[0].worldY = ((27) - 1) *gp.tileSize;
+        
+        gp.npc[1] = new NPC_Drac(gp);
+	    gp.npc[1].worldX = ((23) - 1) *gp.tileSize;
+        gp.npc[1].worldY = ((30) - 1) *gp.tileSize;
+        
+        gp.npc[2] = new NPC_Bulky(gp);
+	    gp.npc[2].worldX = ((23) - 1) *gp.tileSize;
+        gp.npc[2].worldY = ((23) - 1) *gp.tileSize;
+        
+        gp.npc[3] = new PinaKoolada(gp);
+	    gp.npc[3].worldX = ((19) - 1) *gp.tileSize;
+        gp.npc[3].worldY = ((27) - 1) *gp.tileSize;
 	    
 	}
 }

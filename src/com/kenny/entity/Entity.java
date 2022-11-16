@@ -37,6 +37,9 @@ public class Entity {
 	int spriteCounter = 0;
 	int spriteNum = 1;
 	
+	// Entity size scalling
+	int scalling = 1;
+	
 	// COLLISION SETTINGS
 	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
 	public int 	solidAreaDefaultX, solidAreaDefaultY;
@@ -224,7 +227,7 @@ public class Entity {
         
         try {
             image = ImageIO.read(getClass().getResourceAsStream(imagePath + ".png"));
-            image = uTool.scaleImage(image, gp.tileSize, gp.tileSize);
+            image = uTool.scaleImage(image, gp.tileSize * scalling, gp.tileSize * scalling);
         } catch (IOException e) {
             e.printStackTrace();
         }
