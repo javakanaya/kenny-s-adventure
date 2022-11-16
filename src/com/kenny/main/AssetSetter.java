@@ -27,29 +27,29 @@ public class AssetSetter {
 	
 	public void setObject() {
 
-		gp.obj[0] = new WinterKey(gp);
-		gp.obj[0].worldX = ((48) - 1) *gp.tileSize;
-		gp.obj[0].worldY = ((29) - 1) *gp.tileSize;
+	    gp.obj[0] = new Bone(gp);
+	    gp.obj[0].worldX = ((24) - 1) *gp.tileSize;
+	    gp.obj[0].worldY = ((23) - 1) *gp.tileSize;
+	    
+		gp.obj[1] = new WinterKey(gp);
+		gp.obj[1].worldX = ((48) - 1) *gp.tileSize;
+		gp.obj[1].worldY = ((29) - 1) *gp.tileSize;
 		
-		gp.obj[2] = new Bone(gp);
+		gp.obj[2] = new SpringKey(gp);
 		gp.obj[2].worldX = ((24) - 1) *gp.tileSize;
-		gp.obj[2].worldY = ((23) - 1) *gp.tileSize;
+		gp.obj[2].worldY = ((48) - 1) *gp.tileSize;
 		
-		gp.obj[3] = new SpringKey(gp);
-		gp.obj[3].worldX = ((24) - 1) *gp.tileSize;
-		gp.obj[3].worldY = ((48) - 1) *gp.tileSize;
+		gp.obj[3] = new SummerKey(gp);
+		gp.obj[3].worldX = ((3) - 1) *gp.tileSize;
+		gp.obj[3].worldY = ((28) - 1) *gp.tileSize;
 		
-		gp.obj[4] = new SummerKey(gp);
-		gp.obj[4].worldX = ((3) - 1) *gp.tileSize;
-		gp.obj[4].worldY = ((28) - 1) *gp.tileSize;
+		gp.obj[4] = new AutumnKey(gp);
+		gp.obj[4].worldX = ((24) - 1) *gp.tileSize;
+		gp.obj[4].worldY = ((2) - 1) *gp.tileSize;
 		
-		gp.obj[5] = new AutumnKey(gp);
-		gp.obj[5].worldX = ((24) - 1) *gp.tileSize;
-		gp.obj[5].worldY = ((2) - 1) *gp.tileSize;
-		
-		gp.obj[1] = new WinterGate(gp);
-		gp.obj[1].worldX = ((25) - 1) *gp.tileSize;
-		gp.obj[1].worldY = ((27) - 1) *gp.tileSize;
+		gp.obj[5] = new WinterGate(gp);
+		gp.obj[5].worldX = ((25) - 1) *gp.tileSize;
+		gp.obj[5].worldY = ((27) - 1) *gp.tileSize;
 		
 		gp.obj[6] = new SpringGate(gp);
 		gp.obj[6].worldX = ((23) - 1) *gp.tileSize;
@@ -62,5 +62,29 @@ public class AssetSetter {
 		gp.obj[8] = new AutumnGate(gp);
 		gp.obj[8].worldX = ((23) - 1) *gp.tileSize;
 		gp.obj[8].worldY = ((25) - 1) *gp.tileSize;
+		
+		gp.tree[0] = new AppleTree();
+        gp.tree[0].worldX = (20) *gp.tileSize;
+        gp.tree[0].worldY = (20) *gp.tileSize;
+        
+        gp.tree[1] = new BanyanTree();
+        gp.tree[1].worldX = (30) *gp.tileSize;
+        gp.tree[1].worldY = (30) *gp.tileSize;
+        
+        gp.tree[2] = new BonzaiTree();
+        gp.tree[2].worldX = (25) *gp.tileSize;
+        gp.tree[2].worldY = (30) *gp.tileSize;
+        
+        gp.tree[3] = new MapleTree();
+        gp.tree[3].worldX = (30) *gp.tileSize;
+        gp.tree[3].worldY = (25) *gp.tileSize;
+        
+        gp.tree[4] = new PineTree();
+        gp.tree[4].worldX = (35) *gp.tileSize;
+        gp.tree[4].worldY = (30) *gp.tileSize;
+        
+        gp.tree[5] = new SpruceTree();
+        gp.tree[5].worldX = (25) *gp.tileSize;
+        gp.tree[5].worldY = (35) *gp.tileSize;
 	}
 }

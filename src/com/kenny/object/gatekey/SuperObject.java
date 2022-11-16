@@ -13,6 +13,7 @@ public class SuperObject {
 	public String name;
 	public boolean collision = false;
 	public int worldX, worldY;
+	// default solid area, is size of tiles
 	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
 	public int solidDefaultAreaX = 0;
 	public int solidDefaultAreaY = 0;
@@ -31,7 +32,7 @@ public class SuperObject {
                 worldY + 3 * gp.tileSize > gp.player.worldY - gp.player.screenY &&
                 worldY - 3 * gp.tileSize < gp.player.worldY + gp.player.screenY) {
             
-            g2d.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+            g2d.drawImage(image, screenX, screenY, null);
             // System.out.println("sX : " + screenX + " sY :" + screenX);
         }
 	}

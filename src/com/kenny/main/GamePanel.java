@@ -56,6 +56,7 @@ public class GamePanel extends JPanel implements Runnable {
     public Player player = new Player(this, keyH);
 	// instantiate SuperObject Array as Slots for Objects
 	public SuperObject obj[] = new SuperObject[10];
+	public Tree tree[] = new Tree[6];
 	
 	// GAME STATE
 	public int gameState;
@@ -167,8 +168,8 @@ public class GamePanel extends JPanel implements Runnable {
 		Graphics2D g2d = (Graphics2D) g;
 		
 		// DEBUG
-		long drawStart = 0;
-		drawStart = System.nanoTime();
+//		long drawStart = 0;
+//		drawStart = System.nanoTime();
 		
 		// draw background first, and then the player
 		// 1. Background/tile
@@ -184,17 +185,17 @@ public class GamePanel extends JPanel implements Runnable {
 				obj[i].draw(g2d, this);
 		}
 		
-		for(int i = 0; i < obj.length; i++) {
+		for(int i = 0; i < tree.length; i++) {
 			// check slots are empty or not, avoid NullPointer error
-			if(obj[i] != null)
-				obj[i].draw(g2d, this);
+			if(tree[i] != null)
+				tree[i].draw(g2d, this);
 		}
 		
 		// 4.UI
 		ui.draw(g2d);
 		
-		long drawEnd = System.nanoTime();
-		long passed = drawEnd - drawStart;
+//		long drawEnd = System.nanoTime();
+//		long passed = drawEnd - drawStart;
 //		g2d.setColor(Color.white);
 //		g2d.drawString("Draw Time: " + passed, 10, 400);
 //		System.out.println("Draw Time: " + passed);

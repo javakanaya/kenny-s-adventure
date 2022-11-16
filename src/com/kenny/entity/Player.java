@@ -176,7 +176,7 @@ public class Player extends Entity {
 	    		}
 	    	}
 	    }
-	    if(gp.obj[1] == null && gp.obj[7] == null && gp.obj[6] == null && gp.obj[8] == null) {
+	    if(gp.obj[5] == null && gp.obj[6] == null && gp.obj[7] == null && gp.obj[8] == null) {
 	        gp.gameState = gp.finishState;
 	        gp.stopMusic();   
 	    }
