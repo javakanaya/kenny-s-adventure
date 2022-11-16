@@ -30,89 +30,95 @@ public class TileManager {
     public void getTileImage() {
         
         // grass-dirt
-        setup(15, "mainWorld/base/grass", false);
-        setup(42, "mainWorld/base/grass", false);
+        setup(20, "mainWorld/base/020-dirt", false);
+        setup(21, "mainWorld/base/021-grass", true); //11
         
-        setup(12, "mainWorld/base/grass_corner_rightDown_dirt", false);
-        setup(13, "mainWorld/base/grass_corner_leftUp_dirt", false);
-        setup(14, "mainWorld/base/grass_corner_rightUp_dirt", false);
-        setup(14, "mainWorld/base/grass_corner_leftDown_dirt", false);
+        setup(22, "mainWorld/base/022-dirt_corner_leftDown_grass", false);
+        setup(23, "mainWorld/base/023-dirt_corner_leftUp_grass", false);
+        setup(24, "mainWorld/base/024-dirt_corner_rightDown_grass", false);
+        setup(25, "mainWorld/base/025-dirt_corner_rightUp_grass", false);
         
-        setup(20, "mainWorld/base/grass_up_dirt", false);
-        setup(21, "mainWorld/base/grass_down_dirt", false);
-        setup(22, "mainWorld/base/grass_right_dirt", false);
-        setup(23, "mainWorld/base/grass_left_dirt", false);
+        setup(26, "mainWorld/base/026-grass_corner_leftDown_dirt", false);
+        setup(27, "mainWorld/base/027-grass_corner_leftUp_dirt", false);
+        setup(28, "mainWorld/base/028-grass_corner_rightDown_dirt", false);
+        setup(29, "mainWorld/base/029-grass_corner_rightUp_dirt", false);
         
-        // dirt-grass
-        setup(10, "mainWorld/base/dirt", false); //11
-        
-        setup(16, "mainWorld/base/dirt_corner_rightDown_grass", false);
-        setup(17, "mainWorld/base/dirt_corner_leftDown_grass", false);
-        setup(18, "mainWorld/base/dirt_corner_rightUp_grass", false);
-        setup(19, "mainWorld/base/dirt_corner_leftUp_grass", false);
+        setup(30, "mainWorld/base/030-grass_down_dirt", false);
+        setup(31, "mainWorld/base/031-grass_left_dirt", false);
+        setup(32, "mainWorld/base/032-grass_right_dirt", false);
+        setup(33, "mainWorld/base/033-grass_up_dirt", false);
       
         // water-grass
-        setup(0, "mainWorld/base/water", true);
+        setup(0, "mainWorld/base/000-water", true);
         
-        setup(26, "mainWorld/base/grass_corner_leftDown_water", true);
-        setup(27, "mainWorld/base/grass_corner_rightDown_water", true);
-        setup(28, "mainWorld/base/water_corner_rightUp_grass", true);
+        setup(1, "mainWorld/base/001-grass_corner_leftDown_water", true);
+        setup(2, "mainWorld/base/002-grass_corner_leftUp_water", true);
+        setup(3, "mainWorld/base/003-grass_corner_rightDown_water", true);
+        setup(4, "mainWorld/base/004-grass_corner_rightUp_water", true);
         
-        setup(56, "mainWorld/base/water_up_grass", true);
-        setup(41, "mainWorld/base/water_right_grass", true);
-        setup(29, "mainWorld/base/water_left_grass", true);
+        setup(5, "mainWorld/base/005-water_corner_leftDown_grass", true);
+        setup(6, "mainWorld/base/006-water_corner_leftUp_grass", true);
+        setup(7, "mainWorld/base/007-water_corner_rightDown_grass", true);
+        setup(8, "mainWorld/base/008-water_corner_rightUp_grass", true);
+        
+        setup(9, "mainWorld/base/009-water_down_grass", true);
+        setup(10, "mainWorld/base/010-water_left_grass", true);
+        setup(11, "mainWorld/base/011-water_right_grass", true);
+        setup(12, "mainWorld/base/012-water_up_grass", true);
         
         // snow-grass
-        setup(39, "winterWorld/base/snow", false);
+        setup(80, "winterWorld/base/080-snow", false);
         
-        setup(31, "winterWorld/base/grass_corner_leftUp_snow", false);
-        setup(32, "winterWorld/base/grass_corner_rightDown_snow", false);
-        setup(33, "winterWorld/base/grass_corner_rightUp_snow", false);
+        setup(81, "winterWorld/base/081-grass_corner_leftDown_snow", false);
+        setup(82, "winterWorld/base/082-grass_corner_leftUp_snow", false);
+        setup(83, "winterWorld/base/083-grass_corner_rightDown_snow", false);
+        setup(84, "winterWorld/base/084-grass_corner_rightUp_snow", false);
         
-        setup(40, "winterWorld/base/snow_corner_leftDown_grass", false);
-        setup(34, "winterWorld/base/snow_corner_leftUp_grass", false);
-        //setup(35, "winterWorld/base/snow_corner_rightDown_grass", false);
-        setup(36, "winterWorld/base/snow_corner_rightUp_grass", false);
+        setup(85, "winterWorld/base/085-snow_corner_leftDown_grass", false);
+        setup(86, "winterWorld/base/086-snow_corner_leftUp_grass", false);
+        setup(87, "winterWorld/base/087-snow_corner_rightDown_grass", false);
+        setup(88, "winterWorld/base/088-snow_corner_rightUp_grass", false);
         
-        setup(37, "winterWorld/base/snow_down_grass", false);
-        setup(38, "winterWorld/base/snow_left_grass", false);
-        //setup(39, "winterWorld/base/snow_up_grass", false);
+        setup(89, "winterWorld/base/089-snow_down_grass", false);
+        setup(90, "winterWorld/base/090-snow_left_grass", false);
+        setup(91, "winterWorld/base/091-snow_right_grass", false);
+        setup(92, "winterWorld/base/092-snow_up_grass", false);
     
         // lightGrass-grass
-        setup(1, "springWorld/base/lras", false);
+        setup(40, "springWorld/base/040-lras", false);
         
-        setup(51, "springWorld/base/grass_corner_leftDown_lras", false);
-        setup(52, "springWorld/base/grass_corner_leftUp_lras", false);
-        setup(53, "springWorld/base/grass_corner_rightDown_lras", false); 
-        setup(54, "springWorld/base/grass_corner_rightUp_lras", false);
+        setup(41, "springWorld/base/041-grass_corner_leftDown_lras", false);
+        setup(42, "springWorld/base/042-grass_corner_leftUp_lras", false);
+        setup(43, "springWorld/base/043-grass_corner_rightDown_lras", false); 
+        setup(44, "springWorld/base/044-grass_corner_rightUp_lras", false);
         
-        setup(55, "springWorld/base/lras_corner_leftDown_grass", false);
-        //setup(56, "springWorld/base/lras_corner_leftUp_grass", false);
-        setup(57, "springWorld/base/lras_corner_rightDown_grass", false);
-        setup(58, "springWorld/base/lras_corner_rightUp_grass", false);
+        setup(45, "springWorld/base/045-lras_corner_rightUp_grass", false);
+        setup(46, "springWorld/base/046-lras_corner_leftDown_grass", false);
+        setup(47, "springWorld/base/047-lras_corner_leftUp_grass", false);
+        setup(48, "springWorld/base/048-lras_corner_rightDown_grass", false);
         
-        setup(59, "springWorld/base/lras_down_grass", false);
-        setup(60, "springWorld/base/lras_left_grass", false);
-        setup(61, "springWorld/base/lras_up_grass", false);
-        setup(62, "springWorld/base/lras_right_grass", false);
+        setup(49, "springWorld/base/049-iras_right_grass", false);
+        setup(50, "springWorld/base/050-lras_down_grass", false);
+        setup(51, "springWorld/base/051-lras_left_grass", false);
+        setup(52, "springWorld/base/052-lras_up_grass", false);
         
         // brown-grass
-        setup(47, "autumnWorld/base/brown", false);
+        setup(60, "autumnWorld/base/060-brown", false);
         
-        setup(71, "autumnWorld/base/brown_corner_leftDown_grass", false);
-        setup(72, "autumnWorld/base/brown_corner_leftUp_grass", false);
-        setup(73, "autumnWorld/base/brown_corner_rightDown_grass", false);
-        setup(74, "autumnWorld/base/brown_corner_rightUp_grass", false);
+        setup(61, "autumnWorld/base/061-brown_corner_leftDown_grass", false);
+        setup(62, "autumnWorld/base/062-brown_corner_leftUp_grass", false);
+        setup(63, "autumnWorld/base/063-brown_corner_rightDown_grass", false);
+        setup(64, "autumnWorld/base/064-brown_corner_rightUp__grass", false);
         
-        setup(75, "autumnWorld/base/brown_down_grass", false);
-        setup(76, "autumnWorld/base/brown_left_grass", false);
-        setup(77, "autumnWorld/base/brown_right_grass", false);
-        setup(78, "autumnWorld/base/brown_up_grass", false);
+        setup(65, "autumnWorld/base/065-brown_down_grass", false);
+        setup(66, "autumnWorld/base/066-brown_left_grass", false);
+        setup(67, "autumnWorld/base/067-brown_right_grass", false);
+        setup(68, "autumnWorld/base/068-brown_up_grass", false);
         
-        setup(79, "autumnWorld/base/grass_corner_leftDown_brown", false);
-        setup(80, "autumnWorld/base/grass_corner_leftUp_brown", false);
-        setup(81, "autumnWorld/base/grass_corner_rightDown_brown", false);
-        setup(82, "autumnWorld/base/grass_corner_rightUp_brown", false);
+        setup(69, "autumnWorld/base/069-grass_corner_leftDown_brown", false);
+        setup(70, "autumnWorld/base/070-grass_corner_leftUp_brown", false);
+        setup(71, "autumnWorld/base/071-grass_corner_rightDown_brown", false);
+        setup(72, "autumnWorld/base/072-grass_corner_rightUp_brown", false);
     }
     
     public void setup(int index, String imageName, boolean collision) {
