@@ -18,8 +18,11 @@ public class NPC_MrSnow extends Entity{
         direction = "left";
         spriteNum = 5;
         speed = 0;
+        solidArea.width *= scalling;
+        solidArea.height *= scalling;
         
         getImage();
+        setDialogue();
     }
     
     public void getImage() {
@@ -27,6 +30,11 @@ public class NPC_MrSnow extends Entity{
         idleLeft1 = setup("/npc/mrSnow/mrSnow_0");
         idleLeft2 = setup("/npc/mrSnow/mrSnow_1");
    
+    }
+    
+    public void setDialogue() {
+        
+        dialogues[0] = "hi hi hi, brrr dingin";
     }
     
     public void setAction() {
@@ -61,5 +69,7 @@ public class NPC_MrSnow extends Entity{
 //            
 //            actionLockCounter = 0;
 //        }
+		
+		
     }
 }

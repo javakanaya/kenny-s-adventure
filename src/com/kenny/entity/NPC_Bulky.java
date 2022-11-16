@@ -1,5 +1,7 @@
 package com.kenny.entity;
 
+import java.awt.Rectangle;
+
 import com.kenny.main.GamePanel;
 
 public class NPC_Bulky extends Entity {
@@ -14,8 +16,11 @@ public class NPC_Bulky extends Entity {
         direction = "left";
         spriteNum = 5;
         speed = 0;
+        solidArea.width *= scalling;
+        solidArea.height *= scalling;
         
         getImage();
+        setDialogue();
     }
     
     public void getImage() {
@@ -25,11 +30,19 @@ public class NPC_Bulky extends Entity {
    
     }
     
-    public void setAction() {
+    public void setDialogue() {
         
+        dialogues[0] = "helo, njing!";
+        dialogues[1] = "kamu ngapain disini njingg?";
+        dialogues[2] = "wah wih wuh weh\na..a.anjing bisa ngomong";
+        dialogues[3] = "sana njingg cari kuncinya";
+    }
+    
+    public void setAction() {
+        // animate sprite 
 		actionLockCounter++;
     	
-		if(actionLockCounter%50 == 0) {
+		if(actionLockCounter % 50 == 0) {
 			
 			if(spriteNum == 6)
 				spriteNum = 5;
@@ -38,5 +51,6 @@ public class NPC_Bulky extends Entity {
 			actionLockCounter = 0;
 		}
     }
-
+    
+ 
 }

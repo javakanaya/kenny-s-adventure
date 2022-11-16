@@ -37,7 +37,7 @@ public class Entity {
 	int spriteCounter = 0;
 	int spriteNum = 1;
 	
-	// Entity size scalling
+	// Entity size scaling
 	int scalling = 1;
 	
 	// COLLISION SETTINGS
@@ -45,14 +45,43 @@ public class Entity {
 	public int 	solidAreaDefaultX, solidAreaDefaultY;
 	public boolean collisionOn = false;
 	
+	// Entity animation
 	public int actionLockCounter = 0;
+	
+	// Array of Dialogues
+	public String dialogues[] = new String[20];
+	public int dialogueIndex = 0;
 	
 	public Entity(GamePanel gp) {
 	    this.gp = gp;
 	}
 	
-	public void setAction() {
-	    
+	public void setAction() {}
+	
+	public void speak() {
+        
+        if(dialogues[dialogueIndex] == null) {
+            dialogueIndex = 0;
+        }
+        gp.ui.currentDialogue = dialogues[dialogueIndex];
+        dialogueIndex++;
+        
+        // setting for when sprite speak is facing to player
+        // tapi karena belum ada asset sprite nya, ya di-comment dulu aja ya...
+//	        switch(gp.player.direction) {
+//	            case "up":
+//	                direction = "down";
+//	                break;
+//	            case "down":
+//	                direction = "up";
+//	                break;
+//	            case "left":
+//	                direction = "right";
+//	                break;
+//	            case "right":
+//	                direction = "left";
+//	                break;
+//	        }
 	}
 	
 	public void update() {

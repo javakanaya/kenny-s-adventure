@@ -1,5 +1,6 @@
 package com.kenny.main;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -14,20 +15,22 @@ import com.kenny.object.gatekey.WinterKey;
 
 
 public class UI {
+    
     GamePanel gp;
     Graphics2D g2d;
     Font arial_40, consolas_40, arial_80B;
     BufferedImage[] keyImage = new BufferedImage[4];
     SuperObject[] keys = new SuperObject[4];
     
-    // variables for message
     public boolean messageOn = false;
     public String message = "";
     int messageCounter = 0;
     
-    // game play time
-    double playTime;
-    DecimalFormat dFormat = new DecimalFormat("#0.00");
+    public String currentDialogue = "";
+    
+//    game play time
+//    double playTime;
+//    DecimalFormat dFormat = new DecimalFormat("#0.00");
     
     public UI(GamePanel gp) {
         
@@ -57,7 +60,7 @@ public class UI {
         g2d.setFont(arial_40);
         g2d.setColor(Color.white);
         
-        // UI for playState
+        // PLAY STATE
         if(gp.gameState == gp.playState) {
             
             // draw keys on x, y location
@@ -70,8 +73,8 @@ public class UI {
             if(gp.player.hasKey[3] == 1)
                 g2d.drawImage(keys[3].image, (gp.tileSize / 2) * 4, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
             
-            playTime += (double)1 / 60;
-            g2d.drawString("Time: "+ dFormat.format(playTime), gp.tileSize*11, 65);
+//            playTime += (double)1 / 60;
+//            g2d.drawString("Time: "+ dFormat.format(playTime), gp.tileSize*11, 65);
             
             if(messageOn == true) {
                 g2d.setFont(g2d.getFont().deriveFont(30F));
@@ -85,10 +88,16 @@ public class UI {
                 }
             }
         }
-        // UI for pauseState
+        // PAUSE STATE
         else if(gp.gameState == gp.pauseState) {
             drawPauseScreen();
         } 
+        // DIALOGUE STATE
+        else if(gp.gameState == gp.dialogueState) {
+            drawDialogueScreen();
+        }
+        
+        // FINISH STATE
         else if(gp.gameState == gp.finishState) {
             String text;
             int x, y;
@@ -100,10 +109,10 @@ public class UI {
             y = gp.screenHeight / 2 - (gp.tileSize * 3);
             g2d.drawString(text, x, y);
             
-            text = "Your time is : " + dFormat.format(playTime) + "!";
-            x = getXforCenteredText(text);
-            y = gp.screenHeight / 2 + (gp.tileSize * 4);
-            g2d.drawString(text, x, y);
+//            text = "Your time is : " + dFormat.format(playTime) + "!";
+//            x = getXforCenteredText(text);
+//            y = gp.screenHeight / 2 + (gp.tileSize * 4);
+//            g2d.drawString(text, x, y);
             
             
             g2d.setFont(arial_80B);
@@ -121,14 +130,47 @@ public class UI {
     public void drawPauseScreen() {
         
         String text = "PAUSED";
-        int x = getXforCenteredText(text);
-        int y = gp.screenHeight / 2;
+        int x = getXforCenteredText(text),
+            y = gp.screenHeight / 2;
         
         g2d.drawString(text, x, y);
     }
     
+    public void drawDialogueScreen() {
+        
+        // WINDOW
+        int x = gp.tileSize * 2, 
+            y = gp.tileSize / 2,
+            width = gp.screenWidth - (gp.tileSize * 4), 
+            height = gp.tileSize * 4;
+        
+        drawSubWindow(x, y, width, height);
+        
+        x += gp.tileSize;
+        y += gp.tileSize;
+        g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 28F));
+        
+        for(String line : currentDialogue.split("\n")) {
+            g2d.drawString(line, x, y);
+            y += 40;
+        }
+    }
+    
+    private void drawSubWindow(int x, int y, int width, int height) {
+        
+        Color c = new Color(0, 0, 0, 210); // R, G, B, alphaValues (Opacity)
+        g2d.setColor(c);
+        g2d.fillRoundRect(x, y, width, height, 35, 35);
+        
+        c = new Color(255, 255, 255);
+        g2d.setColor(c);
+        g2d.setStroke(new BasicStroke(5));
+        g2d.drawRoundRect(x + 5, y + 5, width - 10, height - 10, 25, 25);
+        
+    }
+    
     // get textLength for centered position
-    public int getXforCenteredText(String text) {
+    private int getXforCenteredText(String text) {
         
         int textLength = (int)g2d.getFontMetrics().getStringBounds(text, g2d).getWidth();
         return gp.screenWidth / 2 - textLength / 2;

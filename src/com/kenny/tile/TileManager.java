@@ -52,18 +52,18 @@ public class TileManager {
         setup(19, "mainWorld/base/dirt_corner_leftUp_grass", false);
       
         // water-grass
-        setup(0, "mainWorld/base/water", false);
+        setup(0, "mainWorld/base/water", true);
         
         setup(26, "mainWorld/base/grass_corner_leftDown_water", true);
         setup(27, "mainWorld/base/grass_corner_rightDown_water", true);
         setup(28, "mainWorld/base/water_corner_rightUp_grass", true);
         
-        setup(25, "mainWorld/base/water_up_grass", true);
-        setup(29, "mainWorld/base/water_right_grass", true);
-        setup(41, "mainWorld/base/water_left_grass", true);
+        setup(56, "mainWorld/base/water_up_grass", true);
+        setup(41, "mainWorld/base/water_right_grass", true);
+        setup(29, "mainWorld/base/water_left_grass", true);
         
         // snow-grass
-        setup(30, "winterWorld/base/snow", false);
+        setup(39, "winterWorld/base/snow", false);
         
         setup(31, "winterWorld/base/grass_corner_leftUp_snow", false);
         setup(32, "winterWorld/base/grass_corner_rightDown_snow", false);
@@ -76,7 +76,7 @@ public class TileManager {
         
         setup(37, "winterWorld/base/snow_down_grass", false);
         setup(38, "winterWorld/base/snow_left_grass", false);
-        setup(39, "winterWorld/base/snow_up_grass", false);
+        //setup(39, "winterWorld/base/snow_up_grass", false);
     
         // lightGrass-grass
         setup(1, "springWorld/base/lras", false);
@@ -87,7 +87,7 @@ public class TileManager {
         setup(54, "springWorld/base/grass_corner_rightUp_lras", false);
         
         setup(55, "springWorld/base/lras_corner_leftDown_grass", false);
-        setup(56, "springWorld/base/lras_corner_leftUp_grass", false);
+        //setup(56, "springWorld/base/lras_corner_leftUp_grass", false);
         setup(57, "springWorld/base/lras_corner_rightDown_grass", false);
         setup(58, "springWorld/base/lras_corner_rightUp_grass", false);
         

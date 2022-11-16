@@ -68,6 +68,7 @@ public class CollisionChecker {
         }
     }
     
+    // PLAYER TO OBJECT
     public int checkObject(Entity entity, boolean player) {
     	
     	int index = 999;
@@ -138,6 +139,7 @@ public class CollisionChecker {
     	return index;
     }
     
+    // ENTITY TO ENTITY
     public int checkEntity(Entity entity, Entity[] target) {
         
         int index = 999;
@@ -188,10 +190,10 @@ public class CollisionChecker {
                 target[i].solidArea.y = target[i].solidAreaDefaultY;
             }
         }
-        //check if player hitting any object, if it is, then return the index of object
         return index;
     }
     
+    // PLAYER TO ENTITY
     public void checkPlayer(Entity entity) {
      // Get entity's solid area position
         entity.solidArea.x = entity.worldX + entity.solidArea.x;

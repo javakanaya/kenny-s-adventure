@@ -274,9 +274,23 @@ public class Player extends Entity {
 	
 	public void interactNPC(int i) {
 	    
-	    if(i != 999) {
-	        System.out.println("You are hitting an NPC!");
-	    }
+	    // if index is not 999, player is hit the NPC
+	    // Kalo yg ini harus klik enter sambil di tabrakin baru dialognya muncul
+//	    if(i != 999) {
+//	        gp.ui.showMessage("press ENTER to interact");
+//	        if(gp.keyH.enterPressed == true) {
+//	            gp.gameState = gp.dialogueState;
+//	            gp.npc[i].speak();	            
+//	        }
+//	    }
+//	    gp.keyH.enterPressed = false;
+	    
+	    // kalo ini cuma tabrakin aja..., nnt kalo mau next klik enter
+       if(i != 999) {
+            gp.ui.showMessage("press ENTER to interact");
+            gp.gameState = gp.dialogueState;
+            gp.npc[i].speak();              
+        }
 	}
 	
 	// player draw method
