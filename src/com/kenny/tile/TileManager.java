@@ -30,13 +30,13 @@ public class TileManager {
     public void getTileImage() {
         
         // grass-dirt
-        setup(35, "mainWorld/base/grass", true);
+        setup(15, "mainWorld/base/grass", false);
         setup(42, "mainWorld/base/grass", false);
         
         setup(12, "mainWorld/base/grass_corner_rightDown_dirt", false);
         setup(13, "mainWorld/base/grass_corner_leftUp_dirt", false);
         setup(14, "mainWorld/base/grass_corner_rightUp_dirt", false);
-        setup(15, "mainWorld/base/grass_corner_leftDown_dirt", false);
+        setup(14, "mainWorld/base/grass_corner_leftDown_dirt", false);
         
         setup(20, "mainWorld/base/grass_up_dirt", false);
         setup(21, "mainWorld/base/grass_down_dirt", false);
@@ -44,7 +44,7 @@ public class TileManager {
         setup(23, "mainWorld/base/grass_left_dirt", false);
         
         // dirt-grass
-        setup(43, "mainWorld/base/dirt", false); //11
+        setup(10, "mainWorld/base/dirt", false); //11
         
         setup(16, "mainWorld/base/dirt_corner_rightDown_grass", false);
         setup(17, "mainWorld/base/dirt_corner_leftDown_grass", false);
@@ -52,7 +52,7 @@ public class TileManager {
         setup(19, "mainWorld/base/dirt_corner_leftUp_grass", false);
       
         // water-grass
-        setup(24, "mainWorld/base/water", true);
+        setup(0, "mainWorld/base/water", false);
         
         setup(26, "mainWorld/base/grass_corner_leftDown_water", true);
         setup(27, "mainWorld/base/grass_corner_rightDown_water", true);
@@ -79,7 +79,7 @@ public class TileManager {
         setup(39, "winterWorld/base/snow_up_grass", false);
     
         // lightGrass-grass
-        setup(50, "springWorld/base/lras", false);
+        setup(1, "springWorld/base/lras", false);
         
         setup(51, "springWorld/base/grass_corner_leftDown_lras", false);
         setup(52, "springWorld/base/grass_corner_leftUp_lras", false);
@@ -97,7 +97,7 @@ public class TileManager {
         setup(62, "springWorld/base/lras_right_grass", false);
         
         // brown-grass
-        setup(70, "autumnWorld/base/brown", false);
+        setup(47, "autumnWorld/base/brown", false);
         
         setup(71, "autumnWorld/base/brown_corner_leftDown_grass", false);
         setup(72, "autumnWorld/base/brown_corner_leftUp_grass", false);

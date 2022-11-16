@@ -3,7 +3,7 @@ package com.kenny.main;
 import com.kenny.entity.NPC_Bulky;
 import com.kenny.entity.NPC_Drac;
 import com.kenny.entity.NPC_MrSnow;
-import com.kenny.entity.PinaKoolada;
+import com.kenny.entity.NPC_PinaKoolada;
 import com.kenny.object.gatekey.AutumnGate;
 import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.Bone;
@@ -106,7 +106,7 @@ public class AssetSetter {
 	    gp.npc[2].worldX = ((23) - 1) *gp.tileSize;
         gp.npc[2].worldY = ((23) - 1) *gp.tileSize;
         
-        gp.npc[3] = new PinaKoolada(gp);
+        gp.npc[3] = new NPC_PinaKoolada(gp);
 	    gp.npc[3].worldX = ((19) - 1) *gp.tileSize;
         gp.npc[3].worldY = ((27) - 1) *gp.tileSize;
 	    
