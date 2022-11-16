@@ -32,40 +32,40 @@ public class AssetSetter {
 	public void setObject() {
 
 	    gp.obj[0] = new Bone(gp);
-	    gp.obj[0].worldX = ((8)) *gp.tileSize;
-	    gp.obj[0].worldY = ((36)) *gp.tileSize;
+	    gp.obj[0].worldX = ((51)) *gp.tileSize;
+	    gp.obj[0].worldY = ((51)) *gp.tileSize;
 	    
 		gp.obj[1] = new WinterKey(gp);
-		gp.obj[1].worldX = ((48) - 1) *gp.tileSize;
-		gp.obj[1].worldY = ((29) - 1) *gp.tileSize;
+		gp.obj[1].worldX = ((60) - 1) *gp.tileSize;
+		gp.obj[1].worldY = ((50) - 1) *gp.tileSize;
 		
 		gp.obj[2] = new SpringKey(gp);
-		gp.obj[2].worldX = ((24) - 1) *gp.tileSize;
-		gp.obj[2].worldY = ((48) - 1) *gp.tileSize;
+		gp.obj[2].worldX = ((50) - 1) *gp.tileSize;
+		gp.obj[2].worldY = ((60) - 1) *gp.tileSize;
 		
 		gp.obj[3] = new SummerKey(gp);
-		gp.obj[3].worldX = ((3) - 1) *gp.tileSize;
-		gp.obj[3].worldY = ((28) - 1) *gp.tileSize;
+		gp.obj[3].worldX = ((40) - 1) *gp.tileSize;
+		gp.obj[3].worldY = ((50) - 1) *gp.tileSize;
 		
 		gp.obj[4] = new AutumnKey(gp);
-		gp.obj[4].worldX = ((24) - 1) *gp.tileSize;
-		gp.obj[4].worldY = ((2) - 1) *gp.tileSize;
+		gp.obj[4].worldX = ((50) - 1) *gp.tileSize;
+		gp.obj[4].worldY = ((40) - 1) *gp.tileSize;
 		
 		gp.obj[5] = new WinterGate(gp);
-		gp.obj[5].worldX = ((25) - 1) *gp.tileSize;
-		gp.obj[5].worldY = ((27) - 1) *gp.tileSize;
+		gp.obj[5].worldX = ((55) - 1) *gp.tileSize;
+		gp.obj[5].worldY = ((50) - 1) *gp.tileSize;
 		
 		gp.obj[6] = new SpringGate(gp);
-		gp.obj[6].worldX = ((23) - 1) *gp.tileSize;
-		gp.obj[6].worldY = ((29) - 1) *gp.tileSize;
+		gp.obj[6].worldX = ((50) - 1) *gp.tileSize;
+		gp.obj[6].worldY = ((55) - 1) *gp.tileSize;
 		
 		gp.obj[7] = new SummerGate(gp);
-		gp.obj[7].worldX = ((21) - 1) *gp.tileSize;
-		gp.obj[7].worldY = ((27) - 1) *gp.tileSize;
+		gp.obj[7].worldX = ((45) - 1) *gp.tileSize;
+		gp.obj[7].worldY = ((50) - 1) *gp.tileSize;
 		
 		gp.obj[8] = new AutumnGate(gp);
-		gp.obj[8].worldX = ((23) - 1) *gp.tileSize;
-		gp.obj[8].worldY = ((25) - 1) *gp.tileSize;
+		gp.obj[8].worldX = ((50) - 1) *gp.tileSize;
+		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
 		
 		gp.tree[0] = new AppleTree();
         gp.tree[0].worldX = (20) *gp.tileSize;
@@ -95,20 +95,20 @@ public class AssetSetter {
 	public void setNPC() {
 	    
 	    gp.npc[0] = new NPC_MrSnow(gp);
-	    gp.npc[0].worldX = ((26) - 1) *gp.tileSize;
-        gp.npc[0].worldY = ((27) - 1) *gp.tileSize;
+	    gp.npc[0].worldX = ((57) - 1) *gp.tileSize;
+        gp.npc[0].worldY = ((50) - 1) *gp.tileSize;
         
         gp.npc[1] = new NPC_Drac(gp);
-	    gp.npc[1].worldX = ((23) - 1) *gp.tileSize;
-        gp.npc[1].worldY = ((30) - 1) *gp.tileSize;
+	    gp.npc[1].worldX = ((50) - 1) *gp.tileSize;
+        gp.npc[1].worldY = ((57) - 1) *gp.tileSize;
         
         gp.npc[2] = new NPC_Bulky(gp);
-	    gp.npc[2].worldX = ((23) - 1) *gp.tileSize;
-        gp.npc[2].worldY = ((23) - 1) *gp.tileSize;
+	    gp.npc[2].worldX = ((42) - 1) *gp.tileSize;
+        gp.npc[2].worldY = ((50) - 1) *gp.tileSize;
         
         gp.npc[3] = new NPC_PinaKoolada(gp);
-	    gp.npc[3].worldX = ((19) - 1) *gp.tileSize;
-        gp.npc[3].worldY = ((27) - 1) *gp.tileSize;
+	    gp.npc[3].worldX = ((50) - 1) *gp.tileSize;
+        gp.npc[3].worldY = ((42) - 1) *gp.tileSize;
 	    
 	}
 }
