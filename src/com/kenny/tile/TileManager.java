@@ -31,7 +31,7 @@ public class TileManager {
         
         // grass-dirt
         setup(20, "mainWorld/base/020-dirt", false);
-        setup(21, "mainWorld/base/021-grass", true); //11
+        setup(21, "mainWorld/base/021-grass", false); //11
         
         setup(22, "mainWorld/base/022-dirt_corner_leftDown_grass", false);
         setup(23, "mainWorld/base/023-dirt_corner_leftUp_grass", false);
@@ -47,6 +47,13 @@ public class TileManager {
         setup(31, "mainWorld/base/031-grass_left_dirt", false);
         setup(32, "mainWorld/base/032-grass_right_dirt", false);
         setup(33, "mainWorld/base/033-grass_up_dirt", false);
+        
+        setup(34, "mainWorld/base/034-grass_fence1", true);
+        setup(35, "mainWorld/base/035-grass_fence2", true);
+        setup(36, "mainWorld/base/036-grass_fence3", true);
+        setup(37, "mainWorld/base/037-grass_fence4", true);
+        setup(38, "mainWorld/base/038-grass_fence5", true);
+        setup(39, "mainWorld/base/039-grass_fence6", true);
       
         // water-grass
         setup(0, "mainWorld/base/000-water", true);
