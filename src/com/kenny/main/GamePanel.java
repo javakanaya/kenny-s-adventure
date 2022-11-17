@@ -62,6 +62,7 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	// GAME STATE
 	public int gameState;
+	public final int titleState = 0;
 	public final int playState = 1;
 	public final int pauseState = 2;
 	public final int dialogueState = 3;
@@ -96,10 +97,10 @@ public class GamePanel extends JPanel implements Runnable {
 		aSetter.setNPC();
 		
 		// play music
-		playMusic(0);
+		// playMusic(0);
 		
 		// initiate gameState
-		gameState = playState;
+		gameState = titleState;
 	}
 	
 	public void startGameThread() {
@@ -183,35 +184,45 @@ public class GamePanel extends JPanel implements Runnable {
 //		long drawStart = 0;
 //		drawStart = System.nanoTime();
 		
-		// draw background first, and then the player
-		// Background/tile
-		tileM.draw(g2d);
-		
-		// Object
-		for(int i = 0; i < obj.length; i++) {
-			// check slots are empty or not, avoid NullPointer error
-			if(obj[i] != null)
-				obj[i].draw(g2d, this);
+		// TITLE SCREEN
+		if(gameState == titleState) {
+		    ui.draw(g2d);
 		}
 		
-		for(int i = 0; i < tree.length; i++) {
-			// check slots are empty or not, avoid NullPointer error
-			if(tree[i] != null)
-				tree[i].draw(g2d, this);
+		// GAME SCREEN
+		else {
+		    // draw background first, and then the player
+	        // TILE
+	        tileM.draw(g2d);
+	        
+	        // OBJECT
+	        for(int i = 0; i < obj.length; i++) {
+	            // check slots are empty or not, avoid NullPointer error
+	            if(obj[i] != null)
+	                obj[i].draw(g2d, this);
+	        }
+	        
+	        for(int i = 0; i < tree.length; i++) {
+	            // check slots are empty or not, avoid NullPointer error
+	            if(tree[i] != null)
+	                tree[i].draw(g2d, this);
+	        }
+	        
+	        // NPC
+	        for(int i = 0; i < npc.length; i++) {
+	            // check slots are empty or not, avoid NullPointer error
+	            if(npc[i] != null)
+	                npc[i].draw(g2d);
+	        }
+	        
+	        // PLAYER
+	        player.draw(g2d);
+	        
+	        // UI
+	        ui.draw(g2d);
 		}
 		
-		// NPC
-        for(int i = 0; i < npc.length; i++) {
-            // check slots are empty or not, avoid NullPointer error
-            if(npc[i] != null)
-                npc[i].draw(g2d);
-        }
-        
-        // Player
-        player.draw(g2d);
 		
-		// UI
-		ui.draw(g2d);
 		
 //		long drawEnd = System.nanoTime();
 //		long passed = drawEnd - drawStart;

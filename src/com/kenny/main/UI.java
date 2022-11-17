@@ -21,7 +21,7 @@ public class UI {
     
     GamePanel gp;
     Graphics2D g2d;
-    Font courier, calibri;
+    Font courier, calibri, chaichle, maruMonica;
     BufferedImage[] keyImage = new BufferedImage[4];
     SuperObject[] keys = new SuperObject[4];
     
@@ -30,6 +30,9 @@ public class UI {
     int messageCounter = 0;
     
     public String currentDialogue = "";
+    public int commandNum = 0;
+    
+    public int titleScreenState = 0; //0 is menuScreen, 1 is storyScreen
     
 //    game play time
 //    double playTime;
@@ -45,6 +48,10 @@ public class UI {
             courier = Font.createFont(Font.TRUETYPE_FONT, is);
             is = getClass().getResourceAsStream("/font/CALIBRI.TTF");
             calibri = Font.createFont(Font.TRUETYPE_FONT, is);
+            is = getClass().getResourceAsStream("/font/ChailceNogginRegular-2OXoW.ttf");
+            chaichle = Font.createFont(Font.TRUETYPE_FONT, is);
+            is = getClass().getResourceAsStream("/font/x12y16pxMaruMonica.ttf");
+            maruMonica = Font.createFont(Font.TRUETYPE_FONT, is);
         } catch (FontFormatException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -70,10 +77,15 @@ public class UI {
         this.g2d = g2d;
         
         // choose font
-        g2d.setFont(calibri);
+        g2d.setFont(maruMonica);
         // adding little bit textured on the text font
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         g2d.setColor(Color.white);
+        
+        // TITlE STATE
+        if(gp.gameState == gp.titleState) {
+            drawTitleScreen();
+        }
         
         // PLAY STATE
         if(gp.gameState == gp.playState) {
@@ -144,6 +156,105 @@ public class UI {
         }
     }
     
+    public void drawTitleScreen() {
+        
+        if(titleScreenState == 0) {
+            // Background
+            g2d.setColor(new Color(235, 131, 52));
+            g2d.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+            
+            // Title
+            g2d.setFont(chaichle);
+            g2d.setFont(g2d.getFont().deriveFont(Font.BOLD, 96F));
+            String text = "Kenny.";
+            int x = getXforCenteredText(text), 
+                    y = gp.tileSize * 3;
+            
+            // Shadow
+            g2d.setColor(Color.BLACK);
+            g2d.drawString(text, x + 5, y + 5);
+            
+            // Main Color
+            g2d.setColor(Color.WHITE);
+            g2d.drawString(text, x, y);
+            
+            // Kenny Image - bisa dikasih idle
+            x = gp.screenWidth / 2 - gp.tileSize;
+            y += gp.tileSize * 1;
+            g2d.drawImage(gp.player.idleRight3, x, y, gp.tileSize * 2, gp.tileSize * 2, null);
+            
+            // Menu
+            g2d.setFont(maruMonica);
+            g2d.setFont(g2d.getFont().deriveFont(Font.BOLD, 48F));
+            
+            text = "NEW GAME";
+            x = getXforCenteredText(text);
+            y += gp.tileSize * 3.5;
+            g2d.drawString(text, x, y);
+            if(commandNum == 0) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+            
+            text = "LOAD GAME";
+            x = getXforCenteredText(text);
+            y += gp.tileSize;
+            g2d.drawString(text, x, y);
+            if(commandNum == 1) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+            
+            text = "EXIT";
+            x = getXforCenteredText(text);
+            y += gp.tileSize;
+            g2d.drawString(text, x, y);
+            if(commandNum == 2) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+        }
+        else if (titleScreenState == 1) {
+            
+            g2d.setColor(Color.WHITE);
+            g2d.setFont(g2d.getFont().deriveFont(42F));
+            
+            String text = "Select your class!";
+            int x = getXforCenteredText(text),
+                y = gp.tileSize * 3;
+            g2d.drawString(text, x, y);
+            
+            text = "Fighter";
+            x = getXforCenteredText(text);
+            y += gp.tileSize * 3;
+            g2d.drawString(text, x, y);
+            if(commandNum == 0) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+            
+            text = "Thieft";
+            x = getXforCenteredText(text);
+            y += gp.tileSize;
+            g2d.drawString(text, x, y);
+            if(commandNum == 1) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+            
+            text = "Sorcerer";
+            x = getXforCenteredText(text);
+            y += gp.tileSize;
+            g2d.drawString(text, x, y);
+            if(commandNum == 2) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+            
+            text = "back";
+            x = getXforCenteredText(text);
+            y += gp.tileSize * 2;
+            g2d.drawString(text, x, y);
+            if(commandNum == 3) {
+                g2d.drawString(">", x - gp.tileSize, y);
+            }
+        }
+
+    }
     public void drawPauseScreen() {
         
         String text = "PAUSED";

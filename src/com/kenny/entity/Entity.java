@@ -25,11 +25,11 @@ public class Entity {
 	
 	// SPRITE SETTINGS
 	// image for entity movement & idle
-	BufferedImage right1, right2, right3, right4, 
+	public BufferedImage right1, right2, right3, right4, 
  				  up1, up2, up3, up4, 
  				  left1, left2, left3, left4, 
  				  down1, down2, down3, down4;
- 	BufferedImage idleFront1, idleFront2, idleFront3, idleFront4,
+ 	public BufferedImage idleFront1, idleFront2, idleFront3, idleFront4,
  				  idleLeft1, idleLeft2, idleLeft3, idleLeft4,
 				  idleRight1, idleRight2, idleRight3, idleRight4;
  	// entity direction
