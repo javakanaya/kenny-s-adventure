@@ -3,9 +3,12 @@ package com.kenny.main;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.text.DecimalFormat;
+import java.io.IOException;
+import java.io.InputStream;
 
 import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.SuperObject;
@@ -18,7 +21,7 @@ public class UI {
     
     GamePanel gp;
     Graphics2D g2d;
-    Font arial_40, consolas_40, arial_80B;
+    Font courier, calibri;
     BufferedImage[] keyImage = new BufferedImage[4];
     SuperObject[] keys = new SuperObject[4];
     
@@ -37,9 +40,19 @@ public class UI {
         this.gp = gp;
         
         // instantiate before game loop
-        arial_40 = new Font("Arial", Font.PLAIN, 40);
-        consolas_40 = new Font("Consolas", Font.PLAIN, 40);
-        arial_80B = new Font("Arial", Font.PLAIN, 80);
+        try {
+            InputStream is = getClass().getResourceAsStream("/font/COUR.TTF");
+            courier = Font.createFont(Font.TRUETYPE_FONT, is);
+            is = getClass().getResourceAsStream("/font/CALIBRI.TTF");
+            calibri = Font.createFont(Font.TRUETYPE_FONT, is);
+        } catch (FontFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
         keys[0] = new WinterKey(gp);  
         keys[1] = new SpringKey(gp); 
         keys[2] = new SummerKey(gp);
@@ -57,7 +70,9 @@ public class UI {
         this.g2d = g2d;
         
         // choose font
-        g2d.setFont(arial_40);
+        g2d.setFont(calibri);
+        // adding little bit textured on the text font
+        g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         g2d.setColor(Color.white);
         
         // PLAY STATE
@@ -77,8 +92,8 @@ public class UI {
 //            g2d.drawString("Time: "+ dFormat.format(playTime), gp.tileSize*11, 65);
             
             if(messageOn == true) {
-                g2d.setFont(g2d.getFont().deriveFont(30F));
-                g2d.drawString(message, gp.tileSize * 4, gp.tileSize * 11);
+                g2d.setFont(g2d.getFont().deriveFont(28F));
+                g2d.drawString(message, getXforCenteredText(message) , gp.tileSize * 11);
                 
                 messageCounter++;
                 
@@ -102,7 +117,8 @@ public class UI {
             String text;
             int x, y;
             
-            g2d.setFont(arial_40);
+            g2d.setFont(calibri);
+            g2d.setFont(g2d.getFont().deriveFont(32F));
             g2d.setColor(Color.white);
             text = "You opened all gates!";
             x = getXforCenteredText(text);
@@ -115,7 +131,8 @@ public class UI {
 //            g2d.drawString(text, x, y);
             
             
-            g2d.setFont(arial_80B);
+            g2d.setFont(calibri);
+            g2d.setFont(g2d.getFont().deriveFont(80F));
             g2d.setColor(Color.yellow);
             text = "Congratulations!";
             x = getXforCenteredText(text);
@@ -148,7 +165,7 @@ public class UI {
         
         x += gp.tileSize;
         y += gp.tileSize;
-        g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 28F));
+        g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 32F));
         
         for(String line : currentDialogue.split("\n")) {
             g2d.drawString(line, x, y);
