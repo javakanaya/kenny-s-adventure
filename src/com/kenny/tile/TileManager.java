@@ -18,13 +18,13 @@ public class TileManager {
     public TileManager(GamePanel gp) {
         this.gp = gp;
         
-        tile = new Tile[100];
+        tile = new Tile[200];
 
         // map size : maxWorldCol x maxWordRow
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
         
         getTileImage();
-        loadMap("/maps/newWorld.txt");
+        loadMap("/maps/world.txt");
     }
     
     public void getTileImage() {
@@ -90,6 +90,9 @@ public class TileManager {
         setup(90, "winterWorld/base/090-snow_left_grass", false);
         setup(91, "winterWorld/base/091-snow_right_grass", false);
         setup(92, "winterWorld/base/092-snow_up_grass", false);
+        
+        // snowdark
+        setup(100, "winterWorld/base/100-snowdark", false);
     
         // lightGrass-grass
         setup(40, "springWorld/base/040-lras", false);
