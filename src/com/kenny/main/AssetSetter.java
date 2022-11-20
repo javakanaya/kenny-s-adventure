@@ -96,6 +96,10 @@ public class AssetSetter {
         gp.tree[5].worldX = (25) *gp.tileSize;
         gp.tree[5].worldY = (35) *gp.tileSize;
         
+        gp.tree[5] = new MapleTree();
+        gp.tree[5].worldX = (35) *gp.tileSize;
+        gp.tree[5].worldY = (35) *gp.tileSize;
+        
 
 	}
 	
