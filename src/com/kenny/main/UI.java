@@ -268,7 +268,7 @@ public class UI {
         
         // WINDOW
         int x = gp.tileSize * 2, 
-            y = gp.tileSize / 2,
+            y = gp.tileSize * 7 + gp.tileSize /2 ,
             width = gp.screenWidth - (gp.tileSize * 4), 
             height = gp.tileSize * 4;
         
