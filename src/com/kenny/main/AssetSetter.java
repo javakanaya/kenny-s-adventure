@@ -71,7 +71,6 @@ public class AssetSetter {
 		gp.obj[9] = new IcePile(gp);
 	    gp.obj[9].worldX = (75) *gp.tileSize;
 	    gp.obj[9].worldY = (50) *gp.tileSize;
-	    gp.obj[9] = null;
 		
 		gp.tree[0] = new AppleTree();
         gp.tree[0].worldX = (20) *gp.tileSize;
