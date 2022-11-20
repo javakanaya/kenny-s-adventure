@@ -262,6 +262,13 @@ public class Player extends Entity {
                 gp.obj[i] = null;
                 gp.ui.showMessage("Speed up!");
                 break;
+            case "Ice Pile" :
+            	if(keyH.interacPressed == true)
+            	{
+            		gp.obj[i] = null;
+                    gp.ui.showMessage("Speed up!");
+            	}
+                break;    
             }
             
         }
