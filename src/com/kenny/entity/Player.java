@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
+import com.kenny.object.gatekey.IcePillarOn;
 
 public class Player extends Entity {
     
@@ -266,9 +267,19 @@ public class Player extends Entity {
             	if(keyH.interacPressed == true)
             	{
             		gp.obj[i] = null;
-                    gp.ui.showMessage("Speed up!");
+                    gp.ui.showMessage("Break!");
             	}
                 break;    
+            case "Ice Pillar Off" :
+            	if(keyH.interacPressed == true)
+            	{
+            		gp.obj[i] = null;
+            		gp.obj[10] = new IcePillarOn(gp);
+            	    gp.obj[10].worldX = (85) *gp.tileSize;
+            	    gp.obj[10].worldY = (50) *gp.tileSize;
+                    gp.ui.showMessage("It's ON!");
+            	}
+                break;  
             }
             
         }

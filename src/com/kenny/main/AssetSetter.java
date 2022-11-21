@@ -7,7 +7,9 @@ import com.kenny.entity.NPC_PinaKoolada;
 import com.kenny.object.gatekey.AutumnGate;
 import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.Bone;
+import com.kenny.object.gatekey.IcePillarOn;
 import com.kenny.object.gatekey.IcePile;
+import com.kenny.object.gatekey.IcePillarOff;
 import com.kenny.object.gatekey.SpringGate;
 import com.kenny.object.gatekey.SpringKey;
 import com.kenny.object.gatekey.SummerGate;
@@ -71,6 +73,15 @@ public class AssetSetter {
 		gp.obj[9] = new IcePile(gp);
 	    gp.obj[9].worldX = (75) *gp.tileSize;
 	    gp.obj[9].worldY = (50) *gp.tileSize;
+	    
+//	    gp.obj[10] = new IcePillarOn(gp);
+//	    gp.obj[10].worldX = (85) *gp.tileSize;
+//	    gp.obj[10].worldY = (50) *gp.tileSize;
+//	    gp.obj[10] = null;
+	    
+	    gp.obj[11] = new IcePillarOff(gp);
+	    gp.obj[11].worldX = (85) *gp.tileSize;
+	    gp.obj[11].worldY = (50) *gp.tileSize;
 		
 		gp.tree[0] = new AppleTree();
         gp.tree[0].worldX = (20) *gp.tileSize;
