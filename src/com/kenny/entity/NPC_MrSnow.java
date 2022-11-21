@@ -18,7 +18,7 @@ public class NPC_MrSnow extends Entity{
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        solidArea.width *= scalling;
+        solidArea.width *= 1;
         solidArea.height *= scalling;
         
         getImage();

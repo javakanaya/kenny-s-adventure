@@ -263,21 +263,51 @@ public class Player extends Entity {
                 gp.obj[i] = null;
                 gp.ui.showMessage("Speed up!");
                 break;
-            case "Ice Pile" :
+            case "Ice Pile Close" :
             	if(keyH.interacPressed == true)
             	{
             		gp.obj[i] = null;
                     gp.ui.showMessage("Break!");
             	}
                 break;    
-            case "Ice Pillar Off" :
+            case "Ice Pile Open" :
             	if(keyH.interacPressed == true)
             	{
             		gp.obj[i] = null;
-            		gp.obj[10] = new IcePillarOn(gp);
-            	    gp.obj[10].worldX = (85) *gp.tileSize;
-            	    gp.obj[10].worldY = (50) *gp.tileSize;
-                    gp.ui.showMessage("It's ON!");
+                    gp.ui.showMessage("Break!");
+            	}
+                break;  
+            case "Ice Pillar Off" :
+            	if(keyH.interacPressed == true)
+            	{
+            		if(gp.obj[15] == null) {
+            			gp.obj[15] = new IcePillarOn(gp);
+                	    gp.obj[15].worldX = gp.obj[i].worldX;
+                	    gp.obj[15].worldY = gp.obj[i].worldY;
+                	    gp.obj[i] = null;
+                        gp.ui.showMessage("It's ON!");
+            		}
+            		else if(gp.obj[16] == null) {
+            			gp.obj[16] = new IcePillarOn(gp);
+                	    gp.obj[16].worldX = gp.obj[i].worldX;
+                	    gp.obj[16].worldY = gp.obj[i].worldY;
+                	    gp.obj[i] = null;
+                        gp.ui.showMessage("It's ON!");
+            		}
+            		else if(gp.obj[17] == null) {
+            			gp.obj[17] = new IcePillarOn(gp);
+                	    gp.obj[17].worldX = gp.obj[i].worldX;
+                	    gp.obj[17].worldY = gp.obj[i].worldY;
+                	    gp.obj[i] = null;
+                        gp.ui.showMessage("It's ON!");
+            		}
+            		else if(gp.obj[18] == null) {
+            			gp.obj[18] = new IcePillarOn(gp);
+                	    gp.obj[18].worldX = gp.obj[i].worldX;
+                	    gp.obj[18].worldY = gp.obj[i].worldY;
+                	    gp.obj[i] = null;
+                        gp.ui.showMessage("It's ON!");
+            		}
             	}
                 break;  
             }

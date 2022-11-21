@@ -54,6 +54,7 @@ public class TileManager {
         setup(37, "mainWorld/base/037-grass_fence4", true);
         setup(38, "mainWorld/base/038-grass_fence5", true);
         setup(39, "mainWorld/base/039-grass_fence6", true);
+        setup(115, "mainWorld/base/115-grass_fence7", true);
       
         // water-grass
         setup(0, "mainWorld/base/000-water", true);
@@ -91,8 +92,31 @@ public class TileManager {
         setup(91, "winterWorld/base/091-snow_right_grass", false);
         setup(92, "winterWorld/base/092-snow_up_grass", false);
         
+        setup(93, "winterWorld/base/093-snowFence_01", true);
+        setup(94, "winterWorld/base/094-snowFence_04", true);
+        setup(95, "winterWorld/base/095-snowFence_07", true);
+        setup(96, "winterWorld/base/096-snowFence_08", true);
+        setup(97, "winterWorld/base/097-snowFence_09", true);
+        setup(98, "winterWorld/base/098-snowFence_10", true);
+        setup(99, "winterWorld/base/099-snow_ph7", false);
+        setup(113, "winterWorld/base/113-snowFence_02", true);
+        setup(114, "winterWorld/base/114-snowFence_03", true);
+        
+        
         // snowdark
-        setup(100, "winterWorld/base/100-snowdark", false);
+        setup(100, "winterWorld/level2/100-snowdark", false);
+        setup(101, "winterWorld/level2/101-snowdark_top", true);
+        setup(102, "winterWorld/level2/102-snowdark_bot", true);
+        setup(103, "winterWorld/level2/103-snowdark_left", false);
+        setup(104, "winterWorld/level2/104-snowdark_right", false);
+        setup(105, "winterWorld/level2/105-snowdark_rightBot", true);
+        setup(106, "winterWorld/level2/106-snowdark_leftBot", true);
+        setup(107, "winterWorld/level2/107-snowdark_leftTop", true);
+        setup(108, "winterWorld/level2/108-snowdark_rightTop", true);
+        setup(109, "winterWorld/level2/109-snowdark_rightSmall", true);
+        setup(110, "winterWorld/level2/110-snowdark_leftSmall", true);
+        setup(111, "winterWorld/level2/111-snowdark_rightSmalt", false);
+        setup(112, "winterWorld/level2/112-snowdark_leftSmalt", false);
     
         // lightGrass-grass
         setup(40, "springWorld/base/040-lras", false);
@@ -129,6 +153,8 @@ public class TileManager {
         setup(70, "autumnWorld/base/070-grass_corner_leftUp_brown", false);
         setup(71, "autumnWorld/base/071-grass_corner_rightDown_brown", false);
         setup(72, "autumnWorld/base/072-grass_corner_rightUp_brown", false);
+        
+        
     }
     
     public void setup(int index, String imageName, boolean collision) {

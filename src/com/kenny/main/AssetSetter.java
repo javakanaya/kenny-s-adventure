@@ -8,7 +8,8 @@ import com.kenny.object.gatekey.AutumnGate;
 import com.kenny.object.gatekey.AutumnKey;
 import com.kenny.object.gatekey.Bone;
 import com.kenny.object.gatekey.IcePillarOn;
-import com.kenny.object.gatekey.IcePile;
+import com.kenny.object.gatekey.IcePileClose;
+import com.kenny.object.gatekey.IcePileOpen;
 import com.kenny.object.gatekey.IcePillarOff;
 import com.kenny.object.gatekey.SpringGate;
 import com.kenny.object.gatekey.SpringKey;
@@ -39,8 +40,8 @@ public class AssetSetter {
 	    gp.obj[0].worldY = ((51)) *gp.tileSize;
 	    
 		gp.obj[1] = new WinterKey(gp);
-		gp.obj[1].worldX = ((60) - 1) *gp.tileSize;
-		gp.obj[1].worldY = ((50) - 1) *gp.tileSize;
+		gp.obj[1].worldX = (84) *gp.tileSize;
+		gp.obj[1].worldY = (47) *gp.tileSize;
 		
 		gp.obj[2] = new SpringKey(gp);
 		gp.obj[2].worldX = ((50) - 1) *gp.tileSize;
@@ -70,18 +71,35 @@ public class AssetSetter {
 		gp.obj[8].worldX = ((50) - 1) *gp.tileSize;
 		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
 		
-		gp.obj[9] = new IcePile(gp);
-	    gp.obj[9].worldX = (75) *gp.tileSize;
-	    gp.obj[9].worldY = (50) *gp.tileSize;
+		//ice pile
+		
+		gp.obj[20] = new IcePileClose(gp);
+	    gp.obj[20].worldX = (75) *gp.tileSize;
+	    gp.obj[20].worldY = (50) *gp.tileSize;
 	    
-//	    gp.obj[10] = new IcePillarOn(gp);
-//	    gp.obj[10].worldX = (85) *gp.tileSize;
-//	    gp.obj[10].worldY = (50) *gp.tileSize;
-//	    gp.obj[10] = null;
+	    gp.obj[21] = new IcePileOpen(gp);
+	    gp.obj[21].worldX = (75) *gp.tileSize;
+	    gp.obj[21].worldY = (45) *gp.tileSize;
+	    
+	    //ice pillar
 	    
 	    gp.obj[11] = new IcePillarOff(gp);
-	    gp.obj[11].worldX = (85) *gp.tileSize;
-	    gp.obj[11].worldY = (50) *gp.tileSize;
+	    gp.obj[11].worldX = (81) *gp.tileSize;
+	    gp.obj[11].worldY = (42) *gp.tileSize;
+	    
+	    gp.obj[12] = new IcePillarOff(gp);
+	    gp.obj[12].worldX = (86) *gp.tileSize;
+	    gp.obj[12].worldY = (42) *gp.tileSize;
+	    
+	    gp.obj[13] = new IcePillarOff(gp);
+	    gp.obj[13].worldX = (81) *gp.tileSize;
+	    gp.obj[13].worldY = (48) *gp.tileSize;
+	    
+	    gp.obj[14] = new IcePillarOff(gp);
+	    gp.obj[14].worldX = (86) *gp.tileSize;
+	    gp.obj[14].worldY = (48) *gp.tileSize;
+	    
+	    //tree
 		
 		gp.tree[0] = new AppleTree();
         gp.tree[0].worldX = (20) *gp.tileSize;
@@ -117,8 +135,8 @@ public class AssetSetter {
 	public void setNPC() {
 	    
 	    gp.npc[0] = new NPC_MrSnow(gp);
-	    gp.npc[0].worldX = ((57) - 1) *gp.tileSize;
-        gp.npc[0].worldY = ((50) - 1) *gp.tileSize;
+	    gp.npc[0].worldX = ((70) - 1) *gp.tileSize;
+        gp.npc[0].worldY = ((48) - 1) *gp.tileSize;
         
         gp.npc[1] = new NPC_Drac(gp);
 	    gp.npc[1].worldX = ((50) - 1) *gp.tileSize;

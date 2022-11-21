@@ -16,8 +16,8 @@ public class IcePillarOn extends SuperObject{
         
 		name = "Ice Pillar On";
 		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/others/pillar_1.png"));
-			image = uTool.scaleImage(image, gp.tileSize, gp.tileSize*2);
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/others/icePillar_1.png"));
+			image = uTool.scaleImage(image, gp.tileSize*2, gp.tileSize*4);
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
