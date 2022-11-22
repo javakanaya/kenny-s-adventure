@@ -49,6 +49,8 @@ public class GamePanel extends JPanel implements Runnable {
     Sound sfx = new Sound();
     // instantiate UI
     public UI ui = new UI(this);
+    // instantiate event Handler
+    public EventHandler eHandler = new EventHandler(this);
     // keeps the program running until users stop it
     Thread gameThread;
 	
