@@ -128,6 +128,12 @@ public class Player extends Entity {
             int npcIndex = gp.cCheker.checkEntity(this, gp.npc);
             interactNPC(npcIndex);
             
+            // CHECK EVENT
+            gp.eHandler.checkEvent();
+            
+            // after all (NPC and EVENT) checked, then change the enter pressed state
+            gp.keyH.enterPressed = false;
+            
             // if collision is false, player can move
             if(collisionOn == false) {
                 switch(direction) {
@@ -264,21 +270,21 @@ public class Player extends Entity {
                 gp.ui.showMessage("Speed up!");
                 break;
             case "Ice Pile Close" :
-            	if(keyH.interacPressed == true)
+            	if(keyH.interactPressed == true)
             	{
             		gp.obj[i] = null;
                     gp.ui.showMessage("Break!");
             	}
                 break;    
             case "Ice Pile Open" :
-            	if(keyH.interacPressed == true)
+            	if(keyH.interactPressed == true)
             	{
             		gp.obj[i] = null;
                     gp.ui.showMessage("Break!");
             	}
                 break;  
             case "Ice Pillar Off" :
-            	if(keyH.interacPressed == true)
+            	if(keyH.interactPressed == true)
             	{
             		if(gp.obj[15] == null) {
             			gp.obj[15] = new IcePillarOn(gp);
@@ -327,7 +333,6 @@ public class Player extends Entity {
                 gp.npc[i].speak();              
             }
         }
-        gp.keyH.enterPressed = false;
         
         // kalo ini cuma tabrakin aja..., nnt kalo mau next klik enter
 //        if(i != 999) {

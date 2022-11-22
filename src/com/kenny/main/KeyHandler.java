@@ -10,7 +10,7 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener {
     
     // declare attributes
-	public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed,interacPressed;
+	public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed,interactPressed;
 	GamePanel gp;
 		
 	public KeyHandler(GamePanel gp) {
@@ -116,7 +116,7 @@ public class KeyHandler implements KeyListener {
             }
            
            if(code == KeyEvent.VK_F) {
-               interacPressed = true;
+               interactPressed = true;
            }
 		}
 		
@@ -151,7 +151,7 @@ public class KeyHandler implements KeyListener {
 			rightPressed = false;
 		
 		if(code == KeyEvent.VK_F)
-			interacPressed = false;
+			interactPressed = false;
 	}
 
 }
