@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
 import com.kenny.object.gatekey.IcePillarOn;
+import com.kenny.object.gatekey.WinterKey;
 
 public class Player extends Entity {
     
@@ -21,6 +22,7 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
     public int[] hasKey = {0, 0, 0, 0};
+    public int[] pillar = {1, 1, 1, 1};
     int keys[] = new int[4];
     
     // player constructor
@@ -292,6 +294,8 @@ public class Player extends Entity {
                 	    gp.obj[15].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
                         gp.ui.showMessage("It's ON!");
+                        pillar[0] = i;
+                        
             		}
             		else if(gp.obj[16] == null) {
             			gp.obj[16] = new IcePillarOn(gp);
@@ -299,6 +303,7 @@ public class Player extends Entity {
                 	    gp.obj[16].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
                         gp.ui.showMessage("It's ON!");
+                        pillar[1] = i;
             		}
             		else if(gp.obj[17] == null) {
             			gp.obj[17] = new IcePillarOn(gp);
@@ -306,6 +311,7 @@ public class Player extends Entity {
                 	    gp.obj[17].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
                         gp.ui.showMessage("It's ON!");
+                        pillar[2] = i;
             		}
             		else if(gp.obj[18] == null) {
             			gp.obj[18] = new IcePillarOn(gp);
@@ -313,6 +319,13 @@ public class Player extends Entity {
                 	    gp.obj[18].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
                         gp.ui.showMessage("It's ON!");
+                        pillar[3] = i;
+            		}
+            		
+            		if(((pillar[0] * pillar[1]) / pillar[2]) - pillar[3] == -4) {
+            			gp.obj[1] = new WinterKey(gp);
+            			gp.obj[1].worldX = (84) *gp.tileSize;
+            			gp.obj[1].worldY = (47) *gp.tileSize;
             		}
             	}
                 break;  

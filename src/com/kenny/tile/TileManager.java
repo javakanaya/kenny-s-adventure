@@ -102,6 +102,8 @@ public class TileManager {
         setup(113, "winterWorld/base/113-snowFence_02", true);
         setup(114, "winterWorld/base/114-snowFence_03", true);
         
+        setup(120, "winterWorld/base/120-snowport_0", false);
+        setup(121, "winterWorld/base/121-snowport_1", false);
         
         // snowdark
         setup(100, "winterWorld/level2/100-snowdark", false);

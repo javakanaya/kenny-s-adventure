@@ -39,9 +39,9 @@ public class AssetSetter {
 	    gp.obj[0].worldX = ((51)) *gp.tileSize;
 	    gp.obj[0].worldY = ((51)) *gp.tileSize;
 	    
-		gp.obj[1] = new WinterKey(gp);
-		gp.obj[1].worldX = (84) *gp.tileSize;
-		gp.obj[1].worldY = (47) *gp.tileSize;
+//		gp.obj[1] = new WinterKey(gp);
+//		gp.obj[1].worldX = (84) *gp.tileSize;
+//		gp.obj[1].worldY = (47) *gp.tileSize;
 		
 		gp.obj[2] = new SpringKey(gp);
 		gp.obj[2].worldX = ((50) - 1) *gp.tileSize;
@@ -74,30 +74,31 @@ public class AssetSetter {
 		//ice pile
 		
 		gp.obj[20] = new IcePileClose(gp);
-	    gp.obj[20].worldX = (75) *gp.tileSize;
-	    gp.obj[20].worldY = (50) *gp.tileSize;
+	    gp.obj[20].worldX = (74) *gp.tileSize;
+	    gp.obj[20].worldY = (49) *gp.tileSize;
 	    
 	    gp.obj[21] = new IcePileOpen(gp);
 	    gp.obj[21].worldX = (75) *gp.tileSize;
 	    gp.obj[21].worldY = (45) *gp.tileSize;
+	    gp.obj[21].collision = false;
 	    
 	    //ice pillar
 	    
 	    gp.obj[11] = new IcePillarOff(gp);
-	    gp.obj[11].worldX = (81) *gp.tileSize;
-	    gp.obj[11].worldY = (42) *gp.tileSize;
+	    gp.obj[11].worldX = (78) *gp.tileSize;
+	    gp.obj[11].worldY = (44) *gp.tileSize;
 	    
 	    gp.obj[12] = new IcePillarOff(gp);
-	    gp.obj[12].worldX = (86) *gp.tileSize;
-	    gp.obj[12].worldY = (42) *gp.tileSize;
+	    gp.obj[12].worldX = (82) *gp.tileSize;
+	    gp.obj[12].worldY = (40) *gp.tileSize;
 	    
 	    gp.obj[13] = new IcePillarOff(gp);
-	    gp.obj[13].worldX = (81) *gp.tileSize;
-	    gp.obj[13].worldY = (48) *gp.tileSize;
+	    gp.obj[13].worldX = (88) *gp.tileSize;
+	    gp.obj[13].worldY = (45) *gp.tileSize;
 	    
 	    gp.obj[14] = new IcePillarOff(gp);
-	    gp.obj[14].worldX = (86) *gp.tileSize;
-	    gp.obj[14].worldY = (48) *gp.tileSize;
+	    gp.obj[14].worldX = (84) *gp.tileSize;
+	    gp.obj[14].worldY = (50) *gp.tileSize;
 	    
 	    //tree
 		
@@ -135,8 +136,8 @@ public class AssetSetter {
 	public void setNPC() {
 	    
 	    gp.npc[0] = new NPC_MrSnow(gp);
-	    gp.npc[0].worldX = ((70) - 1) *gp.tileSize;
-        gp.npc[0].worldY = ((48) - 1) *gp.tileSize;
+	    gp.npc[0].worldX = 69 *gp.tileSize;
+        gp.npc[0].worldY = 48 *gp.tileSize;
         
         gp.npc[1] = new NPC_Drac(gp);
 	    gp.npc[1].worldX = ((50) - 1) *gp.tileSize;

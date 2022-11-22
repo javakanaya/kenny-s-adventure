@@ -22,15 +22,53 @@ public class EventHandler {
 
     public void checkEvent() {
 
-        if(hit(51, 51, "any") == true) {
-            damagePit(gp.dialogueState);
-        }
+//        if(hit(51, 51, "any") == true) {
+//            damagePit(gp.dialogueState);
+//        }
 //        if(hit(51, 60, "any") == true) {
 //            healingPool(gp.dialogueState);
 //        }
-        if (hit(74, 49, "any") == true) {
-            teleport(gp.dialogueState);
+    	
+    	// pillar1
+        if (hit(90, 53, "left") == true) {
+            teleport(gp.dialogueState, 78, 48);
         }
+        if (hit(78, 48, "right") == true) {
+        	teleport(gp.dialogueState, 90, 53);
+        }
+        
+     // pillar2
+        if (hit(80, 56, "left") == true) {
+            teleport(gp.dialogueState, 86, 43);
+        }
+        if (hit(86, 43, "right") == true) {
+        	teleport(gp.dialogueState, 80, 56);
+        }
+        
+     // pillar3
+        if (hit(79, 40, "left") == true) {
+            teleport(gp.dialogueState, 88, 49);
+        }
+        if (hit(88, 49, "right") == true) {
+        	teleport(gp.dialogueState, 79, 40);
+        }
+        
+     // pillar4
+        if (hit(93, 45, "left") == true) {
+            teleport(gp.dialogueState, 82, 51);
+        }
+        if (hit(82, 51, "right") == true) {
+        	teleport(gp.dialogueState, 93, 45);
+        }
+        
+     // key
+        if (hit(74, 45, "left") == true) {
+            teleport(gp.dialogueState, 83, 46);
+        }
+        if (hit(83, 46, "right") == true) {
+        	teleport(gp.dialogueState, 74, 45);
+        }
+        
     }
 
     // check event collision
@@ -64,11 +102,12 @@ public class EventHandler {
         return hit;
     }
 
-    public void teleport(int gameState) {
+    public void teleport(int gameState, int destinationX, int destinationY) {
             gp.gameState = gameState;
             gp.ui.currentDialogue = "Teleport!";
-            gp.player.worldX = 79 * gp.tileSize;
-            gp.player.worldY = 47 * gp.tileSize;
+            
+            gp.player.worldX = destinationX * gp.tileSize;
+            gp.player.worldY = destinationY * gp.tileSize;
     }
 
     public void damagePit(int gameState) {
