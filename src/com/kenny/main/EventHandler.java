@@ -22,6 +22,10 @@ public class EventHandler {
     
     public void checkEvent() {
         
+        if(hit(51, 51, "any") == true) {
+            System.out.println("hr");
+            damagePit(gp.dialogueState);
+        }
     }
     
     // check event collision
@@ -33,8 +37,8 @@ public class EventHandler {
         gp.player.solidArea.x = gp.player.worldX + gp.player.solidArea.x;
         gp.player.solidArea.y = gp.player.worldY + gp.player.solidArea.y;
         
-        eventRect.x = eventCol * gp.tileSize + eventRect.x;
-        eventRect.y = eventCol * gp.tileSize + eventRect.y;
+        eventRect.x = (eventCol * gp.tileSize) + eventRect.x;
+        eventRect.y = (eventRow * gp.tileSize) + eventRect.y;
         
         // checking if player's solidArea is colliding with eventRect's solidArea
         if(gp.player.solidArea.intersects(eventRect)) {
@@ -48,9 +52,16 @@ public class EventHandler {
         // after checking the collision reset the solidArea x and y
         gp.player.solidArea.x = gp.player.solidAreaDefaultX;
         gp.player.solidArea.y = gp.player.solidAreaDefaultY;
-        eventRectDefaultX = eventRect.x;
-        eventRectDefaultY = eventRect.y;
+        eventRect.x = eventRectDefaultX;
+        eventRect.y = eventRectDefaultY;
 
         return hit;
+    }
+    
+    public void damagePit(int gameState) {
+        
+        gp.gameState = gameState;
+        gp.ui.currentDialogue = "you fall into a pit";
+        
     }
 }
