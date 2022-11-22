@@ -74,13 +74,21 @@ public class AssetSetter {
 		//ice pile
 		
 		gp.obj[20] = new IcePileClose(gp);
-	    gp.obj[20].worldX = (74) *gp.tileSize;
-	    gp.obj[20].worldY = (49) *gp.tileSize;
+	    gp.obj[20].worldX = (80) *gp.tileSize;
+	    gp.obj[20].worldY = (56) *gp.tileSize;
 	    
 	    gp.obj[21] = new IcePileOpen(gp);
-	    gp.obj[21].worldX = (75) *gp.tileSize;
-	    gp.obj[21].worldY = (45) *gp.tileSize;
-	    gp.obj[21].collision = false;
+	    gp.obj[21].worldX = (90) *gp.tileSize;
+	    gp.obj[21].worldY = (53) *gp.tileSize;
+	    
+	    gp.obj[22] = new IcePileClose(gp);
+	    gp.obj[22].worldX = (79) *gp.tileSize;
+	    gp.obj[22].worldY = (40) *gp.tileSize;
+	    
+	    gp.obj[23] = new IcePileOpen(gp);
+	    gp.obj[23].worldX = (93) *gp.tileSize;
+	    gp.obj[23].worldY = (45) *gp.tileSize;
+	
 	    
 	    //ice pillar
 	    
