@@ -18,13 +18,19 @@ import com.kenny.main.UtilityTool;
 public class Entity {
 
     GamePanel gp;
-
-    // Entity location on world & speed
-    public int worldX, worldY;
+    
+    // CHARACTER ATRIBUTES
     public int speed;
+    public String name;
 
-    // SPRITE SETTINGS
-    // Image for entity movement & idle
+    // STATE
+    public int worldX, worldY;
+    int spriteNum = 1;
+    public String direction = "down";
+    public int dialogueIndex = 0;
+    public boolean collisionOn = false;
+
+    // SPRITE
     public BufferedImage right1, right2, right3, right4,
             up1, up2, up3, up4,
             left1, left2, left3, left4,
@@ -32,30 +38,15 @@ public class Entity {
     public BufferedImage idleFront1, idleFront2, idleFront3, idleFront4,
             idleLeft1, idleLeft2, idleLeft3, idleLeft4,
             idleRight1, idleRight2, idleRight3, idleRight4;
-    // Entity direction
-    public String direction = "down";
-    int spriteCounter = 0;
-    int spriteNum = 1;
-
-    // Entity size scaling
-    protected int scallingX = 1, scallingY = 1;
-
-    // Attributes for entity as object
-    public String name;
-    public boolean collision = false;
-
-    // COLLISION SETTINGS
-    public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
     public int solidAreaDefaultX, solidAreaDefaultY;
-    
-    public boolean collisionOn = false;
-
-    // Entity animation
-    public int actionLockCounter = 0;
-
-    // Array of Dialogues
+    public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
+    public boolean collision = false;
+    protected int scallingX = 1, scallingY = 1;
     public String dialogues[] = new String[20];
-    public int dialogueIndex = 0;
+
+    // COUNTER
+    int spriteCounter = 0;
+    public int actionLockCounter = 0;
 
     public Entity(GamePanel gp) {
         this.gp = gp;
@@ -97,6 +88,7 @@ public class Entity {
         collisionOn = false;
         gp.cCheker.checkTile(this);
         gp.cCheker.checkObject(this, false);
+        gp.cCheker.checkEntity(this, gp.npc);
         gp.cCheker.checkPlayer(this);
 
         // if collision is false, player can move
@@ -268,7 +260,7 @@ public class Entity {
 
         return image;
     }
-    
+
     public void setSolidArea(int x, int y, int width, int height) {
         solidArea.x = x;
         solidArea.y = y;

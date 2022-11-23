@@ -17,7 +17,7 @@ public class NPC_Bulky extends Entity {
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        setSolidArea(24, 24, 96, 96);
+        setSolidArea(24, 0, 72, 96);
         
         getImage();
         setDialogue();
