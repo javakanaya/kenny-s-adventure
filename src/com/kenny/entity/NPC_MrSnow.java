@@ -19,7 +19,7 @@ public class NPC_MrSnow extends Entity{
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        setSolidArea(0, 0, 96, 96);
+        setSolidArea(24, 0, 72, 96);
         
         getImage();
         setDialogue();
