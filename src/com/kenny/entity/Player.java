@@ -101,7 +101,8 @@ public class Player extends Entity {
         if(keyH.upPressed == true || 
                 keyH.leftPressed == true ||
                 keyH.downPressed == true || 
-                keyH.rightPressed == true) {            
+                keyH.rightPressed == true ||
+                keyH.enterPressed == true) {            
             if(keyH.upPressed == true) {
                 direction = "up";
             }
@@ -131,11 +132,9 @@ public class Player extends Entity {
             // CHECK EVENT
             gp.eHandler.checkEvent();
             
-            // after all (NPC and EVENT) checked, then change the enter pressed state
-            gp.keyH.enterPressed = false;
             
             // if collision is false, player can move
-            if(collisionOn == false) {
+            if(collisionOn == false && keyH.enterPressed == false) {
                 switch(direction) {
                     case "up":
                         worldY -= speed;
@@ -151,6 +150,9 @@ public class Player extends Entity {
                         break;                  
                 }
             }
+            
+            // after all (NPC and EVENT) checked, then change the enter pressed state
+            gp.keyH.enterPressed = false;
             
             // animating sprite
             if(spriteCounter > 10) {
@@ -340,7 +342,7 @@ public class Player extends Entity {
         // if index is not 999, player is hit the NPC
         // Kalo yg ini harus klik enter sambil di tabrakin baru dialognya muncul
         if(i != 999) {
-            gp.ui.showMessage("press ENTER while move to interact");
+            gp.ui.showMessage("press ENTER to interact");
             if(gp.keyH.enterPressed == true) {
                 gp.gameState = gp.dialogueState;
                 gp.npc[i].speak();              
