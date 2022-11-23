@@ -12,12 +12,13 @@ public class NPC_Bulky extends Entity {
         worldX = gp.tileSize * 26;
 		worldY = gp.tileSize * 21;
 		
-        scalling = 2;
+        scalling = 1;
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        solidArea.width *= scalling;
-        solidArea.height *= scalling;
+        
+
+        setSolidArea(48, 0, 48, 96);
         
         getImage();
         setDialogue();

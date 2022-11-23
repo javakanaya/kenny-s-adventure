@@ -10,11 +10,11 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.kenny.object.gatekey.AutumnKey;
-import com.kenny.object.gatekey.SuperObject;
-import com.kenny.object.gatekey.SpringKey;
-import com.kenny.object.gatekey.SummerKey;
-import com.kenny.object.gatekey.WinterKey;
+import com.kenny.entity.Entity;
+import com.kenny.object.s_autumn.OBJ_AutumnKey;
+import com.kenny.object.s_spring.OBJ_SpringKey;
+import com.kenny.object.s_summer.OBJ_SummerKey;
+import com.kenny.object.s_winter.OBJ_WinterKey;
 
 
 public class UI {
@@ -23,7 +23,7 @@ public class UI {
     Graphics2D g2d;
     Font courier, calibri, chaichle, maruMonica;
     BufferedImage[] keyImage = new BufferedImage[4];
-    SuperObject[] keys = new SuperObject[4];
+    Entity[] keys = new Entity[4];
     
     public boolean messageOn = false;
     public String message = "";
@@ -60,10 +60,10 @@ public class UI {
             e.printStackTrace();
         }
         
-        keys[0] = new WinterKey(gp);  
-        keys[1] = new SpringKey(gp); 
-        keys[2] = new SummerKey(gp);
-        keys[3] = new AutumnKey(gp);
+        keys[0] = new OBJ_WinterKey(gp);  
+        keys[1] = new OBJ_SpringKey(gp); 
+        keys[2] = new OBJ_SummerKey(gp);
+        keys[3] = new OBJ_AutumnKey(gp);
     }
     
     public void showMessage(String text) {
@@ -92,13 +92,13 @@ public class UI {
             
             // draw keys on x, y location
             if(gp.player.hasKey[0] == 1)
-                g2d.drawImage(keys[0].image, gp.tileSize / 2, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
+                g2d.drawImage(keys[0].down1, gp.tileSize / 2, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
             if(gp.player.hasKey[1] == 1)
-                g2d.drawImage(keys[1].image, (gp.tileSize / 2) * 2, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
+                g2d.drawImage(keys[1].down1, (gp.tileSize / 2) * 2, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
             if(gp.player.hasKey[2] == 1)
-                g2d.drawImage(keys[2].image, (gp.tileSize / 2) * 3, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
+                g2d.drawImage(keys[2].down1, (gp.tileSize / 2) * 3, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
             if(gp.player.hasKey[3] == 1)
-                g2d.drawImage(keys[3].image, (gp.tileSize / 2) * 4, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
+                g2d.drawImage(keys[3].down1, (gp.tileSize / 2) * 4, gp.tileSize / 2, gp.tileSize, gp.tileSize, null);
             
 //            playTime += (double)1 / 60;
 //            g2d.drawString("Time: "+ dFormat.format(playTime), gp.tileSize*11, 65);

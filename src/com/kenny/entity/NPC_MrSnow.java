@@ -18,8 +18,7 @@ public class NPC_MrSnow extends Entity{
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        solidArea.width *= 1;
-        solidArea.height *= scalling;
+        setSolidArea(48, 0, 48, 96);
         
         getImage();
         setDialogue();
