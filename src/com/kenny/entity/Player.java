@@ -10,8 +10,8 @@ import java.awt.image.BufferedImage;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
-import com.kenny.object.gatekey.IcePillarOn;
-import com.kenny.object.gatekey.WinterKey;
+import com.kenny.object.s_winter.OBJ_IcePillarOn;
+import com.kenny.object.s_winter.OBJ_WinterKey;
 
 public class Player extends Entity {
     
@@ -38,7 +38,7 @@ public class Player extends Entity {
         screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
         
         // player area that will collision on the tiles
-        solidArea = new Rectangle(14, 16, 20, 24);
+        setSolidArea(14, 16, 20, 24);
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         
@@ -289,7 +289,7 @@ public class Player extends Entity {
             	if(keyH.interactPressed == true)
             	{
             		if(gp.obj[15] == null) {
-            			gp.obj[15] = new IcePillarOn(gp);
+            			gp.obj[15] = new OBJ_IcePillarOn(gp);
                 	    gp.obj[15].worldX = gp.obj[i].worldX;
                 	    gp.obj[15].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
@@ -298,7 +298,7 @@ public class Player extends Entity {
                         
             		}
             		else if(gp.obj[16] == null) {
-            			gp.obj[16] = new IcePillarOn(gp);
+            			gp.obj[16] = new OBJ_IcePillarOn(gp);
                 	    gp.obj[16].worldX = gp.obj[i].worldX;
                 	    gp.obj[16].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
@@ -306,7 +306,7 @@ public class Player extends Entity {
                         pillar[1] = i;
             		}
             		else if(gp.obj[17] == null) {
-            			gp.obj[17] = new IcePillarOn(gp);
+            			gp.obj[17] = new OBJ_IcePillarOn(gp);
                 	    gp.obj[17].worldX = gp.obj[i].worldX;
                 	    gp.obj[17].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
@@ -314,7 +314,7 @@ public class Player extends Entity {
                         pillar[2] = i;
             		}
             		else if(gp.obj[18] == null) {
-            			gp.obj[18] = new IcePillarOn(gp);
+            			gp.obj[18] = new OBJ_IcePillarOn(gp);
                 	    gp.obj[18].worldX = gp.obj[i].worldX;
                 	    gp.obj[18].worldY = gp.obj[i].worldY;
                 	    gp.obj[i] = null;
@@ -323,7 +323,7 @@ public class Player extends Entity {
             		}
             		
             		if(((pillar[0] * pillar[1]) / pillar[2]) - pillar[3] == -4) {
-            			gp.obj[1] = new WinterKey(gp);
+            			gp.obj[1] = new OBJ_WinterKey(gp);
             			gp.obj[1].worldX = (84) *gp.tileSize;
             			gp.obj[1].worldY = (47) *gp.tileSize;
             		}

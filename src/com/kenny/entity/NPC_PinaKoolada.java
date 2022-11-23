@@ -15,8 +15,7 @@ public class NPC_PinaKoolada extends Entity {
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        solidArea.width *= scalling;
-        solidArea.height *= scalling;
+        setSolidArea(24, 48, 48, 96);
         
         getImage();
         setDialogue();
