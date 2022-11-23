@@ -39,8 +39,6 @@ public class Player extends Entity {
         
         // player area that will collision on the tiles
         setSolidArea(14, 16, 20, 24);
-        solidAreaDefaultX = solidArea.x;
-        solidAreaDefaultY = solidArea.y;
         
         setDefaultValues();
         getPlayerImage();
@@ -195,143 +193,145 @@ public class Player extends Entity {
     // pickup object method
     public void pickUpObject(int i) {
         
-        // i indicates the name of the object
-        if(i != 999) {
-            // get the object name
-            String objectName = gp.obj[i].name;
-            
-            // condition for each object
-            switch(objectName) {
-            case "Winter Key" :
-                // give SE to Key
-                // gp.playSE(1);
-                hasKey[0]++;
-                keys[0] = 1;
-                gp.obj[i] = null;
-                gp.ui.showMessage("You got a Winter Key!");
-                break;
-            case "Spring Key" :
-                // give SE to Key
-                // gp.playSE(1);
-                hasKey[1]++;
-                keys[1] = 1;
-                gp.obj[i] = null;
-                gp.ui.showMessage("You got a Spring Key!");
-                break;
-            case "Summer Key" :
-                // give SE to Key
-                // gp.playSE(1);
-                hasKey[2]++;
-                keys[2] = 1;
-                gp.obj[i] = null;
-                gp.ui.showMessage("You got a Summer Key!");
-                break;
-            case "Autumn Key" :
-                // give SE to Key
-                // gp.playSE(1);
-                hasKey[3]++;
-                keys[3] = 1;
-                gp.obj[i] = null;
-                gp.ui.showMessage("You got an Autumn Key!");
-                break;
-            case "Winter Gate" :
-                if(keys[0] == 1) {
-                    hasKey[0]--;
-                    gp.obj[i] = null;
-                }
-                else
-                    gp.ui.showMessage("You need a Winter Key!");
-                break;
-            case "Spring Gate" :
-                if(keys[1] == 1) {
-                    hasKey[1]--;
-                    gp.obj[i] = null;
-                }
-                else
-                    gp.ui.showMessage("You need a Spring Key!");
-                break;
-            case "Summer Gate" :
-                if(keys[2] == 1) {
-                    hasKey[2]--;
-                    gp.obj[i] = null;
-                }
-                else
-                    gp.ui.showMessage("You need a Summer Key!");
-                break;
-            case "Autumn Gate" :
-                if(keys[3] == 1) {
-                    hasKey[3]--;
-                    gp.obj[i] = null;
-                }
-                else
-                    gp.ui.showMessage("You need an Autumn Key!");
-                break;
-            case "Bone" :
-                speed += 3;
-                gp.obj[i] = null;
-                gp.ui.showMessage("Speed up!");
-                break;
-            case "Ice Pile Close" :
-            	if(keyH.interactPressed == true)
-            	{
-            		gp.obj[i] = null;
-                    gp.ui.showMessage("Break!");
-            	}
-                break;    
-            case "Ice Pile Open" :
-            	if(keyH.interactPressed == true)
-            	{
-            		gp.obj[i] = null;
-                    gp.ui.showMessage("Break!");
-            	}
-                break;  
-            case "Ice Pillar Off" :
-            	if(keyH.interactPressed == true)
-            	{
-            		if(gp.obj[15] == null) {
-            			gp.obj[15] = new OBJ_IcePillarOn(gp);
-                	    gp.obj[15].worldX = gp.obj[i].worldX;
-                	    gp.obj[15].worldY = gp.obj[i].worldY;
-                	    gp.obj[i] = null;
-                        gp.ui.showMessage("It's ON!");
-                        pillar[0] = i;
-                        
-            		}
-            		else if(gp.obj[16] == null) {
-            			gp.obj[16] = new OBJ_IcePillarOn(gp);
-                	    gp.obj[16].worldX = gp.obj[i].worldX;
-                	    gp.obj[16].worldY = gp.obj[i].worldY;
-                	    gp.obj[i] = null;
-                        gp.ui.showMessage("It's ON!");
-                        pillar[1] = i;
-            		}
-            		else if(gp.obj[17] == null) {
-            			gp.obj[17] = new OBJ_IcePillarOn(gp);
-                	    gp.obj[17].worldX = gp.obj[i].worldX;
-                	    gp.obj[17].worldY = gp.obj[i].worldY;
-                	    gp.obj[i] = null;
-                        gp.ui.showMessage("It's ON!");
-                        pillar[2] = i;
-            		}
-            		else if(gp.obj[18] == null) {
-            			gp.obj[18] = new OBJ_IcePillarOn(gp);
-                	    gp.obj[18].worldX = gp.obj[i].worldX;
-                	    gp.obj[18].worldY = gp.obj[i].worldY;
-                	    gp.obj[i] = null;
-                        gp.ui.showMessage("It's ON!");
-                        pillar[3] = i;
-            		}
-            		
-            		if(((pillar[0] * pillar[1]) / pillar[2]) - pillar[3] == -4) {
-            			gp.obj[1] = new OBJ_WinterKey(gp);
-            			gp.obj[1].worldX = (84) *gp.tileSize;
-            			gp.obj[1].worldY = (47) *gp.tileSize;
-            		}
-            	}
-                break;  
-            }
-            
-        }
+//        // i indicates the name of the object
+//        if(i != 999) {
+//            // get the object name
+//            String objectName = gp.obj[i].name;
+//            
+//            // condition for each object
+//            switch(objectName) {
+//            case "Winter Key" :
+//                // give SE to Key
+//                // gp.playSE(1);
+//                hasKey[0]++;
+//                keys[0] = 1;
+//                gp.obj[i] = null;
+//                gp.ui.showMessage("You got a Winter Key!");
+//                break;
+//            case "Spring Key" :
+//                // give SE to Key
+//                // gp.playSE(1);
+//                hasKey[1]++;
+//                keys[1] = 1;
+//                gp.obj[i] = null;
+//                gp.ui.showMessage("You got a Spring Key!");
+//                break;
+//            case "Summer Key" :
+//                // give SE to Key
+//                // gp.playSE(1);
+//                hasKey[2]++;
+//                keys[2] = 1;
+//                gp.obj[i] = null;
+//                gp.ui.showMessage("You got a Summer Key!");
+//                break;
+//            case "Autumn Key" :
+//                // give SE to Key
+//                // gp.playSE(1);
+//                hasKey[3]++;
+//                keys[3] = 1;
+//                System.out.println(i);
+//                gp.obj[i] = null;
+//                gp.ui.showMessage("You got an Autumn Key!");
+//                break;
+//            case "Winter Gate" :
+//                if(keys[0] == 1) {
+//                    hasKey[0]--;
+//                    gp.obj[i] = null;
+//                }
+//                else
+//                    gp.ui.showMessage("You need a Winter Key!");
+//                break;
+//            case "Spring Gate" :
+//                if(keys[1] == 1) {
+//                    hasKey[1]--;
+//                    gp.obj[i] = null;
+//                }
+//                else
+//                    gp.ui.showMessage("You need a Spring Key!");
+//                break;
+//            case "Summer Gate" :
+//                if(keys[2] == 1) {
+//                    hasKey[2]--;
+//                    gp.obj[i] = null;
+//                }
+//                else
+//                    gp.ui.showMessage("You need a Summer Key!");
+//                break;
+//            case "Autumn Gate" :
+//                if(keys[3] == 1) {
+//                    hasKey[3]--;
+//                    gp.obj[i] = null;
+//                }
+//                else
+//                    gp.ui.showMessage("You need an Autumn Key!");
+//                break;
+//            case "Bone" :
+//                speed += 3;
+//                gp.obj[i] = null;
+//                System.out.println(i);
+//                gp.ui.showMessage("Speed up!");
+//                break;
+//            case "Ice Pile Close" :
+//            	if(keyH.interactPressed == true)
+//            	{
+//            		gp.obj[i] = null;
+//                    gp.ui.showMessage("Break!");
+//            	}
+//                break;    
+//            case "Ice Pile Open" :
+//            	if(keyH.interactPressed == true)
+//            	{
+//            		gp.obj[i] = null;
+//                    gp.ui.showMessage("Break!");
+//            	}
+//                break;  
+//            case "Ice Pillar Off" :
+//            	if(keyH.interactPressed == true)
+//            	{
+//            		if(gp.obj[15] == null) {
+//            			gp.obj[15] = new OBJ_IcePillarOn(gp);
+//                	    gp.obj[15].worldX = gp.obj[i].worldX;
+//                	    gp.obj[15].worldY = gp.obj[i].worldY;
+//                	    gp.obj[i] = null;
+//                        gp.ui.showMessage("It's ON!");
+//                        pillar[0] = i;
+//                        
+//            		}
+//            		else if(gp.obj[16] == null) {
+//            			gp.obj[16] = new OBJ_IcePillarOn(gp);
+//                	    gp.obj[16].worldX = gp.obj[i].worldX;
+//                	    gp.obj[16].worldY = gp.obj[i].worldY;
+//                	    gp.obj[i] = null;
+//                        gp.ui.showMessage("It's ON!");
+//                        pillar[1] = i;
+//            		}
+//            		else if(gp.obj[17] == null) {
+//            			gp.obj[17] = new OBJ_IcePillarOn(gp);
+//                	    gp.obj[17].worldX = gp.obj[i].worldX;
+//                	    gp.obj[17].worldY = gp.obj[i].worldY;
+//                	    gp.obj[i] = null;
+//                        gp.ui.showMessage("It's ON!");
+//                        pillar[2] = i;
+//            		}
+//            		else if(gp.obj[18] == null) {
+//            			gp.obj[18] = new OBJ_IcePillarOn(gp);
+//                	    gp.obj[18].worldX = gp.obj[i].worldX;
+//                	    gp.obj[18].worldY = gp.obj[i].worldY;
+//                	    gp.obj[i] = null;
+//                        gp.ui.showMessage("It's ON!");
+//                        pillar[3] = i;
+//            		}
+//            		
+//            		if(((pillar[0] * pillar[1]) / pillar[2]) - pillar[3] == -4) {
+//            			gp.obj[1] = new OBJ_WinterKey(gp);
+//            			gp.obj[1].worldX = (84) *gp.tileSize;
+//            			gp.obj[1].worldY = (47) *gp.tileSize;
+//            		}
+//            	}
+//                break;  
+//            }
+//            
+//        }
         
     }
     

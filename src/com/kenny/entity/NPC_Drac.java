@@ -10,15 +10,11 @@ public class NPC_Drac extends Entity{
         worldX = gp.tileSize * 26;
 		worldY = gp.tileSize * 21;
 		
-        scalling = 1;
+        scalling = 2;
         direction = "left";
         spriteNum = 5;
         speed = 0;
-        
-        solidArea.x = 96;
-        solidArea.y = 0;
-        solidArea.width = 96;
-        solidArea.height = 96;
+        setSolidArea(0, 0, 96, 96);
         
         getImage();
         setDialogue();

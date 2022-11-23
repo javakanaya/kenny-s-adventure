@@ -45,8 +45,9 @@ public class Entity {
     public boolean collision = false;
 
     // COLLISION SETTINGS
-    public Rectangle solidArea = new Rectangle(48, 48, 48, 48);
+    public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
     public int solidAreaDefaultX, solidAreaDefaultY;
+    
     public boolean collisionOn = false;
 
     // Entity animation
@@ -273,6 +274,8 @@ public class Entity {
         solidArea.y = y;
         solidArea.width = width;
         solidArea.height = height;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
     }
 
 }

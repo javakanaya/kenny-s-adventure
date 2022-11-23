@@ -139,7 +139,7 @@ public class CollisionChecker {
     	return index;
     }
     
-    // ENTITY TO ENTITY
+    // NPC
     public int checkEntity(Entity entity, Entity[] target) {
         
         int index = 999;
