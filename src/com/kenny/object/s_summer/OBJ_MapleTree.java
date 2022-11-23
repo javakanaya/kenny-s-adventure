@@ -13,7 +13,8 @@ public class OBJ_MapleTree extends Entity {
 		super(gp);
 	    
 		name = "Maple Tree";
-		scalling = 3;
+        scallingX = 3;
+        scallingY = 3;
 		down1 = setup("/objects/trees/mapleTree");
 	}
 

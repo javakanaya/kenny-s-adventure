@@ -23,6 +23,7 @@ import com.kenny.object.s_winter.OBJ_IcePillarOff;
 import com.kenny.object.s_winter.OBJ_IcePillarOn;
 import com.kenny.object.s_winter.OBJ_WinterGate;
 import com.kenny.object.s_winter.OBJ_WinterKey;
+import com.kenny.object.s_winter.OBJ_WinterPineTree;
 
 public class AssetSetter {
     
@@ -110,7 +111,7 @@ public class AssetSetter {
 	    
 	    //tree
 		
-		gp.tree[0] = new OBJ_PineTree(gp);
+		gp.tree[0] = new OBJ_WinterPineTree(gp);
         gp.tree[0].worldX = (72) *gp.tileSize;
         gp.tree[0].worldY = (37) *gp.tileSize;
         

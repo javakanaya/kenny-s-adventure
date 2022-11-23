@@ -14,7 +14,8 @@ public class OBJ_IcePillarOff extends Entity{
 	    super(gp);
         
 		name = "Ice Pillar Off";
-		scalling = 2;
+        scallingX = 2;
+        scallingY = 4;
 		down1 = setup("/objects/others/icePillar_2");		
 		collision = true;
 	}

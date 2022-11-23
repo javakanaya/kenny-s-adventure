@@ -11,7 +11,8 @@ public class NPC_PinaKoolada extends Entity {
         worldX = gp.tileSize * 26;
 		worldY = gp.tileSize * 21;
 		
-        scalling = 2;
+        scallingX = 2;
+        scallingY = 2;
         direction = "left";
         spriteNum = 5;
         speed = 0;

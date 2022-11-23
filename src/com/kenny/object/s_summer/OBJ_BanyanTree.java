@@ -13,7 +13,8 @@ public class OBJ_BanyanTree extends Entity {
 		super(gp);
 	    
 		name = "Banyan Tree";
-		scalling = 3;
+        scallingX = 3;
+        scallingY = 3;
 		down1 = setup("/objects/trees/banyanTree");
 	}
 

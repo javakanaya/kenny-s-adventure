@@ -38,7 +38,7 @@ public class Entity {
     int spriteNum = 1;
 
     // Entity size scaling
-    protected int scalling = 1;
+    protected int scallingX = 1, scallingY = 1;
 
     // Attributes for entity as object
     public String name;
@@ -261,7 +261,7 @@ public class Entity {
 
         try {
             image = ImageIO.read(getClass().getResourceAsStream(imagePath + ".png"));
-            image = uTool.scaleImage(image, gp.tileSize * scalling, gp.tileSize * scalling);
+            image = uTool.scaleImage(image, gp.tileSize * scallingX, gp.tileSize * scallingY);
         } catch (IOException e) {
             e.printStackTrace();
         }

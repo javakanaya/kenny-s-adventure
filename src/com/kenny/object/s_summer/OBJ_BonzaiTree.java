@@ -13,7 +13,8 @@ public class OBJ_BonzaiTree extends Entity{
 	    super(gp);
 		
 		name = "Bonzai Tree";
-		scalling = 3;
+        scallingX = 3;
+        scallingY = 3;
 		down1 = setup("/objects/trees/bonzaiTree");
 	}
 	
