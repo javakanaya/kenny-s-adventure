@@ -10,7 +10,7 @@ public class PineTree extends Tree {
 		
 		name = "Pine Tree";
 		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/pineTree.png"));
+			image = ImageIO.read(getClass().getResourceAsStream("/objects/trees/winterPine.png"));
 		} catch(IOException e) {
 			e.printStackTrace();
 		}

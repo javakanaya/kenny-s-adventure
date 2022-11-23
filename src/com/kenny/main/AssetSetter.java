@@ -43,33 +43,33 @@ public class AssetSetter {
 //		gp.obj[1].worldX = (84) *gp.tileSize;
 //		gp.obj[1].worldY = (47) *gp.tileSize;
 		
-		gp.obj[2] = new SpringKey(gp);
-		gp.obj[2].worldX = ((50) - 1) *gp.tileSize;
-		gp.obj[2].worldY = ((60) - 1) *gp.tileSize;
-		
-		gp.obj[3] = new SummerKey(gp);
-		gp.obj[3].worldX = ((40) - 1) *gp.tileSize;
-		gp.obj[3].worldY = ((50) - 1) *gp.tileSize;
-		
-		gp.obj[4] = new AutumnKey(gp);
-		gp.obj[4].worldX = ((50) - 1) *gp.tileSize;
-		gp.obj[4].worldY = ((40) - 1) *gp.tileSize;
-		
+//		gp.obj[2] = new SpringKey(gp);
+//		gp.obj[2].worldX = ((50) - 1) *gp.tileSize;
+//		gp.obj[2].worldY = ((60) - 1) *gp.tileSize;
+//		
+//		gp.obj[3] = new SummerKey(gp);
+//		gp.obj[3].worldX = ((40) - 1) *gp.tileSize;
+//		gp.obj[3].worldY = ((50) - 1) *gp.tileSize;
+//		
+//		gp.obj[4] = new AutumnKey(gp);
+//		gp.obj[4].worldX = ((50) - 1) *gp.tileSize;
+//		gp.obj[4].worldY = ((40) - 1) *gp.tileSize;
+//		
 		gp.obj[5] = new WinterGate(gp);
 		gp.obj[5].worldX = ((55) - 1) *gp.tileSize;
 		gp.obj[5].worldY = ((50) - 1) *gp.tileSize;
-		
-		gp.obj[6] = new SpringGate(gp);
-		gp.obj[6].worldX = ((50) - 1) *gp.tileSize;
-		gp.obj[6].worldY = ((55) - 1) *gp.tileSize;
-		
-		gp.obj[7] = new SummerGate(gp);
-		gp.obj[7].worldX = ((45) - 1) *gp.tileSize;
-		gp.obj[7].worldY = ((50) - 1) *gp.tileSize;
-		
-		gp.obj[8] = new AutumnGate(gp);
-		gp.obj[8].worldX = ((50) - 1) *gp.tileSize;
-		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
+//		
+//		gp.obj[6] = new SpringGate(gp);
+//		gp.obj[6].worldX = ((50) - 1) *gp.tileSize;
+//		gp.obj[6].worldY = ((55) - 1) *gp.tileSize;
+//		
+//		gp.obj[7] = new SummerGate(gp);
+//		gp.obj[7].worldX = ((45) - 1) *gp.tileSize;
+//		gp.obj[7].worldY = ((50) - 1) *gp.tileSize;
+//		
+//		gp.obj[8] = new AutumnGate(gp);
+//		gp.obj[8].worldX = ((50) - 1) *gp.tileSize;
+//		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
 		
 		//ice pile
 		
@@ -110,19 +110,19 @@ public class AssetSetter {
 	    
 	    //tree
 		
-		gp.tree[0] = new AppleTree();
-        gp.tree[0].worldX = (20) *gp.tileSize;
-        gp.tree[0].worldY = (15) *gp.tileSize;
+		gp.tree[0] = new PineTree();
+        gp.tree[0].worldX = (72) *gp.tileSize;
+        gp.tree[0].worldY = (37) *gp.tileSize;
         
-        gp.tree[1] = new BanyanTree();
+        gp.tree[1] = new PineTree();
         gp.tree[1].worldX = (30) *gp.tileSize;
         gp.tree[1].worldY = (30) *gp.tileSize;
         
-        gp.tree[2] = new BonzaiTree();
+        gp.tree[2] = new PineTree();
         gp.tree[2].worldX = (25) *gp.tileSize;
         gp.tree[2].worldY = (30) *gp.tileSize;
         
-        gp.tree[3] = new MapleTree();
+        gp.tree[3] = new PineTree();
         gp.tree[3].worldX = (30) *gp.tileSize;
         gp.tree[3].worldY = (25) *gp.tileSize;
         
@@ -130,11 +130,11 @@ public class AssetSetter {
         gp.tree[4].worldX = (35) *gp.tileSize;
         gp.tree[4].worldY = (30) *gp.tileSize;
         
-        gp.tree[5] = new SpruceTree();
+        gp.tree[5] = new PineTree();
         gp.tree[5].worldX = (25) *gp.tileSize;
         gp.tree[5].worldY = (35) *gp.tileSize;
         
-        gp.tree[5] = new MapleTree();
+        gp.tree[5] = new PineTree();
         gp.tree[5].worldX = (35) *gp.tileSize;
         gp.tree[5].worldY = (35) *gp.tileSize;
         
