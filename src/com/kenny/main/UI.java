@@ -122,6 +122,7 @@ public class UI {
         // DIALOGUE STATE
         else if(gp.gameState == gp.dialogueState) {
             drawDialogueScreen();
+            gp.player.spriteNum = 2; 
         }
         
         // FINISH STATE
