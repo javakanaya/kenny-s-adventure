@@ -25,7 +25,7 @@ public class Entity {
 
     // STATE
     public int worldX, worldY;
-    int spriteNum = 1;
+    public int spriteNum = 1;
     public String direction = "down";
     public int dialogueIndex = 0;
     public boolean collisionOn = false;
