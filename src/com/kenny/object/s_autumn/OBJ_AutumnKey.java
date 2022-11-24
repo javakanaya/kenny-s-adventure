@@ -11,5 +11,6 @@ public class OBJ_AutumnKey extends Entity{
 	    
 		name = "Autumn Key";
 		down1 = setup("/objects/keys/autumnKey");
+        description = "[" + name + "]\nUnlock associated gate";
 	}
 }

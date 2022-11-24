@@ -47,7 +47,10 @@ public class Entity {
     // COUNTER
     int spriteCounter = 0;
     public int actionLockCounter = 0;
-
+    
+    // ITEM ATRIBUTES
+    public String description = "";
+    
     public Entity(GamePanel gp) {
         this.gp = gp;
     }

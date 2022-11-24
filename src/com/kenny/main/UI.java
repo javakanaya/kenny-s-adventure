@@ -296,23 +296,24 @@ public class UI {
         final int slotXStart = frameX + 20,
                 slotYStart = frameY + 20;
         int slotX = slotXStart,
-                slotY = slotYStart;
+                slotY = slotYStart,
+                slotSize = gp.tileSize + 3;
 
         // DRAW PLAYER'S INVENTORY
         for (int i = 0; i < gp.player.inventory.size(); i++) {
 
             g2d.drawImage(gp.player.inventory.get(i).down1, slotX, slotY, null);
-            slotX += gp.tileSize;
-            
-            if(i == 4 || i == 9 || i == 14) {
+            slotX += slotSize;
+
+            if (i == 4 || i == 9 || i == 14) {
                 slotX = slotXStart;
-                slotY += gp.tileSize;
+                slotY += slotSize;
             }
         }
 
         // CURSOR
-        int cursorX = slotXStart + (gp.tileSize * slotCol),
-                cursorY = slotYStart + (gp.tileSize * slotRow),
+        int cursorX = slotXStart + (slotSize * slotCol),
+                cursorY = slotYStart + (slotSize * slotRow),
                 cursorWidth = gp.tileSize,
                 cursorHeight = gp.tileSize;
 
@@ -320,6 +321,33 @@ public class UI {
         g2d.setColor(Color.WHITE);
         g2d.setStroke(new BasicStroke(3));
         g2d.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
+
+        // DESCRIPTION FRAME
+        int dFrameX = frameX,
+                dFrameY = frameY + frameHeight,
+                dFrameWidth = frameWidth,
+                dFrameHeight = gp.tileSize * 3;
+        drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
+
+        // DRAW DESC. TEXT
+        int textX = dFrameX + 20,
+            textY = dFrameY + gp.tileSize;
+        
+        g2d.setFont(g2d.getFont().deriveFont(28F));
+        
+        int itemIndex = getItemIndexOnSlot();
+        
+        if(itemIndex < gp.player.inventory.size()) {
+            for(String line: gp.player.inventory.get(itemIndex).description.split("\n")) {
+                g2d.drawString(line, textX, textY);
+                textY += 32;
+            }  
+        }
+    }
+    
+    private int getItemIndexOnSlot() {
+        int itemIndex = slotCol + (slotRow * 5);
+        return itemIndex;
     }
 
     private void drawSubWindow(int x, int y, int width, int height) {
