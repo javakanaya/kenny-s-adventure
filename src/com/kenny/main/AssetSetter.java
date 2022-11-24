@@ -4,6 +4,7 @@ import com.kenny.entity.NPC_Bulky;
 import com.kenny.entity.NPC_Drac;
 import com.kenny.entity.NPC_MrSnow;
 import com.kenny.entity.NPC_PinaKoolada;
+import com.kenny.entity.NPC_WinterSlime;
 import com.kenny.object.others.OBJ_Bone;
 import com.kenny.object.s_autumn.OBJ_AutumnGate;
 import com.kenny.object.s_autumn.OBJ_AutumnKey;
@@ -160,9 +161,13 @@ public class AssetSetter {
 	
 	public void setNPC() {
 	    
-	    gp.npc[0] = new NPC_MrSnow(gp);
-	    gp.npc[0].worldX = 69 *gp.tileSize;
-        gp.npc[0].worldY = 48 *gp.tileSize;
+//	    gp.npc[0] = new NPC_MrSnow(gp);
+//	    gp.npc[0].worldX = 69 *gp.tileSize;
+//       gp.npc[0].worldY = 48 *gp.tileSize;
+		
+		gp.npc[1] = new NPC_Drac(gp);
+        gp.npc[1].worldX = ((50) - 1) *gp.tileSize;
+        gp.npc[1].worldY = ((57) - 1) *gp.tileSize;
         
         gp.npc[2] = new NPC_Bulky(gp);
 	    gp.npc[2].worldX = ((42) - 1) *gp.tileSize;
@@ -172,8 +177,8 @@ public class AssetSetter {
 	    gp.npc[3].worldX = ((50) - 1) *gp.tileSize;
         gp.npc[3].worldY = ((42) - 1) *gp.tileSize;
 	    
-        gp.npc[1] = new NPC_Drac(gp);
-        gp.npc[1].worldX = ((50) - 1) *gp.tileSize;
-        gp.npc[1].worldY = ((57) - 1) *gp.tileSize;
+        gp.npc[4] = new NPC_WinterSlime(gp);
+        gp.npc[4].worldX = ((60) - 1) *gp.tileSize;
+        gp.npc[4].worldY = ((54) - 1) *gp.tileSize;
 	}
 }

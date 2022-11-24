@@ -84,20 +84,20 @@ public class Entity {
 
         // setting for when sprite speak is facing to player
         // tapi karena belum ada asset sprite nya, ya di-comment dulu aja ya...
-//	        switch(gp.player.direction) {
-//	            case "up":
-//	                direction = "down";
-//	                break;
-//	            case "down":
-//	                direction = "up";
-//	                break;
-//	            case "left":
-//	                direction = "right";
-//	                break;
-//	            case "right":
-//	                direction = "left";
-//	                break;
-//	        }
+	        switch(gp.player.direction) {
+	            case "up":
+	                direction = "down";
+	                break;
+	            case "down":
+	                direction = "up";
+	                break;
+	            case "left":
+	                direction = "right";
+	                break;
+	            case "right":
+	                direction = "left";
+	                break;
+	        }
     }
 
     public void update() {
@@ -110,7 +110,7 @@ public class Entity {
         gp.cCheker.checkEntity(this, gp.npc);
         gp.cCheker.checkPlayer(this);
 
-        // if collision is false, player can move
+        // if collision is false, entity can move
         if (collisionOn == false) {
             switch (direction) {
                 case "up":
@@ -129,8 +129,8 @@ public class Entity {
         }
 
         // animating sprite
-        if (spriteCounter > 10) {
-            if (spriteNum >= 4)
+        if (spriteCounter > 20) {
+            if (spriteNum >= 2)
                 spriteNum = 1;
             else
                 spriteNum++;
