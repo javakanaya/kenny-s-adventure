@@ -50,13 +50,17 @@ public class Entity {
     
     // ITEM ATRIBUTES
     public String description = "";
+    public int type;
+    public final int type_key = 0,
+                     type_npc = 1,
+                     type_consumable = 2;
     
     public Entity(GamePanel gp) {
         this.gp = gp;
     }
 
-    public void setAction() {
-    }
+    public void setAction() {}
+    public void use(Entity entity) {}
 
     public void speak() {
 

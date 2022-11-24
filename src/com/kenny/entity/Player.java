@@ -55,7 +55,7 @@ public class Player extends Entity {
         // player position in the world map
         worldX = gp.tileSize * 50;
         worldY = gp.tileSize * 50;
-        speed = 10;
+        speed = 5;
         direction = "down";
     }
 
@@ -198,7 +198,7 @@ public class Player extends Entity {
             String text;
             if(inventory.size() != maxInventorySize) {
                 inventory.add(gp.obj[i]);
-                text = "Got a" + gp.obj[i].name + "!";
+                text = "Got a " + gp.obj[i].name + "!";
                 gp.obj[i] = null;
             }
             else {
@@ -211,7 +211,6 @@ public class Player extends Entity {
     public void interactNPC(int i) {
 
         // if index is not 999, player is hit the NPC
-        // Kalo yg ini harus klik enter sambil di tabrakin baru dialognya muncul
         if (i != 999) {
             gp.ui.showMessage("press ENTER to interact");
             if (gp.keyH.enterPressed == true) {
@@ -219,15 +218,21 @@ public class Player extends Entity {
                 gp.npc[i].speak();
             }
         }
-
-        // kalo ini cuma tabrakin aja..., nnt kalo mau next klik enter
-//        if(i != 999) {
-//            gp.ui.showMessage("press ENTER to interact");
-//            gp.gameState = gp.dialogueState;
-//            gp.npc[i].speak();              
-//        }
     }
 
+    public void selectItem() {
+        
+        int itemIndex = gp.ui.getItemIndexOnSlot();
+        
+        if(itemIndex < inventory.size()) {
+            Entity selectedItem = inventory.get(itemIndex);
+            
+            if(selectedItem.type == type_consumable) {
+                selectedItem.use(this);
+                inventory.remove(itemIndex);
+            }
+        }
+    }
     // player draw method
     public void draw(Graphics2D g2d) {
 

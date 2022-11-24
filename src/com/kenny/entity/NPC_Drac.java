@@ -15,6 +15,7 @@ public class NPC_Drac extends Entity{
         direction = "left";
         spriteNum = 5;
         speed = 0;
+        type = type_npc;
         setSolidArea(24, 0, 72, 96);
         
         getImage();

@@ -345,7 +345,7 @@ public class UI {
         }
     }
     
-    private int getItemIndexOnSlot() {
+    public int getItemIndexOnSlot() {
         int itemIndex = slotCol + (slotRow * 5);
         return itemIndex;
     }
