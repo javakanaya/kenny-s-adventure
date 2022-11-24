@@ -13,8 +13,8 @@ public class OBJ_WinterPineTree extends Entity {
 		super(gp);
 	    
 		name = "Pine Tree";
-        scallingX = 3;
-        scallingY = 3;
+        scallingX = 4;
+        scallingY = 4;
 		down1 = setup("/objects/trees/winterPine");
 	}
 
