@@ -209,9 +209,15 @@ public class Player extends Entity {
                     
                 }
             }
-            else if (gp.obj[i].type == type_pillarOn) {
-                
+            else if (gp.obj[i].type == type_pillarOn) {}
+            else if (gp.obj[i].type == type_pile) {
+            	gp.ui.showMessage("interact pile");
+                if(keyH.enterPressed == true) { 	
+                	gp.obj[i].interact(i);
+                    
+                }
             }
+            
             else {
                 String text;
                 if (inventory.size() != maxInventorySize) {

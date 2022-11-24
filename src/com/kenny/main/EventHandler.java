@@ -55,42 +55,42 @@ public class EventHandler {
 //            }
 
             // pillar1
-            if (hit(90, 53, "left") == true) {
+            if (hit(90, 53, "any") == true) {
                 teleport(gp.dialogueState, 78, 48);
             }
-            if (hit(78, 48, "right") == true) {
+            else if (hit(78, 48, "any") == true) {
                 teleport(gp.dialogueState, 90, 53);
             }
 
             // pillar2
-            if (hit(80, 56, "left") == true) {
+            if (hit(80, 56, "any") == true) {
                 teleport(gp.dialogueState, 86, 43);
             }
-            if (hit(86, 43, "right") == true) {
+            else if (hit(86, 43, "any") == true) {
                 teleport(gp.dialogueState, 80, 56);
             }
 
             // pillar3
-            if (hit(79, 40, "left") == true) {
+            if (hit(79, 40, "any") == true) {
                 teleport(gp.dialogueState, 88, 49);
             }
-            if (hit(88, 49, "right") == true) {
+            else if (hit(88, 49, "any") == true) {
                 teleport(gp.dialogueState, 79, 40);
             }
 
             // pillar4
-            if (hit(93, 45, "left") == true) {
+            if (hit(93, 45, "any") == true) {
                 teleport(gp.dialogueState, 82, 51);
             }
-            if (hit(82, 51, "right") == true) {
+            else if (hit(82, 51, "any") == true) {
                 teleport(gp.dialogueState, 93, 45);
             }
 
             // key
-            if (hit(74, 45, "left") == true) {
-                teleport(gp.dialogueState, 83, 46);
+            if (hit(74, 45, "any") == true) {
+                teleport(gp.dialogueState, 82, 45);
             }
-            if (hit(83, 46, "right") == true) {
+            else if (hit(82, 45, "any") == true) {
                 teleport(gp.dialogueState, 74, 45);
             }
         }
@@ -131,13 +131,16 @@ public class EventHandler {
     }
 
     public void teleport(int gameState, int destinationCol, int destinationRow) {
-        gp.gameState = gameState;
-        gp.ui.currentDialogue = "Teleport!";
+    	
+    	if (gp.keyH.enterPressed == true) {
+    		 gp.gameState = gameState;
+    	        gp.ui.currentDialogue = "Teleport!";
 
-        gp.player.worldX = destinationCol * gp.tileSize;
-        gp.player.worldY = destinationRow * gp.tileSize;
+    	        gp.player.worldX = destinationCol * gp.tileSize;
+    	        gp.player.worldY = destinationRow * gp.tileSize;
 
-        canTouchEvent = false;
+    	        canTouchEvent = false;
+    	}
     }
 
     public void damagePit(int gameState, int col, int row) {

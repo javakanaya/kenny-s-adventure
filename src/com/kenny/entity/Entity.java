@@ -56,7 +56,8 @@ public class Entity {
             type_consumable = 2,
             type_gate = 3,
     		type_pillarOff = 4,
-    		type_pillarOn = 5;
+    		type_pillarOn = 5,
+    		type_pile = 6;
 
     public Entity(GamePanel gp) {
         this.gp = gp;
