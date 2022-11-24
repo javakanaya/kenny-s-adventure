@@ -46,7 +46,10 @@ public class NPC_WinterSlime extends Entity{
     
     public void setDialogue() {
         
-        dialogues[0] = "slimez";
+    	dialogues[0] = "#1\nThere's nothing here";
+        dialogues[1] = "#2\nI am the Start of Every Direction";
+        dialogues[2] = "#3\nThey faced me 5 atleast times a day";
+        dialogues[3] = "#4\nCome forth the destruction";
     }
     
     public void setAction() {
