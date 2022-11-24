@@ -31,6 +31,5 @@ public class OBJ_IcePillarOff extends Entity{
 		
 		gp.obj[i] = null;
 		gp.ui.showMessage("Pillar On!");
-	
 	}
 }

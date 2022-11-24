@@ -42,8 +42,8 @@ public class AssetSetter {
 	    gp.obj[0].worldY = ((51)) *gp.tileSize;
 	    
 //		gp.obj[1] = new OBJ_WinterKey(gp);
-//		gp.obj[1].worldX = (55 - 1) *gp.tileSize;
-//		gp.obj[1].worldY = (45 - 1) *gp.tileSize;
+//		gp.obj[1].worldX = 64 *gp.tileSize;
+//		gp.obj[1].worldY = 48 *gp.tileSize;
 //		
 //		gp.obj[2] = new OBJ_SpringKey(gp);
 //		gp.obj[2].worldX = ((55) - 1) *gp.tileSize;
@@ -94,37 +94,21 @@ public class AssetSetter {
 	    
 	    //ice pillar
 	    
-	    gp.obj[11] = new OBJ_IcePillarOn(gp);
+	    gp.obj[11] = new OBJ_IcePillarOff(gp);
 	    gp.obj[11].worldX = (78) *gp.tileSize;
 	    gp.obj[11].worldY = (44) *gp.tileSize;
 	    
-	    gp.obj[12] = new OBJ_IcePillarOn(gp);
+	    gp.obj[12] = new OBJ_IcePillarOff(gp);
 	    gp.obj[12].worldX = (82) *gp.tileSize;
 	    gp.obj[12].worldY = (40) *gp.tileSize;
 	    
-	    gp.obj[13] = new OBJ_IcePillarOn(gp);
+	    gp.obj[13] = new OBJ_IcePillarOff(gp);
 	    gp.obj[13].worldX = (88) *gp.tileSize;
 	    gp.obj[13].worldY = (45) *gp.tileSize;
 	    
-	    gp.obj[14] = new OBJ_IcePillarOn(gp);
+	    gp.obj[14] = new OBJ_IcePillarOff(gp);
 	    gp.obj[14].worldX = (84) *gp.tileSize;
 	    gp.obj[14].worldY = (50) *gp.tileSize;
-	    
-	    gp.obj[15] = new OBJ_IcePillarOff(gp);
-	    gp.obj[15].worldX = (78) *gp.tileSize;
-	    gp.obj[15].worldY = (44) *gp.tileSize;
-	    
-	    gp.obj[16] = new OBJ_IcePillarOff(gp);
-	    gp.obj[16].worldX = (82) *gp.tileSize;
-	    gp.obj[16].worldY = (40) *gp.tileSize;
-	    
-	    gp.obj[17] = new OBJ_IcePillarOff(gp);
-	    gp.obj[17].worldX = (88) *gp.tileSize;
-	    gp.obj[17].worldY = (45) *gp.tileSize;
-	    
-	    gp.obj[18] = new OBJ_IcePillarOff(gp);
-	    gp.obj[18].worldX = (84) *gp.tileSize;
-	    gp.obj[18].worldY = (50) *gp.tileSize;
 	    
 	    //tree
 		
