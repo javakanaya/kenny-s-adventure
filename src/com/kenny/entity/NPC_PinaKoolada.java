@@ -27,6 +27,12 @@ public class NPC_PinaKoolada extends Entity {
         
         idleLeft1 = setup("/npc/pinaKoolada/pinaKoolada_0");
         idleLeft2 = setup("/npc/pinaKoolada/pinaKoolada_1");
+        
+        idleRight1 = idleLeft1;
+        idleRight2 =  idleLeft2;
+        
+        idleFront1 =  idleLeft1;
+        idleFront2 =  idleLeft2;
    
     }
     
