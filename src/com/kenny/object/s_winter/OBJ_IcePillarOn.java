@@ -8,14 +8,19 @@ import com.kenny.entity.Entity;
 import com.kenny.main.GamePanel;
 
 public class OBJ_IcePillarOn extends Entity{
+	
+
     
 	public OBJ_IcePillarOn(GamePanel gp) {
 	    super(gp);
+	
+
         
 		name = "Ice Pillar On";
+		type = type_pillarOn;
         scallingX = 2;
         scallingY = 4;
-		setup("/objects/others/icePillar_1");
+        down1 = setup("/objects/others/icePillar_1");
 		collision = true;
 	}
 }

@@ -25,7 +25,6 @@ public class Player extends Entity {
     // indicate where the player will be drawn
     public final int screenX;
     public final int screenY;
-    public int[] pillar = { 1, 1, 1, 1 };
     public ArrayList<Entity> inventory = new ArrayList<>();
     int maxInventorySize = 20;
 
@@ -55,7 +54,7 @@ public class Player extends Entity {
         // player position in the world map
         worldX = gp.tileSize * 50;
         worldY = gp.tileSize * 50;
-        speed = 5;
+        speed = 10;
         direction = "down";
     }
 
@@ -199,8 +198,19 @@ public class Player extends Entity {
             if (gp.obj[i].type == type_gate) {
                 gp.ui.showMessage("press ENTER to interact");
                 if(keyH.enterPressed == true) {
-                    gp.obj[i].interact();
+                    gp.obj[i].interact(i);
+            		
                 }
+            }
+            else if (gp.obj[i].type == type_pillarOff) {
+                gp.ui.showMessage("interact pillar");
+                if(keyH.enterPressed == true) { 	
+                	gp.obj[i].interact(i);
+                    
+                }
+            }
+            else if (gp.obj[i].type == type_pillarOn) {
+                
             }
             else {
                 String text;

@@ -54,7 +54,9 @@ public class Entity {
     public final int type_key = 0,
             type_npc = 1,
             type_consumable = 2,
-            type_gate = 3;
+            type_gate = 3,
+    		type_pillarOff = 4,
+    		type_pillarOn = 5;
 
     public Entity(GamePanel gp) {
         this.gp = gp;
@@ -63,7 +65,7 @@ public class Entity {
     public void setAction() {
     }
 
-    public void interact() {
+    public void interact( int i) {
     }
 
     // return true if can be used, and false if cannot
