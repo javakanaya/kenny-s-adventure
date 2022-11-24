@@ -25,6 +25,7 @@ public class OBJ_IcePillarOff extends Entity{
         scallingY = 4;
 		down1 = setup("/objects/others/icePillar_2");		
 		collision = true;
+		setSolidArea(48, 0, 20, 100);
 	}
 	
 	public void interact(int i) {

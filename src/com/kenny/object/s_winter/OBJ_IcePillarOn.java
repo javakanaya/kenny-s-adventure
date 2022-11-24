@@ -22,5 +22,6 @@ public class OBJ_IcePillarOn extends Entity{
         scallingY = 4;
         down1 = setup("/objects/others/icePillar_1");
 		collision = true;
+		setSolidArea(48, 0, 20, 100);
 	}
 }

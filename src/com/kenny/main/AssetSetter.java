@@ -40,11 +40,7 @@ public class AssetSetter {
 	    gp.obj[0] = new OBJ_Bone(gp);
 	    gp.obj[0].worldX = ((51)) *gp.tileSize;
 	    gp.obj[0].worldY = ((51)) *gp.tileSize;
-	    
-//		gp.obj[1] = new OBJ_WinterKey(gp);
-//		gp.obj[1].worldX = 64 *gp.tileSize;
-//		gp.obj[1].worldY = 48 *gp.tileSize;
-//		
+	    	
 //		gp.obj[2] = new OBJ_SpringKey(gp);
 //		gp.obj[2].worldX = ((55) - 1) *gp.tileSize;
 //		gp.obj[2].worldY = ((55) - 1) *gp.tileSize;
@@ -73,7 +69,7 @@ public class AssetSetter {
 		gp.obj[8].worldX = ((54) - 1) *gp.tileSize;
 		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
 		
-		//ice pile
+		//ice pile port
 		
 		gp.obj[20] = new OBJ_IcePileClose(gp);
 	    gp.obj[20].worldX = (80) *gp.tileSize;
@@ -90,6 +86,24 @@ public class AssetSetter {
 	    gp.obj[23] = new OBJ_IcePileOpen(gp);
 	    gp.obj[23].worldX = (93) *gp.tileSize;
 	    gp.obj[23].worldY = (45) *gp.tileSize;
+	    
+	    //ice pile slime
+	    
+	    gp.obj[24] = new OBJ_IcePileClose(gp);
+	    gp.obj[24].worldX = (93) *gp.tileSize;
+	    gp.obj[24].worldY = (54) *gp.tileSize;
+	    
+	    gp.obj[25] = new OBJ_IcePileOpen(gp);
+	    gp.obj[25].worldX = (76) *gp.tileSize;
+	    gp.obj[25].worldY = (55) *gp.tileSize;
+	    
+	    gp.obj[26] = new OBJ_IcePileClose(gp);
+	    gp.obj[26].worldX = (95) *gp.tileSize;
+	    gp.obj[26].worldY = (40) *gp.tileSize;
+	    
+	    gp.obj[27] = new OBJ_IcePileOpen(gp);
+	    gp.obj[27].worldX = (76) *gp.tileSize;
+	    gp.obj[27].worldY = (38) *gp.tileSize;
 	
 	    
 	    //ice pillar
@@ -160,9 +174,23 @@ public class AssetSetter {
         gp.npc[3] = new NPC_PinaKoolada(gp);
 	    gp.npc[3].worldX = 41 *gp.tileSize;
         gp.npc[3].worldY = 41 *gp.tileSize;
+        
+        
 	    
-        gp.npc[4] = new NPC_WinterSlime(gp);
-        gp.npc[4].worldX = ((60) - 1) *gp.tileSize;
-        gp.npc[4].worldY = ((54) - 1) *gp.tileSize;
+//        gp.npc[4] = new NPC_WinterSlime(gp);
+//        gp.npc[4].worldX = 93 *gp.tileSize;
+//        gp.npc[4].worldY = 54 *gp.tileSize;
+//        
+//        gp.npc[5] = new NPC_WinterSlime(gp);
+//        gp.npc[5].worldX = 76 *gp.tileSize;
+//        gp.npc[5].worldY = 55 *gp.tileSize;
+//        
+//        gp.npc[6] = new NPC_WinterSlime(gp);
+//        gp.npc[6].worldX = 95 *gp.tileSize;
+//        gp.npc[6].worldY = 40 *gp.tileSize;
+//        
+//        gp.npc[7] = new NPC_WinterSlime(gp);
+//        gp.npc[7].worldX = 76 *gp.tileSize;
+//        gp.npc[7].worldY = 38 *gp.tileSize;
 	}
 }
