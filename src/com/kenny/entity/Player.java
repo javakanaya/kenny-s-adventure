@@ -195,16 +195,24 @@ public class Player extends Entity {
     public void pickUpObject(int i) {
 
         if (i != 999) {
-            String text;
-            if(inventory.size() != maxInventorySize) {
-                inventory.add(gp.obj[i]);
-                text = "Got a " + gp.obj[i].name + "!";
-                gp.obj[i] = null;
+            // OBSTACLE
+            if (gp.obj[i].type == type_gate) {
+                gp.ui.showMessage("press ENTER to interact");
+                if(keyH.enterPressed == true) {
+                    gp.obj[i].interact();
+                }
             }
             else {
-                text = "You cannot carry any more!";
+                String text;
+                if (inventory.size() != maxInventorySize) {
+                    inventory.add(gp.obj[i]);
+                    text = "Got a " + gp.obj[i].name + "!";
+                    gp.obj[i] = null;
+                } else {
+                    text = "You cannot carry any more!";
+                }
+                gp.ui.showMessage(text);
             }
-            gp.ui.showMessage(text);
         }
     }
 
@@ -228,8 +236,9 @@ public class Player extends Entity {
             Entity selectedItem = inventory.get(itemIndex);
             
             if(selectedItem.type == type_consumable) {
-                selectedItem.use(this);
-                inventory.remove(itemIndex);
+                if(selectedItem.use(this) == true) {
+                    inventory.remove(itemIndex);                    
+                }
             }
         }
     }

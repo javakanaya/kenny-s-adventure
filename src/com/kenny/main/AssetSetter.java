@@ -49,28 +49,28 @@ public class AssetSetter {
 		gp.obj[2].worldY = ((55) - 1) *gp.tileSize;
 		
 		gp.obj[3] = new OBJ_SummerKey(gp);
-		gp.obj[3].worldX = ((45) - 1) *gp.tileSize;
+		gp.obj[3].worldX = ((48) - 1) *gp.tileSize;
 		gp.obj[3].worldY = ((50) - 1) *gp.tileSize;
 		
 		gp.obj[4] = new OBJ_AutumnKey(gp);
 		gp.obj[4].worldX = ((55) - 1) *gp.tileSize;
 		gp.obj[4].worldY = ((50) - 1) *gp.tileSize;
 		
-//		gp.obj[5] = new OBJ_WinterGate(gp);
-//		gp.obj[5].worldX = ((55) - 1) *gp.tileSize;
-//		gp.obj[5].worldY = ((50) - 1) *gp.tileSize;
-//		
-//		gp.obj[6] = new SpringGate(gp);
-//		gp.obj[6].worldX = ((50) - 1) *gp.tileSize;
-//		gp.obj[6].worldY = ((55) - 1) *gp.tileSize;
-//		
-//		gp.obj[7] = new SummerGate(gp);
-//		gp.obj[7].worldX = ((45) - 1) *gp.tileSize;
-//		gp.obj[7].worldY = ((50) - 1) *gp.tileSize;
-//		
-//		gp.obj[8] = new AutumnGate(gp);
-//		gp.obj[8].worldX = ((50) - 1) *gp.tileSize;
-//		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
+		gp.obj[5] = new OBJ_WinterGate(gp);
+		gp.obj[5].worldX = ((53) - 1) *gp.tileSize;
+		gp.obj[5].worldY = ((50) - 1) *gp.tileSize;
+		
+		gp.obj[6] = new OBJ_SpringGate(gp);
+		gp.obj[6].worldX = ((49) - 1) *gp.tileSize;
+		gp.obj[6].worldY = ((48) - 1) *gp.tileSize;
+		
+		gp.obj[7] = new OBJ_SummerGate(gp);
+		gp.obj[7].worldX = ((45) - 1) *gp.tileSize;
+		gp.obj[7].worldY = ((50) - 1) *gp.tileSize;
+		
+		gp.obj[8] = new OBJ_AutumnGate(gp);
+		gp.obj[8].worldX = ((50) - 1) *gp.tileSize;
+		gp.obj[8].worldY = ((45) - 1) *gp.tileSize;
 		
 		//ice pile
 		

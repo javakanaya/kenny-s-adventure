@@ -20,9 +20,11 @@ public class OBJ_Bone extends Entity{
 		
 	}
 	
-	public void use(Entity entity) {
+	@Override
+	public boolean use(Entity entity) {
 	    gp.gameState = gp.dialogueState;
 	    gp.ui.currentDialogue = "You eat the " + name + "!\nYou now move faster.";
 	    entity.speed += 2;
+	    return true;
 	}
 }

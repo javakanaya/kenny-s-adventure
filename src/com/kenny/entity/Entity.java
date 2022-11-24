@@ -18,7 +18,7 @@ import com.kenny.main.UtilityTool;
 public class Entity {
 
     GamePanel gp;
-    
+
     // CHARACTER ATRIBUTES
     public int speed;
     public String name;
@@ -47,20 +47,29 @@ public class Entity {
     // COUNTER
     int spriteCounter = 0;
     public int actionLockCounter = 0;
-    
+
     // ITEM ATRIBUTES
     public String description = "";
     public int type;
     public final int type_key = 0,
-                     type_npc = 1,
-                     type_consumable = 2;
-    
+            type_npc = 1,
+            type_consumable = 2,
+            type_gate = 3;
+
     public Entity(GamePanel gp) {
         this.gp = gp;
     }
 
-    public void setAction() {}
-    public void use(Entity entity) {}
+    public void setAction() {
+    }
+
+    public void interact() {
+    }
+
+    // return true if can be used, and false if cannot
+    public boolean use(Entity entity) {
+        return false;
+    }
 
     public void speak() {
 
@@ -275,6 +284,74 @@ public class Entity {
         solidArea.height = height;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
+    }
+
+    public int getLeftX() {
+        return worldX + solidArea.x;
+    }
+
+    public int getRightX() {
+        return worldX + solidArea.x + solidArea.width;
+    }
+
+    public int getTopY() {
+        return worldY + solidArea.y;
+    }
+
+    public int getBottomY() {
+        return worldY + solidArea.y + solidArea.height;
+    }
+
+    public int getCol() {
+        return (worldX + solidArea.x) / gp.tileSize;
+    }
+
+    public int getRow() {
+        return (worldY + solidArea.y) / gp.tileSize;
+    }
+
+    public int getDetected(Entity player, Entity target[], String targetName) {
+
+        int index = 999;
+
+        // Check the surrounding object
+        int nextWorldX = player.getLeftX(),
+                nextWorldY = player.getTopY();
+
+        switch (player.direction) {
+            case "up":
+                nextWorldY = player.getTopY() - gp.tileSize;
+                break;
+            case "down":
+                nextWorldY = player.getBottomY() + gp.tileSize;
+                break;
+            case "left":
+                nextWorldX = player.getLeftX() - gp.tileSize;
+                break;
+            case "right":
+                nextWorldX = player.getRightX() + gp.tileSize;
+                break;
+        }
+
+        int col = nextWorldX / gp.tileSize,
+            row = nextWorldY / gp.tileSize;
+        
+        for(int i = 0; i < target.length ; i++) {
+            if(target[i] != null) {
+//                System.out.println(target[i].getCol() + " " + col);
+//                System.out.println(target[i].getRow() + " " + row);
+//                System.out.println(target[i].name + " " + targetName);
+                if(target[i].getCol() == col && 
+                        target[i].getRow() == row &&
+                        target[i].name.equals(targetName)) {
+                    index = i;
+                    break;
+                }
+            }
+        }
+        
+        System.out.println(index);
+        return index;
     }
 
 }
