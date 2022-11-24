@@ -7,9 +7,13 @@ package com.kenny.entity;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
+import com.kenny.object.s_autumn.OBJ_AutumnKey;
+import com.kenny.object.s_spring.OBJ_SpringKey;
+import com.kenny.object.s_summer.OBJ_SummerKey;
 import com.kenny.object.s_winter.OBJ_IcePillarOn;
 import com.kenny.object.s_winter.OBJ_WinterKey;
 
@@ -21,9 +25,8 @@ public class Player extends Entity {
     //indicate where the player will be drawn
     public final int screenX;
     public final int screenY;
-    public int[] hasKey = {0, 0, 0, 0};
     public int[] pillar = {1, 1, 1, 1};
-    int keys[] = new int[4];
+    public ArrayList<Entity> inventory  = new ArrayList<>();
     
     // player constructor
     public Player(GamePanel gp, KeyHandler keyH) {
@@ -42,6 +45,7 @@ public class Player extends Entity {
         
         setDefaultValues();
         getPlayerImage();
+        setItem();
     }
     
     // default values for the player
@@ -52,6 +56,13 @@ public class Player extends Entity {
         worldY = gp.tileSize * 50;
         speed = 10;
         direction ="down";
+    }
+    
+    public void setItem() {
+        inventory.add(new OBJ_AutumnKey(gp));
+        inventory.add(new OBJ_WinterKey(gp));
+        inventory.add(new OBJ_SummerKey(gp));
+        inventory.add(new OBJ_SpringKey(gp));
     }
     
     // get player image and animating asset
