@@ -31,9 +31,6 @@ public class OBJ_IcePillarOff extends Entity{
 		
 		gp.obj[i] = null;
 		gp.ui.showMessage("Pillar On!");
-		
-	    gp.npc[0] = new NPC_MrSnow(gp);
-	    gp.npc[0].worldX = 69 *gp.tileSize;
-	    gp.npc[0].worldY = 48 *gp.tileSize;
+	
 	}
 }

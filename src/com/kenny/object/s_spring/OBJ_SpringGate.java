@@ -15,11 +15,12 @@ public class OBJ_SpringGate extends Entity {
 
         name = "Spring Gate";
         type = type_gate;
-        down1 = setup("/objects/gates/springGate");
+        scallingY = 4;
+        down1 = setup("/objects/gates/springGateOff");
         collision = true;
     }
     
-    public void interact() {
+    public void interact(int i) {
         
         gp.gameState = gp.dialogueState;
         gp.ui.currentDialogue = "You need a key to open this";

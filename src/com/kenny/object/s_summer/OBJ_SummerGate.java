@@ -19,11 +19,12 @@ public class OBJ_SummerGate extends Entity {
         
         name = "Summer Gate";
         type = type_gate;
-        down1 = setup("/objects/gates/summerGate");
+        scallingY = 4;
+        down1 = setup("/objects/gates/summerGateOff");
         collision = true;
     }
     
-    public void interact() {
+    public void interact(int i) {
         
         gp.gameState = gp.dialogueState;
         gp.ui.currentDialogue = "You need a key to open this";
