@@ -74,7 +74,7 @@ public class Entity {
         return false;
     }
 
-    public void speak() {
+    public void speak(int i) {
 
         if (dialogues[dialogueIndex] == null) {
             dialogueIndex = 0;

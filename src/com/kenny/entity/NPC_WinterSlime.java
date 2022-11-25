@@ -50,6 +50,36 @@ public class NPC_WinterSlime extends Entity{
         dialogues[1] = "#2\nI am the Start of Every Direction";
         dialogues[2] = "#3\nThey faced me 5 atleast times a day";
         dialogues[3] = "#4\nCome forth the destruction";
+        
+
+    }
+    
+    public void speak(int i) {
+    	if (i == 4) 
+            dialogueIndex = 0;
+    	else if (i == 5) 
+            dialogueIndex = 3;
+    	else if (i == 6) 
+            dialogueIndex = 1;
+    	else if (i == 7) 
+            dialogueIndex = 2;
+        
+        gp.ui.currentDialogue = dialogues[dialogueIndex];
+        
+        switch(gp.player.direction) {
+        case "up":
+            direction = "down";
+            break;
+        case "down":
+            direction = "up";
+            break;
+        case "left":
+            direction = "right";
+            break;
+        case "right":
+            direction = "left";
+            break;
+    }
     }
     
     public void setAction() {

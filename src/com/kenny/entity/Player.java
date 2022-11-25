@@ -247,7 +247,7 @@ public class Player extends Entity {
             gp.ui.showMessage("press ENTER to interact");
             if (gp.keyH.enterPressed == true) {
                 gp.gameState = gp.dialogueState;
-                gp.npc[i].speak();
+                gp.npc[i].speak(i);
             }
         }
     }
