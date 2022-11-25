@@ -104,7 +104,58 @@ public class AssetSetter {
 	    gp.obj[27] = new OBJ_IcePileOpen(gp);
 	    gp.obj[27].worldX = (76) *gp.tileSize;
 	    gp.obj[27].worldY = (38) *gp.tileSize;
+	    
+	    
+	    
+	    // empty ice pile
 	
+	    gp.obj[28] = new OBJ_IcePileClose(gp);
+	    gp.obj[28].worldX = (81) *gp.tileSize;
+	    gp.obj[28].worldY = (38) *gp.tileSize;
+	    
+	    gp.obj[29] = new OBJ_IcePileOpen(gp);
+	    gp.obj[29].worldX = (77) *gp.tileSize;
+	    gp.obj[29].worldY = (42) *gp.tileSize;
+	    
+	    gp.obj[30] = new OBJ_IcePileClose(gp);
+	    gp.obj[30].worldX = (75) *gp.tileSize;
+	    gp.obj[30].worldY = (48) *gp.tileSize;
+	    
+	    gp.obj[31] = new OBJ_IcePileOpen(gp);
+	    gp.obj[31].worldX = (73) *gp.tileSize;
+	    gp.obj[31].worldY = (50) *gp.tileSize;
+	    
+	    gp.obj[32] = new OBJ_IcePileClose(gp);
+	    gp.obj[32].worldX = (77) *gp.tileSize;
+	    gp.obj[32].worldY = (52) *gp.tileSize;
+	    
+	    gp.obj[33] = new OBJ_IcePileOpen(gp);
+	    gp.obj[33].worldX = (78) *gp.tileSize;
+	    gp.obj[33].worldY = (57) *gp.tileSize;
+	    
+	    gp.obj[34] = new OBJ_IcePileClose(gp);
+	    gp.obj[34].worldX = (88) *gp.tileSize;
+	    gp.obj[34].worldY = (65) *gp.tileSize;
+	    
+	    gp.obj[35] = new OBJ_IcePileOpen(gp);
+	    gp.obj[35].worldX = (93) *gp.tileSize;
+	    gp.obj[35].worldY = (50) *gp.tileSize;
+	    
+	    gp.obj[36] = new OBJ_IcePileClose(gp);
+	    gp.obj[36].worldX = (95) *gp.tileSize;
+	    gp.obj[36].worldY = (48) *gp.tileSize;
+	    
+	    gp.obj[37] = new OBJ_IcePileOpen(gp);
+	    gp.obj[37].worldX = (94) *gp.tileSize;
+	    gp.obj[37].worldY = (42) *gp.tileSize;
+	    
+	    gp.obj[38] = new OBJ_IcePileClose(gp);
+	    gp.obj[38].worldX = (90) *gp.tileSize;
+	    gp.obj[38].worldY = (41) *gp.tileSize;
+	    
+	    gp.obj[39] = new OBJ_IcePileOpen(gp);
+	    gp.obj[39].worldX = (87) *gp.tileSize;
+	    gp.obj[39].worldY = (38) *gp.tileSize;
 	    
 	    //ice pillar
 	    
@@ -130,29 +181,6 @@ public class AssetSetter {
         gp.tree[0].worldX = (72) *gp.tileSize;
         gp.tree[0].worldY = (37) *gp.tileSize;
         
-        gp.tree[1] = new OBJ_PineTree(gp);
-        gp.tree[1].worldX = (30) *gp.tileSize;
-        gp.tree[1].worldY = (30) *gp.tileSize;
-        
-        gp.tree[2] = new OBJ_PineTree(gp);
-        gp.tree[2].worldX = (25) *gp.tileSize;
-        gp.tree[2].worldY = (30) *gp.tileSize;
-        
-        gp.tree[3] = new OBJ_PineTree(gp);
-        gp.tree[3].worldX = (30) *gp.tileSize;
-        gp.tree[3].worldY = (25) *gp.tileSize;
-        
-        gp.tree[4] = new OBJ_PineTree(gp);
-        gp.tree[4].worldX = (35) *gp.tileSize;
-        gp.tree[4].worldY = (30) *gp.tileSize;
-        
-        gp.tree[5] = new OBJ_PineTree(gp);
-        gp.tree[5].worldX = (25) *gp.tileSize;
-        gp.tree[5].worldY = (35) *gp.tileSize;
-        
-        gp.tree[5] = new OBJ_PineTree(gp);
-        gp.tree[5].worldX = (35) *gp.tileSize;
-        gp.tree[5].worldY = (35) *gp.tileSize;
         
 
 	}
