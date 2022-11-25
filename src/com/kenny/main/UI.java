@@ -97,6 +97,7 @@ public class UI {
 
             if (messageOn == true) {
                 g2d.setFont(g2d.getFont().deriveFont(28F));
+                g2d.setColor(Color.black);
                 g2d.drawString(message, getXforCenteredText(message), gp.tileSize * 11);
 
                 messageCounter++;
