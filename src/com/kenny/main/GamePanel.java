@@ -60,7 +60,7 @@ public class GamePanel extends JPanel implements Runnable {
     // instantiate player
     public Player player = new Player(this, keyH);
     // instantiate SuperObject Array as Slots for Objects
-    public Entity tree[] = new Entity[6];
+    public Entity tree[] = new Entity[25];
     public Entity obj[] = new Entity[100];
     public Entity npc[] = new Entity[10];
 

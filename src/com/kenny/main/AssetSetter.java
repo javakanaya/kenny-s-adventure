@@ -25,6 +25,7 @@ import com.kenny.object.s_winter.OBJ_IcePillarOn;
 import com.kenny.object.s_winter.OBJ_WinterGate;
 import com.kenny.object.s_winter.OBJ_WinterKey;
 import com.kenny.object.s_winter.OBJ_WinterPineTree;
+import com.kenny.object.s_winter.OBJ_WinterSpruce;
 
 public class AssetSetter {
     
@@ -180,6 +181,94 @@ public class AssetSetter {
 		gp.tree[0] = new OBJ_WinterPineTree(gp);
         gp.tree[0].worldX = (72) *gp.tileSize;
         gp.tree[0].worldY = (37) *gp.tileSize;
+        
+        gp.tree[1] = new OBJ_WinterSpruce(gp);
+        gp.tree[1].worldX = (70) *gp.tileSize;
+        gp.tree[1].worldY = (34) *gp.tileSize;
+        
+        gp.tree[2] = new OBJ_WinterPineTree(gp);
+        gp.tree[2].worldX = (74) *gp.tileSize;
+        gp.tree[2].worldY = (30) *gp.tileSize;
+        
+        gp.tree[3] = new OBJ_WinterSpruce(gp);
+        gp.tree[3].worldX = (77) *gp.tileSize;
+        gp.tree[3].worldY = (32) *gp.tileSize;
+        
+        gp.tree[4] = new OBJ_WinterPineTree(gp);
+        gp.tree[4].worldX = (80) *gp.tileSize;
+        gp.tree[4].worldY = (30) *gp.tileSize;
+        
+        gp.tree[5] = new OBJ_WinterSpruce(gp);
+        gp.tree[5].worldX = (84) *gp.tileSize;
+        gp.tree[5].worldY = (32) *gp.tileSize;
+        
+        gp.tree[6] = new OBJ_WinterPineTree(gp);
+        gp.tree[6].worldX = (87) *gp.tileSize;
+        gp.tree[6].worldY = (31) *gp.tileSize;
+        
+        gp.tree[7] = new OBJ_WinterSpruce(gp);
+        gp.tree[7].worldX = (88) *gp.tileSize;
+        gp.tree[7].worldY = (33) *gp.tileSize;
+        
+        gp.tree[8] = new OBJ_WinterPineTree(gp);
+        gp.tree[8].worldX = (92) *gp.tileSize;
+        gp.tree[8].worldY = (32) *gp.tileSize;
+        
+        gp.tree[9] = new OBJ_WinterSpruce(gp);
+        gp.tree[9].worldX = (97) *gp.tileSize;
+        gp.tree[9].worldY = (31) *gp.tileSize;
+        
+        gp.tree[10] = new OBJ_WinterPineTree(gp);
+        gp.tree[10].worldX = (96) *gp.tileSize;
+        gp.tree[10].worldY = (35) *gp.tileSize;
+        
+        gp.tree[11] = new OBJ_WinterSpruce(gp);
+        gp.tree[11].worldX = (97) *gp.tileSize;
+        gp.tree[11].worldY = (39) *gp.tileSize;
+        
+        gp.tree[12] = new OBJ_WinterPineTree(gp);
+        gp.tree[12].worldX = (98) *gp.tileSize;
+        gp.tree[12].worldY = (43) *gp.tileSize;
+        
+        gp.tree[13] = new OBJ_WinterSpruce(gp);
+        gp.tree[13].worldX = (96) *gp.tileSize;
+        gp.tree[13].worldY = (50) *gp.tileSize;
+        
+        gp.tree[14] = new OBJ_WinterPineTree(gp);
+        gp.tree[14].worldX = (97) *gp.tileSize;
+        gp.tree[14].worldY = (53) *gp.tileSize;
+        
+        gp.tree[15] = new OBJ_WinterSpruce(gp);
+        gp.tree[15].worldX = (95) *gp.tileSize;
+        gp.tree[15].worldY = (55) *gp.tileSize;
+        
+        gp.tree[16] = new OBJ_WinterPineTree(gp);
+        gp.tree[16].worldX = (92) *gp.tileSize;
+        gp.tree[16].worldY = (57) *gp.tileSize;
+        
+        gp.tree[17] = new OBJ_WinterSpruce(gp);
+        gp.tree[17].worldX = (88) *gp.tileSize;
+        gp.tree[17].worldY = (57) *gp.tileSize;
+        
+        gp.tree[18] = new OBJ_WinterPineTree(gp);
+        gp.tree[18].worldX = (83) *gp.tileSize;
+        gp.tree[18].worldY = (58) *gp.tileSize;
+        
+        gp.tree[19] = new OBJ_WinterSpruce(gp);
+        gp.tree[19].worldX = (79) *gp.tileSize;
+        gp.tree[19].worldY = (57) *gp.tileSize;
+        
+        gp.tree[20] = new OBJ_WinterPineTree(gp);
+        gp.tree[20].worldX = (74) *gp.tileSize;
+        gp.tree[20].worldY = (57) *gp.tileSize;
+        
+        gp.tree[21] = new OBJ_WinterSpruce(gp);
+        gp.tree[21].worldX = (72) *gp.tileSize;
+        gp.tree[21].worldY = (55) *gp.tileSize;
+        
+        gp.tree[22] = new OBJ_WinterSpruce(gp);
+        gp.tree[22].worldX = (70) *gp.tileSize;
+        gp.tree[22].worldY = (51) *gp.tileSize;
         
         
 
