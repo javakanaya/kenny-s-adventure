@@ -37,7 +37,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxWorldRow = 100;
 
     // SYSTEM
-    private final int fps = 60;
+    public int fps = 60;
     // add keyHandler
     public KeyHandler keyH = new KeyHandler(this);
     // instantiate tile manager
@@ -127,13 +127,12 @@ public class GamePanel extends JPanel implements Runnable {
         // GAME LOOP
 
         // loop interval, so it doesn't loop too fast
-        double drawInterval = 1000 / (double) fps;
+        double drawInterval;
         double delta = 0;
         long lastTime = System.currentTimeMillis();
         long currentTime;
         long timer = 0;
         int drawCount = 0;
-
         // as long as the gameThread exist
         while (gameThread != null) {
             // to get the suitable FPS,
@@ -142,7 +141,7 @@ public class GamePanel extends JPanel implements Runnable {
 
             // pause the gameThread for a while
             currentTime = System.currentTimeMillis();
-
+            drawInterval = 1000 / (double) fps;
             delta += (currentTime - lastTime) / drawInterval;
             timer += (currentTime - lastTime);
             lastTime = currentTime;
