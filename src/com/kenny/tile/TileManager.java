@@ -154,6 +154,11 @@ public class TileManager {
         setup(50, "springWorld/base/050-lras_down_grass", false);
         setup(51, "springWorld/base/051-lras_left_grass", false);
         setup(52, "springWorld/base/052-lras_up_grass", false);
+        setup(53, "springWorld/base/053-lras_blueflower", false);
+        setup(54, "springWorld/base/054-lras_pinkflower", false);
+        setup(55, "springWorld/base/055-lras_bigrock1", true);
+        setup(56, "springWorld/base/056-lras_bigrock2", true);
+        setup(57, "springWorld/base/057_lras_smallrock", true);
         
         // brown-grass
         setup(60, "autumnWorld/base/060-brown", false);
