@@ -4,7 +4,6 @@
 
 package com.kenny.entity;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
@@ -55,9 +54,9 @@ public class Entity {
             type_npc = 1,
             type_consumable = 2,
             type_gate = 3,
-    		type_pillarOff = 4,
-    		type_pillarOn = 5,
-    		type_pile = 6;
+            type_pillarOff = 4,
+            type_pillarOn = 5,
+            type_pile = 6;
 
     public Entity(GamePanel gp) {
         this.gp = gp;
@@ -66,7 +65,7 @@ public class Entity {
     public void setAction() {
     }
 
-    public void interact( int i) {
+    public void interact(int i) {
     }
 
     // return true if can be used, and false if cannot
@@ -84,20 +83,20 @@ public class Entity {
 
         // setting for when sprite speak is facing to player
         // tapi karena belum ada asset sprite nya, ya di-comment dulu aja ya...
-	        switch(gp.player.direction) {
-	            case "up":
-	                direction = "down";
-	                break;
-	            case "down":
-	                direction = "up";
-	                break;
-	            case "left":
-	                direction = "right";
-	                break;
-	            case "right":
-	                direction = "left";
-	                break;
-	        }
+        switch (gp.player.direction) {
+            case "up":
+                direction = "down";
+                break;
+            case "down":
+                direction = "up";
+                break;
+            case "left":
+                direction = "right";
+                break;
+            case "right":
+                direction = "left";
+                break;
+        }
     }
 
     public void update() {
@@ -337,14 +336,14 @@ public class Entity {
         }
 
         int col = nextWorldX / gp.tileSize,
-            row = nextWorldY / gp.tileSize;
-        
-        for(int i = 0; i < target.length ; i++) {
-            if(target[i] != null) {
+                row = nextWorldY / gp.tileSize;
+
+        for (int i = 0; i < target.length; i++) {
+            if (target[i] != null) {
 //                System.out.println(target[i].getCol() + " " + col);
 //                System.out.println(target[i].getRow() + " " + row);
 //                System.out.println(target[i].name + " " + targetName);
-                if(target[i].getCol() == col && 
+                if (target[i].getCol() == col &&
                         target[i].getRow() == row &&
                         target[i].name.equals(targetName)) {
                     index = i;
@@ -352,7 +351,7 @@ public class Entity {
                 }
             }
         }
-        
+
         System.out.println(index);
         return index;
     }

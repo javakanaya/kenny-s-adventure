@@ -331,21 +331,21 @@ public class UI {
 
         // DRAW DESC. TEXT
         int textX = dFrameX + 20,
-            textY = dFrameY + gp.tileSize;
-        
+                textY = dFrameY + gp.tileSize;
+
         g2d.setFont(g2d.getFont().deriveFont(28F));
-        
+
         int itemIndex = getItemIndexOnSlot();
-        
-        if(itemIndex < gp.player.inventory.size()) {
+
+        if (itemIndex < gp.player.inventory.size()) {
             drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
-            for(String line: gp.player.inventory.get(itemIndex).description.split("\n")) {
+            for (String line : gp.player.inventory.get(itemIndex).description.split("\n")) {
                 g2d.drawString(line, textX, textY);
                 textY += 32;
-            }  
+            }
         }
     }
-    
+
     public int getItemIndexOnSlot() {
         int itemIndex = slotCol + (slotRow * 5);
         return itemIndex;

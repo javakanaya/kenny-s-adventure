@@ -1,9 +1,5 @@
 package com.kenny.object.s_spring;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import com.kenny.entity.Entity;
 import com.kenny.main.GamePanel;
 

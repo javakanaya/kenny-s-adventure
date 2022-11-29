@@ -5,15 +5,11 @@
 package com.kenny.entity;
 
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
-import com.kenny.object.s_autumn.OBJ_AutumnKey;
-import com.kenny.object.s_spring.OBJ_SpringKey;
-import com.kenny.object.s_summer.OBJ_SummerKey;
 import com.kenny.object.s_winter.OBJ_IcePillarOff;
 import com.kenny.object.s_winter.OBJ_IcePillarOn;
 import com.kenny.object.s_winter.OBJ_WinterKey;
@@ -26,8 +22,8 @@ public class Player extends Entity {
     // indicate where the player will be drawn
     public final int screenX;
     public final int screenY;
-    
-    public int[] pillar = {1, 1, 1, 1};
+
+    public int[] pillar = { 1, 1, 1, 1 };
     public ArrayList<Entity> inventory = new ArrayList<>();
     int maxInventorySize = 20;
 
@@ -200,32 +196,28 @@ public class Player extends Entity {
             // OBSTACLE
             if (gp.obj[i].type == type_gate) {
                 gp.ui.showMessage("press ENTER to interact");
-                if(keyH.enterPressed == true) {
+                if (keyH.enterPressed == true) {
                     gp.obj[i].interact(i);
-            		
+
                 }
-            }
-            else if (gp.obj[i].type == type_pillarOff) {
+            } else if (gp.obj[i].type == type_pillarOff) {
                 gp.ui.showMessage("Interact Ice Pillar");
-                if(keyH.enterPressed == true) { 	
-                	int xPosition = gp.obj[i].worldX,
-                		yPosition = gp.obj[i].worldY;
-                	gp.obj[i].interact(i);
-                	spawnPillarOn(i, xPosition, yPosition);
-                	
-                
-                	
+                if (keyH.enterPressed == true) {
+                    int xPosition = gp.obj[i].worldX,
+                            yPosition = gp.obj[i].worldY;
+                    gp.obj[i].interact(i);
+                    spawnPillarOn(i, xPosition, yPosition);
+
+                }
+            } else if (gp.obj[i].type == type_pillarOn) {
+            } else if (gp.obj[i].type == type_pile) {
+                gp.ui.showMessage("Interact Ice Pile");
+                if (keyH.enterPressed == true) {
+                    gp.obj[i].interact(i);
+
                 }
             }
-            else if (gp.obj[i].type == type_pillarOn) {}
-            else if (gp.obj[i].type == type_pile) {
-            	gp.ui.showMessage("Interact Ice Pile");
-                if(keyH.enterPressed == true) { 	
-                	gp.obj[i].interact(i);
-                    
-                }
-            }
-            
+
             else {
                 String text;
                 if (inventory.size() != maxInventorySize) {
@@ -253,19 +245,20 @@ public class Player extends Entity {
     }
 
     public void selectItem() {
-        
+
         int itemIndex = gp.ui.getItemIndexOnSlot();
-        
-        if(itemIndex < inventory.size()) {
+
+        if (itemIndex < inventory.size()) {
             Entity selectedItem = inventory.get(itemIndex);
-            
-            if(selectedItem.type == type_consumable) {
-                if(selectedItem.use(this) == true) {
-                    inventory.remove(itemIndex);                    
+
+            if (selectedItem.type == type_consumable) {
+                if (selectedItem.use(this) == true) {
+                    inventory.remove(itemIndex);
                 }
             }
         }
     }
+
     // player draw method
     public void draw(Graphics2D g2d) {
 
@@ -383,57 +376,55 @@ public class Player extends Entity {
         // draw the player, the player doesn't change but the map
         g2d.drawImage(image, screenX, screenY, null);
     }
-    
+
     public void spawnPillarOn(int i, int xPos, int yPos) {
-    	gp.obj[i] = new OBJ_IcePillarOn(gp);
- 	    gp.obj[i].worldX = xPos;
- 	    gp.obj[i].worldY = yPos;
- 	    
- 	    int p=0;
- 	    while(pillar[p]!=1)
- 	    	p++;
- 	    pillar[p] = i;
- 	    System.out.println(pillar[p] + " " + p);
- 	    
- 	    if(((pillar[0] - pillar[1])+pillar[2])*pillar[3] == 169) {
- 	    	
- 	    	gp.ui.showMessage("Winter Key Has Spawned!");
- 	    	spawnWinterKey();
- 	    }
- 	    else if(pillar[0] != 1 && pillar[1] != 1 && pillar[2] != 1 && pillar[3] != 1){
- 	    	
- 	    	gp.obj[11]= null;
- 	    	gp.obj[11] = new OBJ_IcePillarOff(gp);
- 		    gp.obj[11].worldX = (78) *gp.tileSize;
- 		    gp.obj[11].worldY = (44) *gp.tileSize;
- 		    
- 		    gp.obj[12]= null;
- 		    gp.obj[12] = new OBJ_IcePillarOff(gp);
- 		    gp.obj[12].worldX = (82) *gp.tileSize;
- 		    gp.obj[12].worldY = (40) *gp.tileSize;
- 		    
- 		    gp.obj[13]= null;
- 		    gp.obj[13] = new OBJ_IcePillarOff(gp);
- 		    gp.obj[13].worldX = (88) *gp.tileSize;
- 		    gp.obj[13].worldY = (45) *gp.tileSize;
- 		    
- 		    gp.obj[14]= null;
- 		    gp.obj[14] = new OBJ_IcePillarOff(gp);
- 		    gp.obj[14].worldX = (84) *gp.tileSize;
- 		    gp.obj[14].worldY = (50) *gp.tileSize;
- 	    	
- 		    while(p >= 0) {
- 		    	pillar[p] = 1;
- 		    	p--;
- 		    }
- 		    
- 		    	
- 	    }
+        gp.obj[i] = new OBJ_IcePillarOn(gp);
+        gp.obj[i].worldX = xPos;
+        gp.obj[i].worldY = yPos;
+
+        int p = 0;
+        while (pillar[p] != 1)
+            p++;
+        pillar[p] = i;
+        System.out.println(pillar[p] + " " + p);
+
+        if (((pillar[0] - pillar[1]) + pillar[2]) * pillar[3] == 169) {
+
+            gp.ui.showMessage("Winter Key Has Spawned!");
+            spawnWinterKey();
+        } else if (pillar[0] != 1 && pillar[1] != 1 && pillar[2] != 1 && pillar[3] != 1) {
+
+            gp.obj[11] = null;
+            gp.obj[11] = new OBJ_IcePillarOff(gp);
+            gp.obj[11].worldX = (78) * gp.tileSize;
+            gp.obj[11].worldY = (44) * gp.tileSize;
+
+            gp.obj[12] = null;
+            gp.obj[12] = new OBJ_IcePillarOff(gp);
+            gp.obj[12].worldX = (82) * gp.tileSize;
+            gp.obj[12].worldY = (40) * gp.tileSize;
+
+            gp.obj[13] = null;
+            gp.obj[13] = new OBJ_IcePillarOff(gp);
+            gp.obj[13].worldX = (88) * gp.tileSize;
+            gp.obj[13].worldY = (45) * gp.tileSize;
+
+            gp.obj[14] = null;
+            gp.obj[14] = new OBJ_IcePillarOff(gp);
+            gp.obj[14].worldX = (84) * gp.tileSize;
+            gp.obj[14].worldY = (50) * gp.tileSize;
+
+            while (p >= 0) {
+                pillar[p] = 1;
+                p--;
+            }
+
+        }
     }
-    
+
     public void spawnWinterKey() {
-		gp.obj[1] = new OBJ_WinterKey(gp);
-		gp.obj[1].worldX = 84 *gp.tileSize;
-		gp.obj[1].worldY = 47 *gp.tileSize;
+        gp.obj[1] = new OBJ_WinterKey(gp);
+        gp.obj[1].worldX = 84 * gp.tileSize;
+        gp.obj[1].worldY = 47 * gp.tileSize;
     }
 }

@@ -57,40 +57,35 @@ public class EventHandler {
             // pillar1
             if (hit(90, 53, "any") == true) {
                 teleport(gp.dialogueState, 78, 48);
-            }
-            else if (hit(78, 48, "any") == true) {
+            } else if (hit(78, 48, "any") == true) {
                 teleport(gp.dialogueState, 90, 53);
             }
 
             // pillar2
             if (hit(80, 56, "any") == true) {
                 teleport(gp.dialogueState, 86, 43);
-            }
-            else if (hit(86, 43, "any") == true) {
+            } else if (hit(86, 43, "any") == true) {
                 teleport(gp.dialogueState, 80, 56);
             }
 
             // pillar3
             if (hit(79, 40, "any") == true) {
                 teleport(gp.dialogueState, 88, 49);
-            }
-            else if (hit(88, 49, "any") == true) {
+            } else if (hit(88, 49, "any") == true) {
                 teleport(gp.dialogueState, 79, 40);
             }
 
             // pillar4
             if (hit(93, 45, "any") == true) {
                 teleport(gp.dialogueState, 82, 51);
-            }
-            else if (hit(82, 51, "any") == true) {
+            } else if (hit(82, 51, "any") == true) {
                 teleport(gp.dialogueState, 93, 45);
             }
 
             // key
             if (hit(74, 45, "any") == true) {
                 teleport(gp.dialogueState, 82, 45);
-            }
-            else if (hit(82, 45, "any") == true) {
+            } else if (hit(82, 45, "any") == true) {
                 teleport(gp.dialogueState, 74, 45);
             }
         }
@@ -131,22 +126,22 @@ public class EventHandler {
     }
 
     public void teleport(int gameState, int destinationCol, int destinationRow) {
-    	
-    	if (gp.keyH.enterPressed == true) {
-    		 gp.gameState = gameState;
-    	        gp.ui.currentDialogue = "Teleport!";
 
-    	        gp.player.worldX = destinationCol * gp.tileSize;
-    	        gp.player.worldY = destinationRow * gp.tileSize;
+        if (gp.keyH.enterPressed == true) {
+            gp.gameState = gameState;
+            gp.ui.currentDialogue = "Teleport!";
 
-    	        canTouchEvent = false;
-    	}
+            gp.player.worldX = destinationCol * gp.tileSize;
+            gp.player.worldY = destinationRow * gp.tileSize;
+
+            canTouchEvent = false;
+        }
     }
 
     public void damagePit(int gameState, int col, int row) {
         gp.gameState = gameState;
         gp.ui.currentDialogue = "you fall into a pit";
-        
+
         // set one time event
         eventRect[col][row].eventDone = true;
 

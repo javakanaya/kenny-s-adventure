@@ -1,22 +1,18 @@
 package com.kenny.object.s_summer;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import com.kenny.entity.Entity;
 import com.kenny.main.GamePanel;
 
 public class OBJ_SummerKey extends Entity {
 
     GamePanel gp;
-    
+
     public OBJ_SummerKey(GamePanel gp) {
 
         super(gp);
-        
+
         this.gp = gp;
-        
+
         type = type_consumable;
         name = "Summer Key";
         down1 = setup("/objects/keys/summerKey");

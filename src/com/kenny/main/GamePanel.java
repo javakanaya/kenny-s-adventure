@@ -110,7 +110,7 @@ public class GamePanel extends JPanel implements Runnable {
         // playMusic(0);
 
         // initiate gameState
-        gameState = playState;
+        gameState = titleState;
     }
 
     public void startGameThread() {
@@ -131,8 +131,8 @@ public class GamePanel extends JPanel implements Runnable {
         double delta = 0;
         long lastTime = System.currentTimeMillis();
         long currentTime;
-        long timer = 0;
-        int drawCount = 0;
+        // long timer = 0;
+        // int drawCount = 0;
         // as long as the gameThread exist
         while (gameThread != null) {
             // to get the suitable FPS,
@@ -143,8 +143,8 @@ public class GamePanel extends JPanel implements Runnable {
             currentTime = System.currentTimeMillis();
             drawInterval = 1000 / (double) fps;
             delta += (currentTime - lastTime) / drawInterval;
-            timer += (currentTime - lastTime);
             lastTime = currentTime;
+            // timer += (currentTime - lastTime);
 
             if (delta >= 1) {
                 // 1. UPDATE: update information such as character information
@@ -153,16 +153,16 @@ public class GamePanel extends JPanel implements Runnable {
                 repaint();
 
                 delta--;
-                drawCount++;
+                // drawCount++;
             }
 
             // display FPS
-            if (timer >= 1000) {
-                // System.out.println("The game loop is running");
-                // System.out.println("FPS: "+ drawCount);
-                drawCount = 0;
-                timer = 0;
-            }
+//            if (timer >= 1000) {
+//                System.out.println("The game loop is running");
+//                System.out.println("FPS: "+ drawCount);
+//                drawCount = 0;
+//                timer = 0;
+//            }
 
         }
     }
@@ -233,12 +233,12 @@ public class GamePanel extends JPanel implements Runnable {
                     return Integer.compare(e1.worldY, e2.worldY);
                 }
             });
-            
+
             // DRAW ENTITIES
             for (int i = 0; i < entityList.size(); i++) {
                 entityList.get(i).draw(g2d);
             }
-            
+
             // EMPTY ENTITYLIST
             entityList.clear();
 

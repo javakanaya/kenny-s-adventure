@@ -6,11 +6,11 @@ import com.kenny.main.GamePanel;
 public class OBJ_WinterGate extends Entity {
 
     GamePanel gp;
-    
+
     public OBJ_WinterGate(GamePanel gp) {
 
         super(gp);
-        
+
         this.gp = gp;
 
         name = "Winter Gate";
@@ -19,9 +19,9 @@ public class OBJ_WinterGate extends Entity {
         down1 = setup("/objects/gates/winterGateOff");
         collision = true;
     }
-    
+
     public void interact(int i) {
-        
+
         gp.gameState = gp.dialogueState;
         gp.ui.currentDialogue = "You need a key to open this";
     }
