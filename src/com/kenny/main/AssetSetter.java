@@ -22,17 +22,17 @@ public class AssetSetter {
         gp.obj[0].worldX = ((51)) * gp.tileSize;
         gp.obj[0].worldY = ((51)) * gp.tileSize;
 
-//		gp.obj[2] = new OBJ_SpringKey(gp);
-//		gp.obj[2].worldX = ((55) - 1) *gp.tileSize;
-//		gp.obj[2].worldY = ((55) - 1) *gp.tileSize;
-//		
-//		gp.obj[3] = new OBJ_SummerKey(gp);
-//		gp.obj[3].worldX = ((48) - 1) *gp.tileSize;
-//		gp.obj[3].worldY = ((50) - 1) *gp.tileSize;
-//		
-//		gp.obj[4] = new OBJ_AutumnKey(gp);
-//		gp.obj[4].worldX = ((55) - 1) *gp.tileSize;
-//		gp.obj[4].worldY = ((50) - 1) *gp.tileSize;
+		gp.obj[2] = new OBJ_SpringKey(gp);
+		gp.obj[2].worldX = (56) *gp.tileSize;
+		gp.obj[2].worldY = (94) *gp.tileSize;
+		
+		gp.obj[3] = new OBJ_SummerKey(gp);
+		gp.obj[3].worldX = (36) *gp.tileSize;
+		gp.obj[3].worldY = (43) *gp.tileSize;
+		
+		gp.obj[4] = new OBJ_AutumnKey(gp);
+		gp.obj[4].worldX = (57) *gp.tileSize;
+		gp.obj[4].worldY = (32) *gp.tileSize;
 
         gp.obj[5] = new OBJ_WinterGate(gp);
         gp.obj[5].worldX = ((56) - 1) * gp.tileSize;
@@ -261,27 +261,11 @@ public class AssetSetter {
         gp.npc[1].worldY = 62 * gp.tileSize;
 
         gp.npc[2] = new NPC_Bulky(gp);
-        gp.npc[2].worldX = 43 * gp.tileSize;
-        gp.npc[2].worldY = 41 * gp.tileSize;
+        gp.npc[2].worldX = 56 * gp.tileSize;
+        gp.npc[2].worldY = 34 * gp.tileSize;
 
         gp.npc[3] = new NPC_PinaKoolada(gp);
-        gp.npc[3].worldX = 41 * gp.tileSize;
-        gp.npc[3].worldY = 41 * gp.tileSize;
-
-//        gp.npc[4] = new NPC_WinterSlime(gp);
-//        gp.npc[4].worldX = 93 *gp.tileSize;
-//        gp.npc[4].worldY = 54 *gp.tileSize;
-//        
-//        gp.npc[5] = new NPC_WinterSlime(gp);
-//        gp.npc[5].worldX = 76 *gp.tileSize;
-//        gp.npc[5].worldY = 55 *gp.tileSize;
-//        
-//        gp.npc[6] = new NPC_WinterSlime(gp);
-//        gp.npc[6].worldX = 95 *gp.tileSize;
-//        gp.npc[6].worldY = 40 *gp.tileSize;
-//        
-//        gp.npc[7] = new NPC_WinterSlime(gp);
-//        gp.npc[7].worldX = 76 *gp.tileSize;
-//        gp.npc[7].worldY = 38 *gp.tileSize;
+        gp.npc[3].worldX = 38 * gp.tileSize;
+        gp.npc[3].worldY = 43 * gp.tileSize;
     }
 }
