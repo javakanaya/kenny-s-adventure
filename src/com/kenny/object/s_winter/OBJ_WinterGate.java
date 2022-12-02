@@ -17,6 +17,7 @@ public class OBJ_WinterGate extends Entity {
         type = type_gate;
         scallingY = 4;
         down1 = setup("/objects/gates/winterGateOff");
+        setSolidArea(0, 30, 48, 150);
         collision = true;
     }
 
