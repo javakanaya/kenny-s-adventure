@@ -53,7 +53,9 @@ public class EventHandler {
 //            if (hit(51, 60, "any") == true) {
 //                healingPool(gp.dialogueState);
 //            }
-
+        	
+        	//winter
+        	
             // pillar1
             if (hit(90, 53, "any") == true) {
                 teleport(gp.dialogueState, 78, 48);
@@ -87,6 +89,13 @@ public class EventHandler {
                 teleport(gp.dialogueState, 82, 45);
             } else if (hit(82, 45, "any") == true) {
                 teleport(gp.dialogueState, 74, 45);
+            }
+            
+            // spring
+            if (hit(56, 64, "down") == true) {
+                gp.fps = 1000;
+            }else if (hit(56, 64, "up") == true) {
+                gp.fps = 60;
             }
         }
     }
