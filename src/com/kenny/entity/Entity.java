@@ -344,8 +344,8 @@ public class Entity {
 //                System.out.println(target[i].getRow() + " " + row);
 //                System.out.println(target[i].name + " " + targetName);
                 if (target[i].getCol() == col &&
-                        target[i].getRow() == row &&
-                        target[i].name.equals(targetName)) {
+                    target[i].getRow() == row &&
+                    target[i].name.equals(targetName)) {
                     index = i;
                     break;
                 }

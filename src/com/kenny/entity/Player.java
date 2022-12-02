@@ -204,7 +204,7 @@ public class Player extends Entity {
                 gp.ui.showMessage("Interact Ice Pillar");
                 if (keyH.enterPressed == true) {
                     int xPosition = gp.obj[i].worldX,
-                            yPosition = gp.obj[i].worldY;
+                        yPosition = gp.obj[i].worldY;
                     gp.obj[i].interact(i);
                     spawnPillarOn(i, xPosition, yPosition);
 

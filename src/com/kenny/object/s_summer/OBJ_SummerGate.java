@@ -17,6 +17,7 @@ public class OBJ_SummerGate extends Entity {
         type = type_gate;
         scallingY = 4;
         down1 = setup("/objects/gates/summerGateOff");
+        setSolidArea(0, 30, 48, 150);
         collision = true;
     }
 

@@ -17,6 +17,7 @@ public class OBJ_SpringGate extends Entity {
         type = type_gate;
         scallingY = 4;
         down1 = setup("/objects/gates/springGateOff");
+        setSolidArea(0, 30, 48, 150);
         collision = true;
     }
 
