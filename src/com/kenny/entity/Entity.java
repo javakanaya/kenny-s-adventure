@@ -54,9 +54,11 @@ public class Entity {
             type_npc = 1,
             type_consumable = 2,
             type_gate = 3,
-            type_pillarOff = 4,
-            type_pillarOn = 5,
-            type_pile = 6;
+            type_winterPillarOff = 4,
+            type_winterPillarOn = 5,
+            type_pile = 6,
+            type_pillarOn = 7,
+            type_pillarOff = 8;
 
     public Entity(GamePanel gp) {
         this.gp = gp;

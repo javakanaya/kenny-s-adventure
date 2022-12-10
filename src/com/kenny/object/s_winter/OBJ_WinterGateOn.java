@@ -1,22 +1,22 @@
-package com.kenny.object.s_autumn;
+package com.kenny.object.s_winter;
 
 import com.kenny.entity.Entity;
 import com.kenny.main.GamePanel;
 
-public class OBJ_AutumnGate extends Entity {
+public class OBJ_WinterGateOn extends Entity {
 
     GamePanel gp;
 
-    public OBJ_AutumnGate(GamePanel gp) {
+    public OBJ_WinterGateOn(GamePanel gp) {
 
         super(gp);
 
         this.gp = gp;
 
-        name = "Autumn Gate";
+        name = "Winter Gate";
         type = type_gate;
         scallingY = 4;
-        down1 = setup("/objects/gates/autumnGateOff");
+        down1 = setup("/objects/gates/winterGateOn");
         setSolidArea(0, 30, 48, 150);
         collision = true;
     }
@@ -24,7 +24,7 @@ public class OBJ_AutumnGate extends Entity {
     public void interact(int i) {
 
         gp.gameState = gp.dialogueState;
-        gp.ui.currentDialogue = "You need a key to open this";
+        gp.ui.currentDialogue = "Gate Open";
     }
 
 }

@@ -9,7 +9,7 @@ public class OBJ_IcePillarOn extends Entity {
         super(gp);
 
         name = "Ice Pillar On";
-        type = type_pillarOn;
+        type = type_winterPillarOn;
         scallingX = 2;
         scallingY = 4;
         down1 = setup("/objects/others/icePillar_1");

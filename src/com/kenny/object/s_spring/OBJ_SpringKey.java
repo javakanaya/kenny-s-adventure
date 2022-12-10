@@ -2,6 +2,9 @@ package com.kenny.object.s_spring;
 
 import com.kenny.entity.Entity;
 import com.kenny.main.GamePanel;
+import com.kenny.object.s_autumn.OBJ_AutumnGateOff;
+import com.kenny.object.s_autumn.OBJ_AutumnGateOn;
+import com.kenny.object.s_autumn.OBJ_AutumnPillarOn;
 
 public class OBJ_SpringKey extends Entity {
 
@@ -24,11 +27,22 @@ public class OBJ_SpringKey extends Entity {
 
         gp.gameState = gp.dialogueState;
 
-        int objIndex = getDetected(entity, gp.obj, "Spring Gate");
+        int objIndex = getDetected(entity, gp.obj, "Spring Pillar");
 
         if (objIndex != 999) {
             gp.ui.currentDialogue = "You use the " + name + "\nand open the Spring Gate";
             gp.obj[objIndex] = null;
+            
+            gp.obj[objIndex] = null;
+            gp.obj[objIndex] = new OBJ_SpringPillarOn(gp);
+            gp.obj[objIndex].worldX = ((49) ) * gp.tileSize;
+            gp.obj[objIndex].worldY = ((52) ) * gp.tileSize;
+            
+            gp.obj[6] = null;
+            gp.obj[6] = new OBJ_SpringGateOn(gp);
+            gp.obj[6].worldX = ((53) ) * gp.tileSize;
+            gp.obj[6].worldY = ((45) ) * gp.tileSize;
+            
             return true;
         } else {
             gp.ui.currentDialogue = "What are you doing?\nYou can only use this key to associated gate";

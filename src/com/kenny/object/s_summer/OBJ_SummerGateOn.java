@@ -3,11 +3,11 @@ package com.kenny.object.s_summer;
 import com.kenny.entity.Entity;
 import com.kenny.main.GamePanel;
 
-public class OBJ_SummerGate extends Entity {
+public class OBJ_SummerGateOn extends Entity {
 
     GamePanel gp;
 
-    public OBJ_SummerGate(GamePanel gp) {
+    public OBJ_SummerGateOn(GamePanel gp) {
 
         super(gp);
 
@@ -16,7 +16,7 @@ public class OBJ_SummerGate extends Entity {
         name = "Summer Gate";
         type = type_gate;
         scallingY = 4;
-        down1 = setup("/objects/gates/summerGateOff");
+        down1 = setup("/objects/gates/summerGateOn");
         setSolidArea(0, 30, 48, 150);
         collision = true;
     }
@@ -24,6 +24,6 @@ public class OBJ_SummerGate extends Entity {
     public void interact(int i) {
 
         gp.gameState = gp.dialogueState;
-        gp.ui.currentDialogue = "You need a key to open this";
+        gp.ui.currentDialogue = "Gate Open";
     }
 }

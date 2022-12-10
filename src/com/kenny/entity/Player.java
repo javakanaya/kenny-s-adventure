@@ -200,7 +200,7 @@ public class Player extends Entity {
                     gp.obj[i].interact(i);
 
                 }
-            } else if (gp.obj[i].type == type_pillarOff) {
+            } else if (gp.obj[i].type == type_winterPillarOff) {
                 gp.ui.showMessage("Interact Ice Pillar");
                 if (keyH.enterPressed == true) {
                     int xPosition = gp.obj[i].worldX,
@@ -209,12 +209,21 @@ public class Player extends Entity {
                     spawnPillarOn(i, xPosition, yPosition);
 
                 }
-            } else if (gp.obj[i].type == type_pillarOn) {
+            } else if (gp.obj[i].type == type_winterPillarOn) {
+            	
             } else if (gp.obj[i].type == type_pile) {
                 gp.ui.showMessage("Interact Ice Pile");
                 if (keyH.enterPressed == true) {
                     gp.obj[i].interact(i);
 
+                }
+            }else if (gp.obj[i].type == type_pillarOff) {
+            	if (keyH.enterPressed == true) {
+                    gp.obj[i].interact(i);
+                }
+            }else if (gp.obj[i].type == type_pillarOn) {
+            	if (keyH.enterPressed == true) {
+                    gp.obj[i].interact(i);
                 }
             }
 

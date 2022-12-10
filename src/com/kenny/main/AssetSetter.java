@@ -18,37 +18,53 @@ public class AssetSetter {
 
     public void setObject() {
 
-        gp.obj[0] = new OBJ_Bone(gp);
-        gp.obj[0].worldX = ((51)) * gp.tileSize;
-        gp.obj[0].worldY = ((51)) * gp.tileSize;
+//        gp.obj[0] = new OBJ_Bone(gp);
+//        gp.obj[0].worldX = ((51)) * gp.tileSize;
+//        gp.obj[0].worldY = ((51)) * gp.tileSize;
 
 		gp.obj[2] = new OBJ_SpringKey(gp);
 		gp.obj[2].worldX = (56) *gp.tileSize;
 		gp.obj[2].worldY = (94) *gp.tileSize;
 		
 		gp.obj[3] = new OBJ_SummerKey(gp);
-		gp.obj[3].worldX = (36) *gp.tileSize;
+		gp.obj[3].worldX = (37) *gp.tileSize;
 		gp.obj[3].worldY = (43) *gp.tileSize;
 		
 		gp.obj[4] = new OBJ_AutumnKey(gp);
 		gp.obj[4].worldX = (57) *gp.tileSize;
 		gp.obj[4].worldY = (32) *gp.tileSize;
 
-        gp.obj[5] = new OBJ_WinterGate(gp);
-        gp.obj[5].worldX = ((56) - 1) * gp.tileSize;
-        gp.obj[5].worldY = ((45) - 1) * gp.tileSize;
+        gp.obj[5] = new OBJ_WinterGateOff(gp);
+        gp.obj[5].worldX = ((56) ) * gp.tileSize;
+        gp.obj[5].worldY = ((45) ) * gp.tileSize;
 
-        gp.obj[6] = new OBJ_SpringGate(gp);
-        gp.obj[6].worldX = ((53) - 1) * gp.tileSize;
-        gp.obj[6].worldY = ((45) - 1) * gp.tileSize;
+        gp.obj[6] = new OBJ_SpringGateOff(gp);
+        gp.obj[6].worldX = ((53) ) * gp.tileSize;
+        gp.obj[6].worldY = ((45) ) * gp.tileSize;
 
-        gp.obj[7] = new OBJ_SummerGate(gp);
-        gp.obj[7].worldX = ((55) - 1) * gp.tileSize;
-        gp.obj[7].worldY = ((45) - 1) * gp.tileSize;
+        gp.obj[7] = new OBJ_SummerGateOff(gp);
+        gp.obj[7].worldX = ((55) ) * gp.tileSize;
+        gp.obj[7].worldY = ((45) ) * gp.tileSize;
 
-        gp.obj[8] = new OBJ_AutumnGate(gp);
-        gp.obj[8].worldX = ((54) - 1) * gp.tileSize;
-        gp.obj[8].worldY = ((45) - 1) * gp.tileSize;
+        gp.obj[8] = new OBJ_AutumnGateOff(gp);
+        gp.obj[8].worldX = ((54) ) * gp.tileSize;
+        gp.obj[8].worldY = ((45) ) * gp.tileSize;
+        
+        gp.obj[40] = new OBJ_AutumnPillarOff(gp);
+        gp.obj[40].worldX = ((51)) * gp.tileSize;
+        gp.obj[40].worldY = ((50)) * gp.tileSize;
+        
+        gp.obj[41] = new OBJ_SpringPillarOff(gp);
+        gp.obj[41].worldX = ((49)) * gp.tileSize;
+        gp.obj[41].worldY = ((52)) * gp.tileSize;
+        
+        gp.obj[42] = new OBJ_SummerPillarOff(gp);
+        gp.obj[42].worldX = ((58)) * gp.tileSize;
+        gp.obj[42].worldY = ((50)) * gp.tileSize;
+        
+        gp.obj[43] = new OBJ_WinterPillarOff(gp);
+        gp.obj[43].worldX = ((60)) * gp.tileSize;
+        gp.obj[43].worldY = ((52)) * gp.tileSize;
 
         // ice pile port
 
