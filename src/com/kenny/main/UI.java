@@ -195,7 +195,7 @@ public class UI {
                 g2d.drawString(">", x - gp.tileSize, y);
             }
 
-            text = "LOAD GAME";
+            text = "HIGH SCORE";
             x = getXforCenteredText(text);
             y += gp.tileSize;
             g2d.drawString(text, x, y);
