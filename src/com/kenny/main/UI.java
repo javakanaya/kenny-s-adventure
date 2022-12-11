@@ -10,6 +10,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
+import javax.imageio.ImageIO;
+
 import com.kenny.entity.Entity;
 import com.kenny.object.s_autumn.OBJ_AutumnKey;
 import com.kenny.object.s_spring.OBJ_SpringKey;
@@ -23,6 +25,11 @@ public class UI {
     Font courier, calibri, chaichle, maruMonica;
     BufferedImage[] keyImage = new BufferedImage[4];
     Entity[] keys = new Entity[4];
+    int counter = 0
+    	,tImage = 1;
+    public BufferedImage tutorial1, tutorial2,
+    					 tutorial3, tutorial4,
+    					 kennyTS, TS1, TS2;
 
     public boolean messageOn = false;
     public String message = "";
@@ -66,6 +73,33 @@ public class UI {
         keys[1] = new OBJ_SpringKey(gp);
         keys[2] = new OBJ_SummerKey(gp);
         keys[3] = new OBJ_AutumnKey(gp);
+        
+        getImage();
+    }
+    
+    public BufferedImage setup(String imagePath) {
+
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream(imagePath + ".png"));
+            image = uTool.scaleImage(image, gp.tileSize*16, gp.tileSize*12);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return image;
+    }
+    
+    public void getImage() {
+    	tutorial1 = setup("/tutorial/t1");
+    	tutorial2 = setup("/tutorial/t2");
+    	tutorial3 = setup("/tutorial/t3");
+    	tutorial4 = setup("/tutorial/t4");
+    	kennyTS = setup("/title/kenny_ts");
+    	TS1 = setup("/title/TS1");
+    	TS2 = setup("/title/TS2");
     }
 
     public void showMessage(String text) {
@@ -157,39 +191,37 @@ public class UI {
     }
 
     public void drawTitleScreen() {
-
+    	
+    	counter++;
+    	
         if (titleScreenState == 0) {
             // Background
-            g2d.setColor(new Color(231, 188, 145));
+            g2d.setColor(new Color(250, 237, 205));
             g2d.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
             // Title
-            g2d.setFont(chaichle);
-            g2d.setFont(g2d.getFont().deriveFont(Font.BOLD, 96F));
-            String text = "Kenny.";
-            int x = getXforCenteredText(text),
-                    y = gp.tileSize * 3;
-
-            // Shadow
-            g2d.setColor(Color.BLACK);
-            g2d.drawString(text, x + 5, y + 5);
-
-            // Main Color
-            g2d.setColor(Color.WHITE);
-            g2d.drawString(text, x, y);
-
-            // Kenny Image - bisa dikasih idle
-            x = gp.screenWidth / 2 - gp.tileSize;
-            y += gp.tileSize * 1;
-            g2d.drawImage(gp.player.idleRight3, x, y, gp.tileSize * 2, gp.tileSize * 2, null);
+            if(tImage == 1)
+            	g2d.drawImage(TS1, 0, 0, null);
+        	else if(tImage == 2)
+        		g2d.drawImage(TS2, 0, 0, null);
+            if (counter > 50) {
+				if (tImage >= 2)
+					tImage = 1;
+				else
+					tImage++;
+				counter = 0;
+			}
+            
 
             // Menu
+            g2d.setColor(Color.BLACK);
             g2d.setFont(maruMonica);
-            g2d.setFont(g2d.getFont().deriveFont(Font.BOLD, 48F));
+            g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 48F));
 
-            text = "NEW GAME";
+            String text = "NEW GAME";
+            int x = getXforCenteredText(text),
+                    y = gp.tileSize * 8;
             x = getXforCenteredText(text);
-            y += gp.tileSize * 3.5;
             g2d.drawString(text, x, y);
             if (commandNum == 0) {
                 g2d.drawString(">", x - gp.tileSize, y);
@@ -197,7 +229,7 @@ public class UI {
 
             text = "HIGH SCORE";
             x = getXforCenteredText(text);
-            y += gp.tileSize;
+            y += gp.tileSize*1.2;
             g2d.drawString(text, x, y);
             if (commandNum == 1) {
                 g2d.drawString(">", x - gp.tileSize, y);
@@ -205,52 +237,32 @@ public class UI {
 
             text = "EXIT";
             x = getXforCenteredText(text);
-            y += gp.tileSize;
+            y += gp.tileSize*1.2;
             g2d.drawString(text, x, y);
             if (commandNum == 2) {
                 g2d.drawString(">", x - gp.tileSize, y);
             }
         } else if (titleScreenState == 1) {
-
-            g2d.setColor(Color.WHITE);
-            g2d.setFont(g2d.getFont().deriveFont(42F));
-
-            String text = "Select your class!";
-            int x = getXforCenteredText(text),
-                    y = gp.tileSize * 3;
-            g2d.drawString(text, x, y);
-
-            text = "Fighter";
-            x = getXforCenteredText(text);
-            y += gp.tileSize * 3;
-            g2d.drawString(text, x, y);
-            if (commandNum == 0) {
-                g2d.drawString(">", x - gp.tileSize, y);
-            }
-
-            text = "Thieft";
-            x = getXforCenteredText(text);
-            y += gp.tileSize;
-            g2d.drawString(text, x, y);
-            if (commandNum == 1) {
-                g2d.drawString(">", x - gp.tileSize, y);
-            }
-
-            text = "Sorcerer";
-            x = getXforCenteredText(text);
-            y += gp.tileSize;
-            g2d.drawString(text, x, y);
-            if (commandNum == 2) {
-                g2d.drawString(">", x - gp.tileSize, y);
-            }
-
-            text = "back";
-            x = getXforCenteredText(text);
-            y += gp.tileSize * 2;
-            g2d.drawString(text, x, y);
-            if (commandNum == 3) {
-                g2d.drawString(">", x - gp.tileSize, y);
-            }
+        	
+        	if(tImage == 1)
+        		g2d.drawImage(tutorial1, 0, 0, null);
+        	else if(tImage == 2)
+        		g2d.drawImage(tutorial2, 0, 0, null);
+        	else if(tImage == 3)
+        		g2d.drawImage(tutorial3, 0, 0, null);
+        	else if(tImage == 4)
+        		g2d.drawImage(tutorial4, 0, 0, null);
+        		
+        	if (counter > 25) {
+				if (tImage >= 4)
+					tImage = 1;
+				else
+					tImage++;
+				counter = 0;
+			}
+        	
+        	
+        		
         }
 
     }
