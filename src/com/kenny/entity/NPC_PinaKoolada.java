@@ -37,7 +37,7 @@ public class NPC_PinaKoolada extends Entity {
 
     public void setDialogue() {
 
-        dialogues[0] = "yo wasapp njing!";
+        dialogues[0] = "Yo whazapp lil'dog!\nWhat'ca doin here?";
     }
 
     public void setAction() {

@@ -160,7 +160,7 @@ public class UI {
 
         if (titleScreenState == 0) {
             // Background
-            g2d.setColor(new Color(235, 131, 52));
+            g2d.setColor(new Color(231, 188, 145));
             g2d.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 
             // Title

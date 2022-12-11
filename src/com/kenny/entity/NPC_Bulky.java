@@ -37,10 +37,7 @@ public class NPC_Bulky extends Entity {
 
     public void setDialogue() {
 
-        dialogues[0] = "helo, njing!";
-        dialogues[1] = "kamu ngapain disini njingg?";
-        dialogues[2] = "wah wih wuh weh\na..a.anjing bisa ngomong";
-        dialogues[3] = "sana njingg cari kuncinya";
+        dialogues[0] = "GGRHRHH... little dog!";
     }
 
     public void setAction() {

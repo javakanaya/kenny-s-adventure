@@ -37,7 +37,9 @@ public class NPC_Drac extends Entity {
 
     public void setDialogue() {
 
-        dialogues[0] = "Ho Ho Helo, njing";
+        dialogues[0] = "Rawrr..\nHi little one\nWhat brings you here?";
+        dialogues[1] = "You need a Spring Key?\nwell well well.. Of Course i know where it is\nIt's located at the farside of this maze";
+        dialogues[2] = "But becareful,\nsome flower makes you go into SUGAR RUSH\nAnd some makes you normal again";
     }
 
     public void setAction() {
