@@ -62,7 +62,8 @@ public class KeyHandler implements KeyListener {
                     gp.playSfx(2);
                     gp.gameState = gp.playState;
                     gp.ui.titleScreenState = 0;
-                    gp.playMusic(0);
+                    gp.stopMusic();
+                    gp.playMusic(12);
                 }
                 if (code == KeyEvent.VK_ESCAPE) {
                     gp.playSfx(2);
@@ -133,6 +134,7 @@ public class KeyHandler implements KeyListener {
                 }
                 if (gp.ui.commandNum == 1) {
                     gp.gameState = gp.titleState;
+                    gp.stopMusic();
                 }
             }
         }

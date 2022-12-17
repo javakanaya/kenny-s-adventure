@@ -111,6 +111,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         // initiate gameState
         gameState = titleState;
+        playMusic(0);
     }
 
     public void startGameThread() {

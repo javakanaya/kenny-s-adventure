@@ -15,6 +15,8 @@ public class Sound {
     public Sound() {
 
         soundURL[0] = getClass().getResource("/sound/music/titleMusic.wav");
+        soundURL[12] = getClass().getResource("/sound/music/gameMusic.wav");
+        soundURL[13] = getClass().getResource("/sound/music/finisMusic.wav");
         
         soundURL[1] = getClass().getResource("/sound/sfx/switchTab.wav");
         soundURL[2] = getClass().getResource("/sound/sfx/selectTab.wav");
