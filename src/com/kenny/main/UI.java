@@ -185,7 +185,6 @@ public class UI {
             g2d.drawString(text, x, y);
 
             // stop the thread to stop the game
-            gp.gameThread = null;
         }
     }
 

@@ -184,6 +184,15 @@ public class KeyHandler implements KeyListener {
                 gp.player.selectItem();
             }
         }
+        
+        // FINISH STATE
+        else if (gp.gameState == gp.finishState) {
+            gp.stopMusic();
+            if(code == KeyEvent.VK_ENTER) {
+                gp.gameState = gp.titleState;
+            }
+                
+        }
     }
 
     @Override
