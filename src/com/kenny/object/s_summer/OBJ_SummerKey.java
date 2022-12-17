@@ -26,8 +26,6 @@ public class OBJ_SummerKey extends Entity {
 
         gp.gameState = gp.dialogueState;
         
-        
-
         int objIndex = getDetected(entity, gp.obj, "Summer Pillar");
 
         if (objIndex != 999) {

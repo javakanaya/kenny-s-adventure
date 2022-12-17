@@ -10,6 +10,10 @@ import java.util.ArrayList;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
+import com.kenny.object.others.OBJ_OpenedGate;
+import com.kenny.object.s_autumn.OBJ_AutumnKey;
+import com.kenny.object.s_spring.OBJ_SpringKey;
+import com.kenny.object.s_summer.OBJ_SummerKey;
 import com.kenny.object.s_winter.OBJ_IcePillarOff;
 import com.kenny.object.s_winter.OBJ_IcePillarOn;
 import com.kenny.object.s_winter.OBJ_WinterKey;
@@ -57,6 +61,11 @@ public class Player extends Entity {
 		worldY = gp.tileSize * 50;
 		speed = 10;
 		direction = "down";
+		
+		inventory.add(new OBJ_WinterKey(gp));
+		inventory.add(new OBJ_SummerKey(gp));
+		inventory.add(new OBJ_AutumnKey(gp));
+		inventory.add(new OBJ_SpringKey(gp));
 	}
 
 	public void setItem() {
@@ -387,10 +396,23 @@ public class Player extends Entity {
 	
 	public void finish(){
 	    
-	    for(int p = 0; p<4;p++) 
+	    for(int p = 0; p<4;p++) {
+	        System.out.println(gate[p]);
 	        if(gate[p]==1) return;
-        
-        gateState = 0;
+	    }
+	        System.out.println("nailed");
+//	        if(gate[p]==1) return;
+//        
+	        
+	        
+	    gp.obj[5] = null; 
+	    gp.obj[6] = null; 
+	    gp.obj[7] = null; 
+	    gp.obj[8] = null; 
+	        
+      gp.obj[9] = new OBJ_OpenedGate(gp);
+      gp.obj[9].worldX = 53 * gp.tileSize;
+      gp.obj[9].worldY = 45 * gp.tileSize;
         
 	}
 
