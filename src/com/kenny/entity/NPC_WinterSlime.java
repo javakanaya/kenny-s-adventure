@@ -50,6 +50,7 @@ public class NPC_WinterSlime extends Entity {
     }
 
     public void speak(int i) {
+        gp.playSfx(11);
         if (i == 4)
             dialogueIndex = 0;
         else if (i == 5)

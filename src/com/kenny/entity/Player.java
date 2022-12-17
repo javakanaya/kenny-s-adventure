@@ -23,9 +23,11 @@ public class Player extends Entity {
 	public final int screenX;
 	public final int screenY;
 
-	public int[] pillar = { 1, 1, 1, 1 };
+	public int[] pillar = { 1, 1, 1, 1 },
+	             gate = {1, 1, 1, 1} ;
 	public ArrayList<Entity> inventory = new ArrayList<>();
-	int maxInventorySize = 20;
+	int maxInventorySize = 20,
+	    gateState = 1;
 
 	// player constructor
 	public Player(GamePanel gp, KeyHandler keyH) {
@@ -192,11 +194,11 @@ public class Player extends Entity {
 		if (i != 999) {
 			// OBSTACLE
 			if (gp.obj[i].type == type_gate) {
-				gp.ui.showMessage("press ENTER to interact");
-				if (keyH.enterPressed == true) {
-					gp.obj[i].interact(i);
-
-				}
+//				gp.ui.showMessage("press ENTER to interact");
+//				if (keyH.enterPressed == true) {
+					gp.obj[i].interact(gateState);
+//
+//			}
 			} else if (gp.obj[i].type == type_winterPillarOff) {
 				gp.ui.showMessage("Interact Ice Pillar");
 				if (keyH.enterPressed == true) {
@@ -227,6 +229,7 @@ public class Player extends Entity {
 				String text;
 				if (inventory.size() != maxInventorySize) {
 					inventory.add(gp.obj[i]);
+					gp.playSfx(6);
 					text = "Got a " + gp.obj[i].name + "!";
 					gp.obj[i] = null;
 				} else {
@@ -381,6 +384,15 @@ public class Player extends Entity {
 		// draw the player, the player doesn't change but the map
 		g2d.drawImage(image, screenX, screenY, null);
 	}
+	
+	public void finish(){
+	    
+	    for(int p = 0; p<4;p++) 
+	        if(gate[p]==1) return;
+        
+        gateState = 0;
+        
+	}
 
 	public void spawnPillarOn(int i, int xPos, int yPos) {
 		gp.obj[i] = new OBJ_IcePillarOn(gp);
@@ -399,8 +411,11 @@ public class Player extends Entity {
 			gp.obj[1] = new OBJ_WinterKey(gp);
 			gp.obj[1].worldX = 84 * gp.tileSize;
 			gp.obj[1].worldY = 47 * gp.tileSize;
+			
 		} else if (pillar[0] != 1 && pillar[1] != 1 && pillar[2] != 1 && pillar[3] != 1) {
 
+		   
+		    
 			gp.obj[11] = null;
 			gp.obj[11] = new OBJ_IcePillarOff(gp);
 			gp.obj[11].worldX = (78) * gp.tileSize;
@@ -421,11 +436,13 @@ public class Player extends Entity {
 			gp.obj[14].worldX = (84) * gp.tileSize;
 			gp.obj[14].worldY = (50) * gp.tileSize;
 
+			gp.ui.showMessage("Wrong Pillar Order");
+			gp.playSfx(9);
+			 
 			while (p >= 0) {
 				pillar[p] = 1;
 				p--;
 			}
-
 		}
 	}
 }

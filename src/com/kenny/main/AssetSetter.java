@@ -68,87 +68,87 @@ public class AssetSetter {
 
         // ice pile port
 
-        gp.obj[20] = new OBJ_IcePileClose(gp);
+        gp.obj[20] = new OBJ_IcePileA(gp);
         gp.obj[20].worldX = (80) * gp.tileSize;
         gp.obj[20].worldY = (56) * gp.tileSize;
 
-        gp.obj[21] = new OBJ_IcePileOpen(gp);
+        gp.obj[21] = new OBJ_IcePileB(gp);
         gp.obj[21].worldX = (90) * gp.tileSize;
         gp.obj[21].worldY = (53) * gp.tileSize;
 
-        gp.obj[22] = new OBJ_IcePileClose(gp);
+        gp.obj[22] = new OBJ_IcePileA(gp);
         gp.obj[22].worldX = (79) * gp.tileSize;
         gp.obj[22].worldY = (40) * gp.tileSize;
 
-        gp.obj[23] = new OBJ_IcePileOpen(gp);
+        gp.obj[23] = new OBJ_IcePileB(gp);
         gp.obj[23].worldX = (93) * gp.tileSize;
         gp.obj[23].worldY = (45) * gp.tileSize;
 
         // ice pile slime
 
-        gp.obj[24] = new OBJ_IcePileClose(gp);
+        gp.obj[24] = new OBJ_IcePileA(gp);
         gp.obj[24].worldX = (93) * gp.tileSize;
         gp.obj[24].worldY = (54) * gp.tileSize;
 
-        gp.obj[25] = new OBJ_IcePileOpen(gp);
+        gp.obj[25] = new OBJ_IcePileB(gp);
         gp.obj[25].worldX = (76) * gp.tileSize;
         gp.obj[25].worldY = (55) * gp.tileSize;
 
-        gp.obj[26] = new OBJ_IcePileClose(gp);
+        gp.obj[26] = new OBJ_IcePileA(gp);
         gp.obj[26].worldX = (95) * gp.tileSize;
         gp.obj[26].worldY = (40) * gp.tileSize;
 
-        gp.obj[27] = new OBJ_IcePileOpen(gp);
+        gp.obj[27] = new OBJ_IcePileB(gp);
         gp.obj[27].worldX = (76) * gp.tileSize;
         gp.obj[27].worldY = (38) * gp.tileSize;
 
         // empty ice pile
 
-        gp.obj[28] = new OBJ_IcePileClose(gp);
+        gp.obj[28] = new OBJ_IcePileA(gp);
         gp.obj[28].worldX = (81) * gp.tileSize;
         gp.obj[28].worldY = (38) * gp.tileSize;
 
-        gp.obj[29] = new OBJ_IcePileOpen(gp);
+        gp.obj[29] = new OBJ_IcePileB(gp);
         gp.obj[29].worldX = (77) * gp.tileSize;
         gp.obj[29].worldY = (42) * gp.tileSize;
 
-        gp.obj[30] = new OBJ_IcePileClose(gp);
+        gp.obj[30] = new OBJ_IcePileA(gp);
         gp.obj[30].worldX = (75) * gp.tileSize;
         gp.obj[30].worldY = (48) * gp.tileSize;
 
-        gp.obj[31] = new OBJ_IcePileOpen(gp);
+        gp.obj[31] = new OBJ_IcePileB(gp);
         gp.obj[31].worldX = (73) * gp.tileSize;
         gp.obj[31].worldY = (50) * gp.tileSize;
 
-        gp.obj[32] = new OBJ_IcePileClose(gp);
+        gp.obj[32] = new OBJ_IcePileA(gp);
         gp.obj[32].worldX = (77) * gp.tileSize;
         gp.obj[32].worldY = (52) * gp.tileSize;
 
-        gp.obj[33] = new OBJ_IcePileOpen(gp);
+        gp.obj[33] = new OBJ_IcePileB(gp);
         gp.obj[33].worldX = (78) * gp.tileSize;
         gp.obj[33].worldY = (57) * gp.tileSize;
 
-        gp.obj[34] = new OBJ_IcePileClose(gp);
+        gp.obj[34] = new OBJ_IcePileA(gp);
         gp.obj[34].worldX = (88) * gp.tileSize;
         gp.obj[34].worldY = (65) * gp.tileSize;
 
-        gp.obj[35] = new OBJ_IcePileOpen(gp);
+        gp.obj[35] = new OBJ_IcePileB(gp);
         gp.obj[35].worldX = (93) * gp.tileSize;
         gp.obj[35].worldY = (50) * gp.tileSize;
 
-        gp.obj[36] = new OBJ_IcePileClose(gp);
+        gp.obj[36] = new OBJ_IcePileA(gp);
         gp.obj[36].worldX = (95) * gp.tileSize;
         gp.obj[36].worldY = (48) * gp.tileSize;
 
-        gp.obj[37] = new OBJ_IcePileOpen(gp);
+        gp.obj[37] = new OBJ_IcePileB(gp);
         gp.obj[37].worldX = (94) * gp.tileSize;
         gp.obj[37].worldY = (42) * gp.tileSize;
 
-        gp.obj[38] = new OBJ_IcePileClose(gp);
+        gp.obj[38] = new OBJ_IcePileA(gp);
         gp.obj[38].worldX = (90) * gp.tileSize;
         gp.obj[38].worldY = (41) * gp.tileSize;
 
-        gp.obj[39] = new OBJ_IcePileOpen(gp);
+        gp.obj[39] = new OBJ_IcePileB(gp);
         gp.obj[39].worldX = (87) * gp.tileSize;
         gp.obj[39].worldY = (38) * gp.tileSize;
 

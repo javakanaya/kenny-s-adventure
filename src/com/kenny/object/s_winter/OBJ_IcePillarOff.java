@@ -24,7 +24,9 @@ public class OBJ_IcePillarOff extends Entity {
 
     public void interact(int i) {
 
+        
         gp.obj[i] = null;
         gp.ui.showMessage("Pillar On!");
+        gp.playSfx(8);
     }
 }

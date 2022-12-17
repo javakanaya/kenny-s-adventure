@@ -131,13 +131,10 @@ public class GamePanel extends JPanel implements Runnable {
         double delta = 0;
         long lastTime = System.currentTimeMillis();
         long currentTime;
-        // long timer = 0;
-        // int drawCount = 0;
+        
         // as long as the gameThread exist
         while (gameThread != null) {
-            // to get the suitable FPS,
-            // long currTime = System.nanoTime();
-            // System.out.println("Current Time:" + currTime);
+
 
             // pause the gameThread for a while
             currentTime = System.currentTimeMillis();
@@ -155,15 +152,6 @@ public class GamePanel extends JPanel implements Runnable {
                 delta--;
                 // drawCount++;
             }
-
-            // display FPS
-//            if (timer >= 1000) {
-//                System.out.println("The game loop is running");
-//                System.out.println("FPS: "+ drawCount);
-//                drawCount = 0;
-//                timer = 0;
-//            }
-
         }
     }
 
@@ -188,10 +176,6 @@ public class GamePanel extends JPanel implements Runnable {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
-
-        // DEBUG
-//		long drawStart = 0;
-//		drawStart = System.nanoTime();
 
         // TITLE SCREEN
         if (gameState == titleState) {
@@ -245,12 +229,6 @@ public class GamePanel extends JPanel implements Runnable {
             // UI
             ui.draw(g2d);
         }
-
-//		long drawEnd = System.nanoTime();
-//		long passed = drawEnd - drawStart;
-//		g2d.setColor(Color.white);
-//		g2d.drawString("Draw Time: " + passed, 10, 400);
-//		System.out.println("Draw Time: " + passed);
 
         // dispose (membuang) this graphics context and release any system resources
         // that using it

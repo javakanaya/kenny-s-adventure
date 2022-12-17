@@ -25,10 +25,13 @@ public class OBJ_SummerKey extends Entity {
     public boolean use(Entity entity) {
 
         gp.gameState = gp.dialogueState;
+        
+        
 
         int objIndex = getDetected(entity, gp.obj, "Summer Pillar");
 
         if (objIndex != 999) {
+            gp.playSfx(7);
             gp.ui.currentDialogue = "You use the " + name + "\nand open the Summer Gate";
             gp.obj[objIndex] = null;
             
@@ -41,6 +44,10 @@ public class OBJ_SummerKey extends Entity {
             gp.obj[7] = new OBJ_SummerGateOn(gp);
             gp.obj[7].worldX = ((55) ) * gp.tileSize;
             gp.obj[7].worldY = ((45) ) * gp.tileSize;
+            
+            gp.player.gate[1] = 0;
+            gp.player.finish();
+            
             return true;
         } else {
             gp.ui.currentDialogue = "What are you doing?\nYou can only use this key to associated gate";

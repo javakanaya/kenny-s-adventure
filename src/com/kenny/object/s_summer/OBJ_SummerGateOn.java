@@ -23,7 +23,12 @@ public class OBJ_SummerGateOn extends Entity {
 
     public void interact(int i) {
 
-        gp.gameState = gp.dialogueState;
-        gp.ui.currentDialogue = "Gate Open";
+        if(i == 1) {
+            gp.gameState = gp.dialogueState;
+            gp.ui.currentDialogue = "Gate Closed.\nAll Pillar Must Be Activated!";
+        }else if(i == 0) {
+            gp.gameState = gp.dialogueState;
+            gp.ui.currentDialogue = "kelar uhuy";
+        }
     }
 }
