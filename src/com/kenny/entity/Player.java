@@ -57,8 +57,8 @@ public class Player extends Entity {
 	public void setDefaultValues() {
 
 		// player position in the world map
-		worldX = gp.tileSize * 50;
-		worldY = gp.tileSize * 50;
+		worldX = gp.tileSize * 55;
+		worldY = gp.tileSize * 51;
 		speed = 10;
 		direction = "down";
 		
@@ -399,11 +399,7 @@ public class Player extends Entity {
 	    for(int p = 0; p<4;p++) {
 	        System.out.println(gate[p]);
 	        if(gate[p]==1) return;
-	    }
-	        System.out.println("nailed");
-//	        if(gate[p]==1) return;
-//        
-	        
+	    }    
 	        
 	    gp.obj[5] = null; 
 	    gp.obj[6] = null; 

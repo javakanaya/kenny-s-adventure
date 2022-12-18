@@ -18,12 +18,14 @@ public class OBJ_OpenedGate extends Entity {
         scallingX = 4;
         scallingY = 4;
         down1 = setup("/objects/gates/gateOpened");
-        setSolidArea(0, 30, 48, 150);
+        setSolidArea(0, 30, 192, 150);
         collision = true;
     }
 
     public void interact(int i) {
         gp.gameState = gp.finishState;
+        gp.stopMusic();
+        gp.playMusic(13);
     }
 
 }

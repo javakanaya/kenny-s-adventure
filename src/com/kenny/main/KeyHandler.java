@@ -187,9 +187,11 @@ public class KeyHandler implements KeyListener {
         
         // FINISH STATE
         else if (gp.gameState == gp.finishState) {
-            gp.stopMusic();
+        
             if(code == KeyEvent.VK_ENTER) {
                 gp.gameState = gp.titleState;
+                gp.stopMusic();
+                gp.playMusic(0);
             }
                 
         }

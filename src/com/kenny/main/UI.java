@@ -28,7 +28,7 @@ public class UI {
     int counter = 0, tImage = 1;
     public BufferedImage tutorial1, tutorial2,
             tutorial3, tutorial4,
-            kennyTS, TS1, TS2;
+            kennyTS, TS1, TS2, credit1, credit2;
 
     public boolean messageOn = false;
     public String message = "";
@@ -99,6 +99,8 @@ public class UI {
         kennyTS = setup("/title/kenny_ts");
         TS1 = setup("/title/TS1");
         TS2 = setup("/title/TS2");
+        credit1 = setup("/credit/credit1");
+        credit2 = setup("/credit/credit2");
     }
 
     public void showMessage(String text) {
@@ -160,31 +162,7 @@ public class UI {
 
         // FINISH STATE
         else if (gp.gameState == gp.finishState) {
-            String text;
-            int x, y;
-
-            g2d.setFont(calibri);
-            g2d.setFont(g2d.getFont().deriveFont(32F));
-            g2d.setColor(Color.white);
-            text = "You opened all gates!";
-            x = getXforCenteredText(text);
-            y = gp.screenHeight / 2 - (gp.tileSize * 3);
-            g2d.drawString(text, x, y);
-
-//            text = "Your time is : " + dFormat.format(playTime) + "!";
-//            x = getXforCenteredText(text);
-//            y = gp.screenHeight / 2 + (gp.tileSize * 4);
-//            g2d.drawString(text, x, y);
-
-            g2d.setFont(calibri);
-            g2d.setFont(g2d.getFont().deriveFont(80F));
-            g2d.setColor(Color.yellow);
-            text = "Congratulations!";
-            x = getXforCenteredText(text);
-            y = gp.screenHeight / 2 + (gp.tileSize * 2);
-            g2d.drawString(text, x, y);
-
-            // stop the thread to stop the game
+        	drawFinishScreen();
         }
     }
 
@@ -260,6 +238,24 @@ public class UI {
             }
         }
     }
+    
+    public void drawFinishScreen() {
+    	
+    	counter++;
+    	
+    	 if (tImage == 1)
+             g2d.drawImage(credit1, 0, 0, null);
+         else if (tImage == 2)
+             g2d.drawImage(credit2, 0, 0, null);
+         if (counter > 50) {
+             if (tImage >= 2)
+                 tImage = 1;
+             else
+                 tImage++;
+             counter = 0;
+         }
+    	
+    }
 
     public void drawPauseScreen() {
 
@@ -272,13 +268,13 @@ public class UI {
         g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 64));
         String text = "GAME PAUSED";
         int x = getXforCenteredText(text),
-                y = gp.screenHeight / 2;
+                y = gp.screenHeight / 3;
         g2d.drawString(text, x, y);
 
         g2d.setFont(g2d.getFont().deriveFont(Font.PLAIN, 48));
         text = "RESUME";
         x = getXforCenteredText(text);
-        y += gp.tileSize * 1.2;
+        y += gp.tileSize * 2.3;
         g2d.drawString(text, x, y);
         if (commandNum == 0) {
             g2d.drawString(">", x - gp.tileSize, y);
@@ -286,7 +282,7 @@ public class UI {
 
         text = "EXIT TO MAIN MENU";
         x = getXforCenteredText(text);
-        y += gp.tileSize * 1.2;
+        y += gp.tileSize * 1.5;
         g2d.drawString(text, x, y);
         if (commandNum == 1) {
             g2d.drawString(">", x - gp.tileSize, y);
