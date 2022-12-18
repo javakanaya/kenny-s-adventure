@@ -59,7 +59,7 @@ public class Player extends Entity {
         // player position in the world map
         worldX = gp.tileSize * 55;
         worldY = gp.tileSize * 51;
-        speed = 10;
+        speed = 7;
         direction = "down";
 
     }
