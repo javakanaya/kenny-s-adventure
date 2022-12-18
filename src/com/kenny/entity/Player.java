@@ -65,10 +65,10 @@ public class Player extends Entity {
     }
 
     public void setItem() {
-        inventory.add(new OBJ_WinterKey(gp));
-        inventory.add(new OBJ_SummerKey(gp));
-        inventory.add(new OBJ_AutumnKey(gp));
-        inventory.add(new OBJ_SpringKey(gp));
+//        inventory.add(new OBJ_WinterKey(gp));
+//        inventory.add(new OBJ_SummerKey(gp));
+//        inventory.add(new OBJ_AutumnKey(gp));
+//        inventory.add(new OBJ_SpringKey(gp));
     }
 
     // get player image and animating asset
