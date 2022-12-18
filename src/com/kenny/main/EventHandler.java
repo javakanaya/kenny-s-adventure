@@ -20,10 +20,10 @@ public class EventHandler {
 		int row = 0;
 		while (col < gp.maxWorldCol && row < gp.maxWorldRow) {
 			eventRect[col][row] = new EventRect();
-			eventRect[col][row].x = 20;
-			eventRect[col][row].y = 20;
-			eventRect[col][row].width = 8;
-			eventRect[col][row].height = 8;
+			eventRect[col][row].x = 10;
+			eventRect[col][row].y = 10;
+			eventRect[col][row].width = 28;
+			eventRect[col][row].height = 28;
 			eventRect[col][row].eventRectDefaultX = eventRect[col][row].x;
 			eventRect[col][row].eventRectDefaultY = eventRect[col][row].y;
 
@@ -47,57 +47,52 @@ public class EventHandler {
 		}
 
 		if (canTouchEvent == true) {
-//            if (hit(51, 51, "any") == true) {
-//                damagePit(gp.dialogueState, 51, 51);
-//            }
-//            if (hit(51, 60, "any") == true) {
-//                healingPool(gp.dialogueState);
-//            }
 
 			// winter
 
-			// pillar1
+			// TELEPORT PILLAR1
 			if (hit(90, 53, "any") == true) {
 				teleport(gp.dialogueState, 78, 48);
 			} else if (hit(78, 48, "any") == true) {
 				teleport(gp.dialogueState, 90, 53);
 			}
 
-			// pillar2
+			// TELEPORT PILLAR2
 			if (hit(80, 56, "any") == true) {
 				teleport(gp.dialogueState, 86, 43);
 			} else if (hit(86, 43, "any") == true) {
 				teleport(gp.dialogueState, 80, 56);
 			}
 
-			// pillar3
+			// TELEPORT PILLAR3
 			if (hit(79, 40, "any") == true) {
 				teleport(gp.dialogueState, 88, 49);
 			} else if (hit(88, 49, "any") == true) {
 				teleport(gp.dialogueState, 79, 40);
 			}
 
-			// pillar4
+			// TELEPORT PILLAR4
 			if (hit(93, 45, "any") == true) {
 				teleport(gp.dialogueState, 82, 51);
 			} else if (hit(82, 51, "any") == true) {
 				teleport(gp.dialogueState, 93, 45);
 			}
 
-			// key
+			// KEY
 			if (hit(74, 45, "any") == true) {
 				teleport(gp.dialogueState, 82, 45);
 			} else if (hit(82, 45, "any") == true) {
 				teleport(gp.dialogueState, 74, 45);
 			}
 
-			// spring
+			// SUGAR RUSH
 			if (hit(56, 64, "down") == true) {
 				gp.fps = 1000;
 			} else if (hit(56, 64, "up") == true) {
 				gp.fps = 60;
 			}
 
+			// SUGAR RUSH STOP
 			if (hit(54, 95, "any") == true) {
 				gp.fps = 60;
 			}
@@ -150,26 +145,5 @@ public class EventHandler {
 			canTouchEvent = false;
 		}
 	}
-
-	public void damagePit(int gameState, int col, int row) {
-		gp.gameState = gameState;
-		gp.ui.currentDialogue = "you fall into a pit";
-
-		// set one time event
-		eventRect[col][row].eventDone = true;
-
-		// player harus minggir dulu 1 tiles baru bisa interact event lagi
-		canTouchEvent = false;
-	}
-
-//    public void healingPool(int gameState) {
-//
-//        if (gp.keyH.enterPressed == true) {
-//            gp.gameState = gameState;
-//            gp.ui.currentDialogue = "Your drink the water.\nYour life has been recovered";
-//
-//            canTouchEvent = false;
-//        }
-//    }
 
 }

@@ -23,8 +23,7 @@ public class UI {
     GamePanel gp;
     Graphics2D g2d;
     Font courier, calibri, chaichle, maruMonica;
-    BufferedImage[] keyImage = new BufferedImage[4];
-    Entity[] keys = new Entity[4];
+  
     int counter = 0, tImage = 1;
     public BufferedImage tutorial1, tutorial2,
             tutorial3, tutorial4,
@@ -67,11 +66,6 @@ public class UI {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        keys[0] = new OBJ_WinterKey(gp);
-        keys[1] = new OBJ_SpringKey(gp);
-        keys[2] = new OBJ_SummerKey(gp);
-        keys[3] = new OBJ_AutumnKey(gp);
 
         getImage();
     }

@@ -25,7 +25,7 @@ public class OBJ_OpenedGate extends Entity {
     public void interact(int i) {
         gp.gameState = gp.finishState;
         gp.stopMusic();
-        gp.playMusic(13);
+        gp.playSfx(13);
     }
 
 }

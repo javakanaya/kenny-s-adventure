@@ -27,8 +27,7 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
 
-    public int[] pillar = { 1, 1, 1, 1 },
-            gate = { 1, 1, 1, 1 };
+    public int[] pillar,gate;
     public ArrayList<Entity> inventory = new ArrayList<>();
     int maxInventorySize = 20,
             gateState = 1;
@@ -59,16 +58,14 @@ public class Player extends Entity {
         // player position in the world map
         worldX = gp.tileSize * 55;
         worldY = gp.tileSize * 51;
-        speed = 7;
+        speed = 3;
         direction = "down";
 
     }
 
     public void setItem() {
-//        inventory.add(new OBJ_WinterKey(gp));
-//        inventory.add(new OBJ_SummerKey(gp));
-//        inventory.add(new OBJ_AutumnKey(gp));
-//        inventory.add(new OBJ_SpringKey(gp));
+        inventory.add(new OBJ_WinterKey(gp));
+        inventory.add(new OBJ_SpringKey(gp));
     }
 
     // get player image and animating asset
@@ -203,11 +200,8 @@ public class Player extends Entity {
         if (i != 999) {
             // OBSTACLE
             if (gp.obj[i].type == type_gate) {
-//				gp.ui.showMessage("press ENTER to interact");
-//				if (keyH.enterPressed == true) {
                 gp.obj[i].interact(gateState);
-//
-//			}
+
             } else if (gp.obj[i].type == type_winterPillarOff) {
                 gp.ui.showMessage("Interact Ice Pillar");
                 if (keyH.enterPressed == true) {
@@ -394,6 +388,7 @@ public class Player extends Entity {
         g2d.drawImage(image, screenX, screenY, null);
     }
 
+    //ENABLING FINISH STATE
     public void finish() {
 
         for (int p = 0; p < 4; p++) {
@@ -413,6 +408,8 @@ public class Player extends Entity {
 
     }
 
+    
+    //CHANGE ICE PILLAR
     public void spawnPillarOn(int i, int xPos, int yPos) {
         gp.obj[i] = new OBJ_IcePillarOn(gp);
         gp.obj[i].worldX = xPos;

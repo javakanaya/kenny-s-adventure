@@ -10,7 +10,7 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener {
 
     // declare attributes
-    public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, interactPressed;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed;
     GamePanel gp;
 
     public KeyHandler(GamePanel gp) {
@@ -112,9 +112,6 @@ public class KeyHandler implements KeyListener {
                 enterPressed = true;
             }
 
-            if (code == KeyEvent.VK_F) {
-                interactPressed = true;
-            }
         }
 
         // PAUSE STATE
@@ -142,6 +139,7 @@ public class KeyHandler implements KeyListener {
                 if (gp.ui.commandNum == 1) {
                     gp.gameState = gp.titleState;
                     gp.stopMusic();
+                    gp.playMusic(0);
                 }
             }
         }
@@ -198,7 +196,7 @@ public class KeyHandler implements KeyListener {
             if(code == KeyEvent.VK_ENTER) {
                 gp.gameState = gp.titleState;
                 gp.stopMusic();
-                gp.playSfx(0);
+                gp.playMusic(0);
             }
                 
         }
@@ -220,8 +218,6 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT)
             rightPressed = false;
 
-        if (code == KeyEvent.VK_F)
-            interactPressed = false;
     }
 
 }

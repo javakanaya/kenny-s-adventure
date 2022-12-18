@@ -159,7 +159,7 @@ public class CollisionChecker {
         return index;
     }
 
-    // PLAYER TO ENTITY
+    // ENTITY TO PLAYER
     public void checkPlayer(Entity entity) {
 
         // Get entity's solid area position

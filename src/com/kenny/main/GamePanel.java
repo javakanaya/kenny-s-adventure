@@ -84,7 +84,7 @@ public class GamePanel extends JPanel implements Runnable {
         this.setBackground(Color.black);
 
         // improve game's rendering performance
-        // all the drawing from his component will be done in an off-screen painting
+        // all the drawing from this component will be done in an off-screen painting
         // buffer
         /*
          * drawing graphics into an off-screen image buffer and then copying the
@@ -166,11 +166,12 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     // Standard method to draw on JPanel
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // TITLE SCREEN
+        // TITLE SCREEN & FINISH SCREEN
         if (gameState == titleState) {
             ui.draw(g2d);
         }
