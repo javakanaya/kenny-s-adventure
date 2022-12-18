@@ -23,7 +23,6 @@ public class AssetSetter {
 //        gp.obj[0].worldY = ((51)) * gp.tileSize;
 
 
-
         gp.obj[2] = new OBJ_SpringKey(gp);
         gp.obj[2].worldX = (56) * gp.tileSize;
         gp.obj[2].worldY = (94) * gp.tileSize;
@@ -269,6 +268,7 @@ public class AssetSetter {
     }
 
     public void setNPC() {
+        
 
         gp.npc[0] = new NPC_MrSnow(gp);
         gp.npc[0].worldX = 69 * gp.tileSize;

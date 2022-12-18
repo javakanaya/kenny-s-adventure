@@ -11,7 +11,7 @@ public class CollisionChecker {
         this.gp = gp;
     }
 
-    // check if the player solidArea, hit the tile or not
+    // ENTITY TO TILES
     public void checkTile(Entity entity) {
 
         // leftX
@@ -67,8 +67,8 @@ public class CollisionChecker {
         }
     }
 
-    // PLAYER TO OBJECT
-    public int checkObject(Entity entity, boolean player) {
+    // ENTITY TO OBJECT
+    public int checkObject(Entity entity, boolean entityCollision) {
 
         int index = 999;
 
@@ -100,7 +100,7 @@ public class CollisionChecker {
                     if (gp.obj[i].collision == true) {
                         entity.collisionOn = true;
                     }
-                    if (player == true) {
+                    if (entityCollision == true) {
                         index = i;
                     }
                 }
@@ -110,11 +110,12 @@ public class CollisionChecker {
                 gp.obj[i].solidArea.y = gp.obj[i].solidAreaDefaultY;
             }
         }
-        // check if player hitting any object, if it is, then return the index of object
+        // check if entity hitting any object, if it is, then return the index of object
+        // that has been hit
         return index;
     }
 
-    // NPC
+    // ENTITY TO ARRAY OF ENTITY
     public int checkEntity(Entity entity, Entity[] target) {
 
         int index = 999;

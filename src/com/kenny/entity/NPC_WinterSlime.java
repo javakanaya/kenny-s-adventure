@@ -82,14 +82,13 @@ public class NPC_WinterSlime extends Entity {
 
         actionLockCounter++;
         spriteCounter++;
-//		if(actionLockCounter%50 == 0) {
-//			
-//			if(spriteNum == 6)
-//				spriteNum = 5;
-//			else spriteNum = 6;
-//			
-//			actionLockCounter = 0;
-//		}
+        if (spriteCounter > 20) {
+            if (spriteNum >= 2)
+                spriteNum = 1;
+            else
+                spriteNum++;
+            spriteCounter = 0;
+        }
 
         if (actionLockCounter == 120) {
             Random random = new Random();

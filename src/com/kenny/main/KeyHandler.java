@@ -64,6 +64,13 @@ public class KeyHandler implements KeyListener {
                     gp.ui.titleScreenState = 0;
                     gp.stopMusic();
                     gp.playMusic(12);
+                    
+                    // set object for new game
+                    gp.aSetter.setObject();
+                    gp.aSetter.setNPC();
+                    gp.player.pillar = new int[] {1, 1, 1, 1};
+                    gp.player.gate = new int[] {1, 1, 1, 1};
+                    gp.obj[9] = null;
                 }
                 if (code == KeyEvent.VK_ESCAPE) {
                     gp.playSfx(2);
@@ -191,7 +198,7 @@ public class KeyHandler implements KeyListener {
             if(code == KeyEvent.VK_ENTER) {
                 gp.gameState = gp.titleState;
                 gp.stopMusic();
-                gp.playMusic(0);
+                gp.playSfx(0);
             }
                 
         }

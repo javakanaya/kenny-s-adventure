@@ -64,11 +64,9 @@ public class Entity {
         this.gp = gp;
     }
 
-    public void setAction() {
-    }
+    public void setAction() {}
 
-    public void interact(int i) {
-    }
+    public void interact(int i) {}
 
     // return true if can be used, and false if cannot
     public boolean use(Entity entity) {
@@ -105,7 +103,10 @@ public class Entity {
 
         setAction();
 
+        // current collision condition
         collisionOn = false;
+        
+        // check collision
         gp.cCheker.checkTile(this);
         gp.cCheker.checkObject(this, false);
         gp.cCheker.checkEntity(this, gp.npc);
@@ -127,15 +128,6 @@ public class Entity {
                     worldX += speed;
                     break;
             }
-        }
-
-        // animating sprite
-        if (spriteCounter > 20) {
-            if (spriteNum >= 2)
-                spriteNum = 1;
-            else
-                spriteNum++;
-            spriteCounter = 0;
         }
     }
 

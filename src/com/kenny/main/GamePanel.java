@@ -102,13 +102,6 @@ public class GamePanel extends JPanel implements Runnable {
 
     // setup for Game
     public void setupGame() {
-        // set object
-        aSetter.setObject();
-        aSetter.setNPC();
-
-        // play music
-        // playMusic(0);
-
         // initiate gameState
         gameState = titleState;
         playMusic(0);
@@ -132,10 +125,9 @@ public class GamePanel extends JPanel implements Runnable {
         double delta = 0;
         long lastTime = System.currentTimeMillis();
         long currentTime;
-        
+
         // as long as the gameThread exist
         while (gameThread != null) {
-
 
             // pause the gameThread for a while
             currentTime = System.currentTimeMillis();
