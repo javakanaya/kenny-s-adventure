@@ -32,6 +32,7 @@ public class TileManager {
         // grass-dirt
         setup(20, "mainWorld/base/020-dirt", false);
         setup(21, "mainWorld/base/021-grass", false); // 11
+        
 
         setup(22, "mainWorld/base/022-dirt_corner_leftDown_grass", false);
         setup(23, "mainWorld/base/023-dirt_corner_leftUp_grass", false);
@@ -55,6 +56,13 @@ public class TileManager {
         setup(38, "mainWorld/base/038-grass_fence5", true);
         setup(39, "mainWorld/base/039-grass_fence6", true);
         setup(132, "mainWorld/base/132-grass_fence7", true);
+        
+        setup(13, "mainWorld/base/013-rock", true);
+        setup(145, "mainWorld/base/145-bigRock", true);
+        setup(146, "mainWorld/base/146-bigRock", true);
+        setup(147, "mainWorld/base/147-bigRock", true);
+        setup(148, "mainWorld/base/148-bigRock", true);
+        setup(149, "mainWorld/base/149-flower", false);
 
         // water-grass
         setup(0, "mainWorld/base/000-water", true);
@@ -73,6 +81,19 @@ public class TileManager {
         setup(10, "mainWorld/base/010-water_left_grass", true);
         setup(11, "mainWorld/base/011-water_right_grass", true);
         setup(12, "mainWorld/base/012-water_up_grass", true);
+        
+        setup(133, "mainWorld/base/133-water", true);
+        setup(134, "mainWorld/base/134-water", true);
+        setup(135, "mainWorld/base/135-water", true);
+        setup(136, "mainWorld/base/136-water", true);
+        setup(137, "mainWorld/base/137-water", true);
+        setup(138, "mainWorld/base/138-water", true);
+        setup(139, "mainWorld/base/139-water", true);
+        setup(140, "mainWorld/base/140-water", true);
+        setup(141, "mainWorld/base/141-water", true);
+        setup(142, "mainWorld/base/142-water", true);
+        setup(143, "mainWorld/base/143-water", true);
+        setup(144, "mainWorld/base/144-water", true);
 
         // snow-grass
         setup(80, "winterWorld/base/080-snow", false);
