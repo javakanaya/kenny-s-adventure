@@ -49,7 +49,6 @@ public class Player extends Entity {
 
         setDefaultValues();
         getPlayerImage();
-        setItem();
     }
 
     // default values for the player
@@ -58,14 +57,15 @@ public class Player extends Entity {
         // player position in the world map
         worldX = gp.tileSize * 55;
         worldY = gp.tileSize * 51;
-        speed = 3;
+        speed = 7;
         direction = "down";
 
     }
 
+    //Method Khusus Untuk Demo, menambahkan Item yang diperlukan pada awla game
     public void setItem() {
-        inventory.add(new OBJ_WinterKey(gp));
-        inventory.add(new OBJ_SpringKey(gp));
+//        inventory.add(new OBJ_WinterKey(gp));
+//        inventory.add(new OBJ_SpringKey(gp));
     }
 
     // get player image and animating asset
@@ -130,7 +130,7 @@ public class Player extends Entity {
 
             // CHECK OBJECT COLLISION
             int objIndex = gp.cCheker.checkObject(this, true);
-            pickUpObject(objIndex);
+            interactObject(objIndex);
 
             // CHECK NPC COLLISION
             // pass NPC array
@@ -195,7 +195,7 @@ public class Player extends Entity {
     }
 
     // pickup object method
-    public void pickUpObject(int i) {
+    public void interactObject(int i) {
 
         if (i != 999) {
             // OBSTACLE

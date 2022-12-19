@@ -39,7 +39,7 @@ public class NPC_MrSnow extends Entity {
 
         dialogues[0] = "HO HO HO, Hello There!\nI'm your friendly winterhood Mr.Snowman";
         dialogues[1] = "You need a winter Key eey?\nI happen to know it's location Ho Ho\nIt's at the top of The Mountain";
-        dialogues[2] = "My advice to get there? HO HO HO\nAda udang di balik batu maszeh";
+        dialogues[2] = "My advice to get there? HO HO HO\nThere'something underneath those ice";
     }
 
     public void setAction() {

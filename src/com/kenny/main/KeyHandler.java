@@ -66,6 +66,7 @@ public class KeyHandler implements KeyListener {
                     gp.playMusic(12);
                     
                     // set object for new game
+                    gp.player.setItem();
                     gp.aSetter.setObject();
                     gp.aSetter.setNPC();
                     gp.player.pillar = new int[] {1, 1, 1, 1};

@@ -87,14 +87,18 @@ public class EventHandler {
 
 			// SUGAR RUSH
 			if (hit(56, 64, "down") == true) {
-				gp.fps = 1000;
+				gp.fps = 2000;
+				gp.player.speed = 10;
+				
 			} else if (hit(56, 64, "up") == true) {
 				gp.fps = 60;
+				gp.player.speed = 7;
 			}
 
 			// SUGAR RUSH STOP
 			if (hit(54, 95, "any") == true) {
 				gp.fps = 60;
+				gp.player.speed = 7;
 			}
 		}
 	}
