@@ -13,10 +13,10 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 
 import com.kenny.entity.Entity;
-import com.kenny.object.s_autumn.OBJ_AutumnKey;
-import com.kenny.object.s_spring.OBJ_SpringKey;
-import com.kenny.object.s_summer.OBJ_SummerKey;
-import com.kenny.object.s_winter.OBJ_WinterKey;
+import com.kenny.object.s_autumn.AutumnKey;
+import com.kenny.object.s_spring.SpringKey;
+import com.kenny.object.s_summer.SummerKey;
+import com.kenny.object.s_winter.WinterKey;
 
 public class UI {
 

@@ -2,9 +2,9 @@ package com.kenny.entity;
 
 import com.kenny.main.GamePanel;
 
-public class NPC_Bulky extends Entity {
+public class Bulky extends Entity {
 
-    public NPC_Bulky(GamePanel gp) {
+    public Bulky(GamePanel gp) {
         super(gp);
 
         worldX = gp.tileSize * 26;

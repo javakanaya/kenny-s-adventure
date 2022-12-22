@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 import com.kenny.main.GamePanel;
 import com.kenny.main.KeyHandler;
-import com.kenny.object.others.OBJ_OpenedGate;
-import com.kenny.object.s_autumn.OBJ_AutumnKey;
-import com.kenny.object.s_spring.OBJ_SpringKey;
-import com.kenny.object.s_summer.OBJ_SummerKey;
-import com.kenny.object.s_winter.OBJ_IcePillarOff;
-import com.kenny.object.s_winter.OBJ_IcePillarOn;
-import com.kenny.object.s_winter.OBJ_WinterKey;
+import com.kenny.object.others.OpenedGate;
+import com.kenny.object.s_autumn.AutumnKey;
+import com.kenny.object.s_spring.SpringKey;
+import com.kenny.object.s_summer.SummerKey;
+import com.kenny.object.s_winter.IcePillarOff;
+import com.kenny.object.s_winter.IcePillarOn;
+import com.kenny.object.s_winter.WinterKey;
 
 public class Player extends Entity {
 
@@ -402,7 +402,7 @@ public class Player extends Entity {
         gp.obj[7] = null;
         gp.obj[8] = null;
 
-        gp.obj[9] = new OBJ_OpenedGate(gp);
+        gp.obj[9] = new OpenedGate(gp);
         gp.obj[9].worldX = 53 * gp.tileSize;
         gp.obj[9].worldY = 45 * gp.tileSize;
 
@@ -411,7 +411,7 @@ public class Player extends Entity {
     
     //CHANGE ICE PILLAR
     public void spawnPillarOn(int i, int xPos, int yPos) {
-        gp.obj[i] = new OBJ_IcePillarOn(gp);
+        gp.obj[i] = new IcePillarOn(gp);
         gp.obj[i].worldX = xPos;
         gp.obj[i].worldY = yPos;
 
@@ -424,29 +424,29 @@ public class Player extends Entity {
         if (((pillar[0] - pillar[1]) + pillar[2]) * pillar[3] == 169) {
 
             gp.ui.showMessage("Winter Key Has Spawned!");
-            gp.obj[1] = new OBJ_WinterKey(gp);
+            gp.obj[1] = new WinterKey(gp);
             gp.obj[1].worldX = 84 * gp.tileSize;
             gp.obj[1].worldY = 47 * gp.tileSize;
 
         } else if (pillar[0] != 1 && pillar[1] != 1 && pillar[2] != 1 && pillar[3] != 1) {
 
             gp.obj[11] = null;
-            gp.obj[11] = new OBJ_IcePillarOff(gp);
+            gp.obj[11] = new IcePillarOff(gp);
             gp.obj[11].worldX = (78) * gp.tileSize;
             gp.obj[11].worldY = (44) * gp.tileSize;
 
             gp.obj[12] = null;
-            gp.obj[12] = new OBJ_IcePillarOff(gp);
+            gp.obj[12] = new IcePillarOff(gp);
             gp.obj[12].worldX = (82) * gp.tileSize;
             gp.obj[12].worldY = (40) * gp.tileSize;
 
             gp.obj[13] = null;
-            gp.obj[13] = new OBJ_IcePillarOff(gp);
+            gp.obj[13] = new IcePillarOff(gp);
             gp.obj[13].worldX = (88) * gp.tileSize;
             gp.obj[13].worldY = (45) * gp.tileSize;
 
             gp.obj[14] = null;
-            gp.obj[14] = new OBJ_IcePillarOff(gp);
+            gp.obj[14] = new IcePillarOff(gp);
             gp.obj[14].worldX = (84) * gp.tileSize;
             gp.obj[14].worldY = (50) * gp.tileSize;
 

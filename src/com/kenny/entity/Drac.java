@@ -2,9 +2,9 @@ package com.kenny.entity;
 
 import com.kenny.main.GamePanel;
 
-public class NPC_Drac extends Entity {
+public class Drac extends Entity {
 
-    public NPC_Drac(GamePanel gp) {
+    public Drac(GamePanel gp) {
         super(gp);
 
         worldX = gp.tileSize * 26;

@@ -2,9 +2,9 @@ package com.kenny.entity;
 
 import com.kenny.main.GamePanel;
 
-public class NPC_MrSnow extends Entity {
+public class MrSnow extends Entity {
 
-    public NPC_MrSnow(GamePanel gp) {
+    public MrSnow(GamePanel gp) {
         super(gp);
 
         worldX = gp.tileSize * 26;

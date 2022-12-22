@@ -2,9 +2,9 @@ package com.kenny.entity;
 
 import com.kenny.main.GamePanel;
 
-public class NPC_PinaKoolada extends Entity {
+public class PinaKoolada extends Entity {
 
-    public NPC_PinaKoolada(GamePanel gp) {
+    public PinaKoolada(GamePanel gp) {
         super(gp);
 
         worldX = gp.tileSize * 26;

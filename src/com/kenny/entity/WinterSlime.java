@@ -4,9 +4,9 @@ import java.util.Random;
 
 import com.kenny.main.GamePanel;
 
-public class NPC_WinterSlime extends Entity {
+public class WinterSlime extends Entity {
 
-    public NPC_WinterSlime(GamePanel gp) {
+    public WinterSlime(GamePanel gp) {
         super(gp);
 
         worldX = gp.tileSize * 26;
